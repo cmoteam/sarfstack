@@ -1,0 +1,52 @@
+{
+  "skills": {
+    "ceo-review": {
+      "path": "skills/ceo-review/SKILL.md",
+      "description": "収益性・ビジネス観点からマーケティング施策をレビュー"
+    },
+    "cmo-review": {
+      "path": "skills/cmo-review/SKILL.md",
+      "description": "マーケティング戦略全体の統括レビュー"
+    },
+    "seo": {
+      "path": "skills/seo/SKILL.md",
+      "description": "SEO分析・キーワード戦略・技術SEO監査"
+    },
+    "creative-director": {
+      "path": "skills/creative-director/SKILL.md",
+      "description": "クリエイティブの品質・ブランド一貫性チェック"
+    },
+    "ui-review": {
+      "path": "skills/ui-review/SKILL.md",
+      "description": "LP/広告LPのUI/UXレビューと改善"
+    },
+    "ads": {
+      "path": "skills/ads/SKILL.md",
+      "description": "デジタル広告の設計・運用・最適化"
+    },
+    "content": {
+      "path": "skills/content/SKILL.md",
+      "description": "コンテンツマーケティングの企画・制作"
+    },
+    "analytics": {
+      "path": "skills/analytics/SKILL.md",
+      "description": "KPI分析・レポーティング・改善提案"
+    },
+    "campaign-launch": {
+      "path": "skills/campaign-launch/SKILL.md",
+      "description": "キャンペーン企画→制作→レビュー→ローンチの全工程"
+    },
+    "content-review": {
+      "path": "skills/content-review/SKILL.md",
+      "description": "コンテンツ制作→多角的レビューサイクル"
+    },
+    "landing-page": {
+      "path": "skills/landing-page/SKILL.md",
+      "description": "LP設計→制作→最適化サイクル"
+    },
+    "weekly-retro": {
+      "path": "skills/weekly-retro/SKILL.md",
+      "description": "週次マーケティング振り返り"
+    }
+  }
+}
