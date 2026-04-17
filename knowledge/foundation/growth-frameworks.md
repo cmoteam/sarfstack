@@ -197,7 +197,7 @@ Customer Problem Fit → Problem Solution Fit → Product Market Fit
 - コストを掛けずに、必要最小限の製品を作り、可能な限り早く顧客からのフィードバックを得ることを目的とする
 - コア機能だけを残した最小限の製品/プロトタイプ
 - 顧客の最も重要な課題を解決する、最小コストで作れる製品
-- 例: Dropboxはデモ動画、Twitterは社内ツール、Airbnbは自宅の写真
+- 例: Dropboxはデモ動画、X（旧Twitter）は社内ツール、Airbnbは自宅の写真
 
 ## リーンスタートアップ
 
