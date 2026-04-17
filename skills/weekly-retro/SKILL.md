@@ -9,14 +9,18 @@ version: 1.0.0
 毎週のマーケティング活動を振り返り、データに基づいた改善サイクルを回すワークフローです。
 形式的な報告ではなく、具体的なネクストアクションを導出します。
 
+**SAAF上の位置づけ**: このワークフローは **Feedback → Set** のブリッジを担います。今週のAction結果を数値と定性で集約し、来週の Set（特に `knowledge/latest/` と `knowledge/company/`）を更新するのが最終目的です。単なる報告会ではなく、AIの次のサイクルの入力精度を上げる儀式として位置づけてください。
+
 ## Workflow
 
 ```
-Step 1: /analytics   — 週次パフォーマンスレポート
-Step 2: /cmo-review  — 戦略的インサイトの抽出
+SAAFでの位置: ──Action結果── → Feedback集約 → Setに還元 → 次のAsk
+
+Step 1: /analytics   — 週次パフォーマンスレポート（Feedbackの数値面）
+Step 2: /cmo-review  — 戦略的インサイトの抽出（Feedbackの定性面）
 Step 3: /ceo-review  — 経営インパクトの評価
-Step 4: Next Week    — 来週のアクションプラン策定
-Step 5: Knowledge    — 知識ベースの更新
+Step 4: Next Week    — 来週のアクションプラン策定（次のAsk）
+Step 5: Knowledge    — 知識ベースの更新（Setへの還元）
 ```
 
 ## Step 1: Performance Analysis（パフォーマンス分析）
@@ -93,13 +97,17 @@ Step 5: Knowledge    — 知識ベースの更新
 
 ---
 
-## Step 5: Knowledge Update（知識更新）
+## Step 5: Knowledge Update（知識更新 = SAAFのSetへの還元）
 
-振り返りの中で得られた情報を知識ベースに反映:
+**このステップを省略するとSAAFのループが閉じません。**
+振り返りの中で得られた情報を知識ベースに反映し、次サイクルのSetを強化します:
 
-- `knowledge/latest/performance-data.md` の更新
+- `knowledge/latest/performance-data.md` の更新（実測値を記録）
 - `knowledge/latest/industry-trends.md` に新しいトレンドがあれば追記
 - `knowledge/latest/platform-updates.md` にプラットフォーム変更があれば追記
+- 検証済みの知見（ICPの解像度向上、ポジショニングの微修正）があれば `knowledge/company/*.md` も更新
+
+**注意**: 未検証の仮説をcompany層に書かないこと。Set層の汚染は以降の全出力を歪めます。
 
 ---
 

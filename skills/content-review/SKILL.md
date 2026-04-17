@@ -9,14 +9,19 @@ version: 1.0.0
 コンテンツ（ブログ記事、SNS投稿、メール等）を制作し、
 SEO・クリエイティブ・戦略の各観点からレビューして品質を担保するワークフローです。
 
+**SAAF上の位置づけ**: Step 1がAction（制作）、Step 2-4が複数視点からのAsk（レビュー）、Step 5が本番Action（公開）です。公開後はセットで `/analytics` を走らせ、Feedbackをknowledge/latestに還元することでサイクルを閉じてください。
+
 ## Workflow
 
 ```
+SAAF:              Action →        Ask (多角レビュー)        → Action (公開)
+
 Step 1: /content      — コンテンツの企画・制作
 Step 2: /seo          — SEO観点のレビュー・最適化
 Step 3: /creative-director — 品質・ブランド整合性のレビュー
 Step 4: /cmo-review   — 戦略整合性の最終確認
 Step 5: Publish       — 公開チェックリスト
+Step 6 (後工程): /analytics — 公開後のFeedback収集 → knowledge/latest/ に反映
 ```
 
 ## Step 1: Content Creation（制作）

@@ -9,6 +9,8 @@ version: 1.0.0
 LPの設計からコピーライティング、HTML/CSS実装、SEO最適化、CVR改善まで
 一貫して行うワークフローです。そのまま使えるLP一式を出力します。
 
+**SAAF上の位置づけ**: Step 1がAsk（戦略設計）、Step 2-6がAction（制作・最適化）、Step 7がFeedback設計（計測の仕込み）です。公開後は `/analytics` でCVR実績を取得し、`knowledge/latest/performance-data.md` に書き戻してサイクルを閉じてください。
+
 ## Workflow
 
 ```

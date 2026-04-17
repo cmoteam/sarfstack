@@ -4,6 +4,32 @@ CMObotは、Claude Code / Codex 上で動作する仮想マーケティング組
 企業のマーケティング担当者、スタートアップのグロース担当、広告代理店の担当者が、
 AIエージェントチームと協働してマーケティング業務を遂行するためのフレームワークです。
 
+## Operating Model — SAAF
+
+CMObotの全スキルは **SAAF** サイクルの上で動作します。SAAFはAI時代のマーケティングの基本OSであり、個別のフレームワーク（AARRR・STP・RAM-CE等）の上位に位置する「AIとの関わり方の型」です。
+
+```
+Set ─→ Ask ─→ Action ─→ Feedback ─┐
+ ↑                                  │
+ └──────────────────────────────────┘
+```
+
+- **S — Set**: 自分の情報（事業・ICP・ブランド・数字・制約）をAIに伝える
+- **A — Ask**: AIとのコミュニケーション。誰の視点で・何を・どの形式で出させるか問いを組む
+- **A — Action**: 出てきたアイデアの中から判断して実装する（本番反映して初めて完了）
+- **F — Feedback**: 結果をAIに戻してリファインし、次のSetを更新する
+
+SAAFの各段階はCMObotの構造に対応しています:
+
+| SAAF | CMObotでの担い手 |
+|------|-----------------|
+| Set | `knowledge/` 3層（foundation / company / latest） |
+| Ask | レビュー系スキル（`/cmo-review` `/ceo-review` `/seo` `/creative-director` 等） |
+| Action | 制作系スキル / ワークフロー（`/content` `/ads` `/landing-page` `/campaign-launch` 等） |
+| Feedback | 分析系スキル（`/analytics` `/weekly-retro`）→ 知識ベースに還元 |
+
+詳細は `knowledge/foundation/saaf-framework.md` を参照。
+
 ## Available Skills
 
 以下のスラッシュコマンドで各エージェントを呼び出せます:
@@ -46,10 +72,10 @@ AIエージェントチームと協働してマーケティング業務を遂行
 ## Principles
 
 1. **忖度しない** — 数字とロジックに基づいた率直なフィードバック。「いいと思います」で終わらない。
-2. **実行ベース** — アドバイスだけでなく、実際の成果物（コピー、HTML、設定値）を出力する。
+2. **実行ベース** — アドバイスだけでなく、実際の成果物（コピー、HTML、設定値）を出力する。Actionまで到達して初めて完了。
 3. **根拠を示す** — すべての提案に理由・データ・フレームワークの裏付けを添える。
-4. **サイクルを回す** — 企画→制作→レビュー→改善のループを1つのワークフローで完結させる。
-5. **知識を分離する** — 普遍的な知識と揮発性の情報を混ぜない。
+4. **SAAFサイクルを回す** — Set→Ask→Action→Feedbackのループを1つのワークフローで完結させる。Feedbackを怠らない。
+5. **知識を分離する** — 普遍的な知識と揮発性の情報を混ぜない。SetとFeedbackが汚染されないよう、検証済みの知見のみをknowledge/companyに記入する。
 
 ## How Knowledge Loading Works
 
@@ -67,3 +93,5 @@ Read: knowledge/latest/performance-data.md
 - **Executive Review** → foundation + company（戦略判断に必要）
 - **Specialist Agents** → foundation + company + latest（実行に必要）
 - **Workflows** → 内包するスキルが個別に読み込む
+
+これはSAAFの **Set** 段階に相当します。スキル実行前に `[TODO]` が残っているファイルがあれば、それは Set が未完成ということ。Ask の前に Set を整えることが、成果物の質を決めます。

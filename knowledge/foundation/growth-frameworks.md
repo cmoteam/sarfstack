@@ -1,5 +1,13 @@
 # Growth Frameworks — グロースフレームワーク集
 
+以下のフレームワークは、いずれも **SAAF**（Set / Ask / Action / Feedback）サイクルの中で使われる「考える道具」として位置づけられる。
+- **Set段階**で使う: STP / JTBD（誰に・何の仕事のために売るかをAIに伝える材料）
+- **Ask段階**で使う: AARRR / RAM-CE / Content Marketing Matrix（どのレンズで評価・制作させるかを指定）
+- **Action段階**で使う: Hook Model / MVP（何をどう実装するかの型）
+- **Feedback段階**で使う: North Star Metric / ユニットエコノミクス / AARRR指標（何を測って戻すか）
+
+SAAFの詳細は `knowledge/foundation/saaf-framework.md`。
+
 ## AARRR（Pirate Metrics）
 
 スタートアップのグロース分析の基本フレームワーク。
