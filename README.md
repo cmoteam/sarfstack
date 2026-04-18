@@ -41,11 +41,21 @@ git clone https://github.com/cmoteam/cmobot.git
 cd cmobot
 ```
 
-### 2. Fill in Company Knowledge（= SAAFのSet）
+### 2. Bootstrap Company Knowledge（企業情報ディレクトリを作成）
+
+企業固有情報は `knowledge/company/` に置きますが、このディレクトリは **gitignore 対象**（upstream には含まれない）です。リポジトリにはテンプレート `knowledge/company.example/` のみが入っているので、初回にコピーしてください:
+
+```bash
+cp -r knowledge/company.example knowledge/company
+```
+
+> **なぜ分離しているか**: ICP・競合情報・ブランドガイドラインなどの機密情報を upstream に誤って push する事故を防ぎ、`git pull` でフレームワーク本体のアップデートを素直に取り込めるようにするためです。
+
+### 3. Fill in Company Knowledge（= SAAFのSet）
 
 SAAFの **Set** 段階。ここを埋めないとAIは汎用回答しか返せません。成果物の質の9割がここで決まります。
 
-**推奨**: `/set-company` を実行すると、対話で必要な情報を一括ヒアリングして以下のファイルを埋められます。
+**推奨**: `/set-company` を実行すると、`knowledge/company/` が無ければ自動でテンプレートから作成し、対話で必要な情報を一括ヒアリングして以下のファイルを埋めます。
 
 手動で編集する場合は `knowledge/company/` 内のファイルを開き、`[TODO]` を実際の情報で置き換えてください:
 
@@ -57,9 +67,11 @@ knowledge/company/brand-guidelines.md ← ブランドガイドライン
 knowledge/company/competitors.md      ← 競合情報
 ```
 
+⚠️ **`knowledge/company.example/` には実情報を書き込まないでください**。こちらは upstream に push される共通テンプレートです。実データは必ず `knowledge/company/`（gitignore側）に書きます。
+
 充足率は `/saaf-check` で確認できます。
 
-### 3. Update Latest Knowledge（= SAAFのFeedbackをSetに還元）
+### 4. Update Latest Knowledge（= SAAFのFeedbackをSetに還元）
 
 SAAFの **Feedback** を次の **Set** に反映する層。施策を回すたびに、ここに数字と学びを書き戻してください。
 
@@ -115,7 +127,8 @@ cmobot/
 │
 ├── knowledge/                   # 3-tier knowledge base
 │   ├── foundation/              # Stable: frameworks, mindset
-│   ├── company/                 # Company-specific: ICP, brand
+│   ├── company.example/         # Template for company/ (tracked)
+│   ├── company/                 # Company-specific: ICP, brand (gitignored — per-project)
 │   └── latest/                  # Volatile: trends, data
 │
 ├── skills/                      # Individual agents & workflows

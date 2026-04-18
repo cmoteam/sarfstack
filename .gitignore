@@ -10,3 +10,7 @@ Thumbs.db
 
 # Node (if used for tooling)
 node_modules/
+
+# Company-specific knowledge (per-project, not shared upstream)
+# Bootstrap with: cp -r knowledge/company.example knowledge/company
+knowledge/company/

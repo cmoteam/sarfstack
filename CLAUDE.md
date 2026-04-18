@@ -71,6 +71,8 @@ SAAFの各段階はCMObotの構造に対応しています:
 `knowledge/company/` — 事業概要、ICP、ポジショニング、ブランドガイドライン、競合情報。
 プロジェクト開始時にユーザーが記入する。施策レビュー時に必ず参照される。
 
+> このディレクトリは **gitignore 対象**（各プロジェクトのローカル管理）です。upstream には共通テンプレート `knowledge/company.example/` のみが入っています。初回は `cp -r knowledge/company.example knowledge/company` で複製するか、`/set-company` に任せてください。企業の実情報は必ず `knowledge/company/` 側に書き、`knowledge/company.example/` は書き換えないでください（upstreamに流れます）。
+
 ### Latest（最新情報）
 `knowledge/latest/` — プラットフォームアップデート、業界トレンド、直近のパフォーマンスデータ。
 頻繁に更新される揮発性の情報。実行系スキルが参照する。
