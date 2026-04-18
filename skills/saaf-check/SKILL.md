@@ -23,7 +23,7 @@ Read: knowledge/company/brand-guidelines.md
 Read: knowledge/company/competitors.md
 Read: knowledge/latest/industry-trends.md
 Read: knowledge/latest/platform-updates.md
-Read: knowledge/feedback/performance-data.md
+Read: knowledge/results/performance-data.md
 ```
 
 ## Diagnostic Protocol
@@ -44,7 +44,7 @@ Set→Ask→Action→Feedback のどの段階に今いるかを判定:
 | **Set 構築中** | company 層の充足率 < 70% |
 | **Ask 準備完了** | company 層 ≥ 70% かつ latest が 30日以内に更新されている |
 | **Action 実行可** | 上記に加え、直近でレビュー系スキルの出力が参照可能 |
-| **Feedback 待ち** | Action 後、`knowledge/feedback/performance-data.md` の最終更新が古い／未反映 |
+| **Feedback 待ち** | Action 後、`knowledge/results/performance-data.md` の最終更新が古い／未反映 |
 
 ### Step 3: Output
 
@@ -70,7 +70,7 @@ Set→Ask→Action→Feedback のどの段階に今いるかを判定:
 | industry-trends.md | YYYY-MM-DD | N日 | 🟢🟡🔴 |
 | platform-updates.md | YYYY-MM-DD | N日 | 🟢🟡🔴 |
 
-### Feedback Layer（企業固有の結果ログ）
+### Results Layer（企業固有の結果ログ）
 | ファイル | 最終更新 | 経過日数 | 評価 |
 |---------|---------|---------|------|
 | performance-data.md | YYYY-MM-DD | N日 | 🟢🟡🔴 |

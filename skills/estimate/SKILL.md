@@ -23,7 +23,7 @@ Read: knowledge/company/company-overview.md
 Read: knowledge/company/icp.md
 Read: knowledge/foundation/marketing-mindset.md
 Read: knowledge/foundation/metrics-glossary.md
-Read: knowledge/feedback/performance-data.md
+Read: knowledge/results/performance-data.md
 ```
 
 ## Capabilities

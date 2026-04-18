@@ -27,7 +27,7 @@ Read: knowledge/company/brand-guidelines.md
 Read: knowledge/foundation/marketing-mindset.md
 Read: knowledge/foundation/metrics-glossary.md
 Read: knowledge/latest/platform-updates.md
-Read: knowledge/feedback/performance-data.md
+Read: knowledge/results/performance-data.md
 ```
 
 ## Capabilities

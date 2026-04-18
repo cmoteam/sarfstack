@@ -23,10 +23,10 @@ SAAFの各段階はCMObotの構造に対応しています:
 
 | SAAF | CMObotでの担い手 |
 |------|-----------------|
-| Set | `/set-company` `/set-latest` `/saaf-check` + `knowledge/` 4層（foundation / company / latest / feedback） |
+| Set | `/set-company` `/set-latest` `/saaf-check` + `knowledge/` 4層（foundation / company / latest / results） |
 | Ask | レビュー系スキル（`/cmo-review` `/ceo-review` `/seo` `/creative-director` 等） |
 | Action | 制作系スキル / ワークフロー（`/content` `/ads` `/landing-page` `/campaign-launch` 等） |
-| Feedback | 分析系スキル（`/analytics` `/weekly-retro`）＋ `/feedback`（検証ゲート付きで feedback/ 生データと company/ 検証済み知見に還元） |
+| Feedback | 分析系スキル（`/analytics` `/weekly-retro`）＋ `/feedback`（検証ゲート付きで results/ 生データと company/ 検証済み知見に還元） |
 
 詳細は `knowledge/foundation/saaf-framework.md` を参照。
 
@@ -75,13 +75,13 @@ SAAFの各段階はCMObotの構造に対応しています:
 
 ### Latest（外部揮発情報 / tracked）
 `knowledge/latest/` — プラットフォームアップデート、業界トレンド。**外から入ってくる** 公開情報ベースの揮発層。
-`/set-latest` で更新する。自社の実績数値（CVR・CPA 等）はここではなく `feedback/` 側。
+`/set-latest` で更新する。自社の実績数値（CVR・CPA 等）はここではなく `results/` 側。
 
-### Feedback（企業固有の結果ログ / gitignored）
-`knowledge/feedback/` — 直近のパフォーマンスデータ（CVR・CPA・ROAS・売上 等）、施策ごとの検証ログ、普遍化前の観測仮説。
-**中から出てくる** 機密性の高い数値のため gitignore 対象。`/feedback` が書き込む。
+### Results（企業固有の結果ログ / gitignored）
+`knowledge/results/` — 直近のパフォーマンスデータ（CVR・CPA・ROAS・売上 等）、施策ごとの検証ログ、普遍化前の観測仮説。
+**中から出てくる** 機密性の高い数値のため gitignore 対象。SAAFのFeedback段階で `/feedback` スキルが書き込む保管先。
 
-> upstream には共通テンプレート `knowledge/feedback.example/` のみ。初回は `cp -r knowledge/feedback.example knowledge/feedback` で複製するか、`/feedback` に任せてください。`knowledge/feedback.example/` は書き換え禁止（upstreamに流れます）。
+> upstream には共通テンプレート `knowledge/results.example/` のみ。初回は `cp -r knowledge/results.example knowledge/results` で複製するか、`/feedback` に任せてください。`knowledge/results.example/` は書き換え禁止（upstreamに流れます）。
 
 ## Principles
 
@@ -100,13 +100,13 @@ SAAFの各段階はCMObotの構造に対応しています:
 Read: knowledge/company/company-overview.md
 Read: knowledge/company/icp.md
 Read: knowledge/foundation/growth-frameworks.md
-Read: knowledge/feedback/performance-data.md
+Read: knowledge/results/performance-data.md
 ```
 
 スキルの性質に応じて読み込む知識層が異なります:
 - **SAAF Ops** → saaf-framework + 対象となる knowledge 層（Set/Feedbackの操作自体が責務）
 - **Executive Review** → foundation + company（戦略判断に必要）
-- **Specialist Agents** → foundation + company + latest + feedback（実行に必要）
+- **Specialist Agents** → foundation + company + latest + results（実行に必要）
 - **Workflows** → 内包するスキルが個別に読み込む
 
 これはSAAFの **Set** 段階に相当します。スキル実行前に `[TODO]` が残っているファイルがあれば、それは Set が未完成ということ。Ask の前に Set を整えることが、成果物の質を決めます。

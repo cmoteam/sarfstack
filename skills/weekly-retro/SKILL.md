@@ -15,7 +15,7 @@ version: 1.0.0
 - **Set Preflight**: 今週の施策ログと数値が手元にあることが前提。なければ `/analytics` を先に実行してから戻ってくる
 - **Feedback Hook**: Step 5 で `/set-latest` と `/feedback` を必ず呼び出す。これを省略するとサイクルが閉じず、次週の Set 精度が今週と同じレベルに留まる
 
-**SAAF上の位置づけ**: このワークフローは **Feedback → Set** のブリッジを担います。今週のAction結果を数値と定性で集約し、来週の Set（特に `knowledge/feedback/` `knowledge/latest/` `knowledge/company/`）を更新するのが最終目的です。単なる報告会ではなく、AIの次のサイクルの入力精度を上げる儀式として位置づけてください。
+**SAAF上の位置づけ**: このワークフローは **Feedback → Set** のブリッジを担います。今週のAction結果を数値と定性で集約し、来週の Set（特に `knowledge/results/` `knowledge/latest/` `knowledge/company/`）を更新するのが最終目的です。単なる報告会ではなく、AIの次のサイクルの入力精度を上げる儀式として位置づけてください。
 
 ## Workflow
 

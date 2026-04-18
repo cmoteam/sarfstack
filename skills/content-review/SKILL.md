@@ -27,7 +27,7 @@ Step 2: /seo          — SEO観点のレビュー・最適化
 Step 3: /creative-director — 品質・ブランド整合性のレビュー
 Step 4: /cmo-review   — 戦略整合性の最終確認
 Step 5: Publish       — 公開チェックリスト
-Step 6 (後工程): /analytics — 公開後のFeedback収集 → knowledge/feedback/ に反映
+Step 6 (後工程): /analytics — 公開後のFeedback収集 → knowledge/results/ に反映
 ```
 
 ## Step 1: Content Creation（制作）
