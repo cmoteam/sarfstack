@@ -10,6 +10,12 @@ version: 1.0.0
 Google Ads、Meta Ads、X Ads等のデジタル広告の設計から入稿データ作成、
 運用最適化、パフォーマンス分析まで一貫して担当します。
 
+## SAAF Alignment
+
+- **Position**: Action（入稿可能な設計＋コピー）
+- **Set Preflight**: `platform-updates.md` が60日以上古い場合、入札戦略・仕様が実態とズレる可能性を明示して `/set-latest` を推奨する。`performance-data.md` の CPA/ROAS ベースラインが欠けていると予測が立てられない
+- **Feedback Hook**: 配信後の CTR / CVR / CPA / ROAS を `/feedback` に戻す。クリエイティブ仮説と入札戦略の学習に使う
+
 ## Required Knowledge
 
 ```

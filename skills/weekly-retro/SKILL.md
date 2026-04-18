@@ -9,6 +9,12 @@ version: 1.0.0
 毎週のマーケティング活動を振り返り、データに基づいた改善サイクルを回すワークフローです。
 形式的な報告ではなく、具体的なネクストアクションを導出します。
 
+## SAAF Alignment
+
+- **Position**: Workflow（Feedback → Set 還元）
+- **Set Preflight**: 今週の施策ログと数値が手元にあることが前提。なければ `/analytics` を先に実行してから戻ってくる
+- **Feedback Hook**: Step 5 で `/set-latest` と `/feedback` を必ず呼び出す。これを省略するとサイクルが閉じず、次週の Set 精度が今週と同じレベルに留まる
+
 **SAAF上の位置づけ**: このワークフローは **Feedback → Set** のブリッジを担います。今週のAction結果を数値と定性で集約し、来週の Set（特に `knowledge/latest/` と `knowledge/company/`）を更新するのが最終目的です。単なる報告会ではなく、AIの次のサイクルの入力精度を上げる儀式として位置づけてください。
 
 ## Workflow
@@ -100,14 +106,12 @@ Step 5: Knowledge    — 知識ベースの更新（Setへの還元）
 ## Step 5: Knowledge Update（知識更新 = SAAFのSetへの還元）
 
 **このステップを省略するとSAAFのループが閉じません。**
-振り返りの中で得られた情報を知識ベースに反映し、次サイクルのSetを強化します:
+振り返りの中で得られた情報を専用スキルで知識ベースに反映し、次サイクルのSetを強化します:
 
-- `knowledge/latest/performance-data.md` の更新（実測値を記録）
-- `knowledge/latest/industry-trends.md` に新しいトレンドがあれば追記
-- `knowledge/latest/platform-updates.md` にプラットフォーム変更があれば追記
-- 検証済みの知見（ICPの解像度向上、ポジショニングの微修正）があれば `knowledge/company/*.md` も更新
+1. **`/set-latest` を実行** — 今週の実測値を `performance-data.md` に、新トレンドを `industry-trends.md` に、仕様変更を `platform-updates.md` に書き戻す
+2. **`/feedback` を実行** — 検証済み知見（ICPの解像度向上、ポジショニングの微修正等）の company 層反映を検証ゲート付きで処理する
 
-**注意**: 未検証の仮説をcompany層に書かないこと。Set層の汚染は以降の全出力を歪めます。
+**注意**: 未検証の仮説をcompany層に直書きしない。必ず `/feedback` の検証ゲートを通すこと。Set層の汚染は以降の全出力を歪めます。
 
 ---
 

@@ -10,6 +10,12 @@ version: 1.0.0
 データに基づいた分析、KPIレポーティング、アトリビューション分析、
 そして具体的な改善アクションの提案を行います。
 
+## SAAF Alignment
+
+- **Position**: Feedback（数値の集約と解釈）
+- **Set Preflight**: `performance-data.md` の過去データがないとトレンド分析ができない。初回実行時はユーザーに直近データの提供を要求し、終了後に `/set-latest` で書き戻すよう促す
+- **Feedback Hook**: このスキルが **Feedback の主役**。出力の Recommended Actions を `/feedback` に連携し、検証済み学びだけを knowledge 層に反映する
+
 ## Required Knowledge
 
 ```

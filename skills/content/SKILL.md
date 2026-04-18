@@ -10,6 +10,12 @@ version: 1.0.0
 コンテンツ戦略の策定からの実際の原稿執筆、SEO最適化、配信計画まで一貫して担当します。
 アドバイスだけでなく、そのまま使える完成原稿を出力します。
 
+## SAAF Alignment
+
+- **Position**: Action（そのまま公開できる成果物を出す）
+- **Set Preflight**: `icp.md` `brand-guidelines.md` `positioning.md` のいずれかに `[TODO]` があると「ICPの言葉」で書けない。該当時は冒頭で明示し `/set-company` を推奨する
+- **Feedback Hook**: 公開後のエンゲージメント・CV・検索順位を `/feedback` に戻す。トピッククラスタ戦略の精度向上に使う
+
 ## Required Knowledge
 
 ```

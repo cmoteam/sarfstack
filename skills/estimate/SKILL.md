@@ -10,6 +10,12 @@ version: 1.0.0
 クライアントへの提案書作成、施策の見積り、工数計算、費用対効果シミュレーションを担当します。
 代理店としての実務経験に基づき、現実的で根拠のある見積りを出力します。
 
+## SAAF Alignment
+
+- **Position**: Action（提案書・見積書の成果物）／ Ask（経営承認前の試算）
+- **Set Preflight**: `performance-data.md` の CPC/CTR/CVR ベンチマークがないと ROI 試算が架空値になる。欠けている場合はシナリオの前提を業界平均で埋めた上で「自社データ不足」を明示する
+- **Feedback Hook**: 見積り vs 実際の工数・媒体費・ROAS の差分を `/feedback` に戻す。次回見積りの単価・係数較正に使う
+
 ## Required Knowledge
 
 ```

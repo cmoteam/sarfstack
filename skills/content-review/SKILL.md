@@ -9,6 +9,12 @@ version: 1.0.0
 コンテンツ（ブログ記事、SNS投稿、メール等）を制作し、
 SEO・クリエイティブ・戦略の各観点からレビューして品質を担保するワークフローです。
 
+## SAAF Alignment
+
+- **Position**: Workflow（Action → 多角 Ask → Action → Feedback）
+- **Set Preflight**: `icp.md` `brand-guidelines.md` が未整備だと Step 3 (creative-director) のレビューが成立しない。開始前に `/saaf-check` を推奨
+- **Feedback Hook**: Step 6（後工程）の `/analytics` の結果を `/feedback` に連携。高パフォーマンス記事の共通パターンは ICP の解像度向上として company 層に反映候補になる
+
 **SAAF上の位置づけ**: Step 1がAction（制作）、Step 2-4が複数視点からのAsk（レビュー）、Step 5が本番Action（公開）です。公開後はセットで `/analytics` を走らせ、Feedbackをknowledge/latestに還元することでサイクルを閉じてください。
 
 ## Workflow

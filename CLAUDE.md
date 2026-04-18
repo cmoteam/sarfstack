@@ -23,16 +23,22 @@ SAAFの各段階はCMObotの構造に対応しています:
 
 | SAAF | CMObotでの担い手 |
 |------|-----------------|
-| Set | `knowledge/` 3層（foundation / company / latest） |
+| Set | `/set-company` `/set-latest` `/saaf-check` + `knowledge/` 3層（foundation / company / latest） |
 | Ask | レビュー系スキル（`/cmo-review` `/ceo-review` `/seo` `/creative-director` 等） |
 | Action | 制作系スキル / ワークフロー（`/content` `/ads` `/landing-page` `/campaign-launch` 等） |
-| Feedback | 分析系スキル（`/analytics` `/weekly-retro`）→ 知識ベースに還元 |
+| Feedback | 分析系スキル（`/analytics` `/weekly-retro`）＋ `/feedback`（検証ゲート付きでknowledge層に還元） |
 
 詳細は `knowledge/foundation/saaf-framework.md` を参照。
 
 ## Available Skills
 
 以下のスラッシュコマンドで各エージェントを呼び出せます:
+
+### SAAF Ops（サイクル運用）
+- `/set-company` — Set段階。企業情報を対話で一括ヒアリングし `knowledge/company/` を埋める
+- `/set-latest` — Set段階。数値・トレンド・仕様変更を `knowledge/latest/` に書き戻す
+- `/saaf-check` — サイクル診断。Set充足率・次の一手を提示
+- `/feedback` — Feedback段階。施策結果を検証ゲート付きで knowledge 層に反映
 
 ### Executive Review（経営レビュー）
 - `/ceo-review` — 収益性・ビジネス観点からの施策レビュー
@@ -90,8 +96,21 @@ Read: knowledge/latest/performance-data.md
 ```
 
 スキルの性質に応じて読み込む知識層が異なります:
+- **SAAF Ops** → saaf-framework + 対象となる knowledge 層（Set/Feedbackの操作自体が責務）
 - **Executive Review** → foundation + company（戦略判断に必要）
 - **Specialist Agents** → foundation + company + latest（実行に必要）
 - **Workflows** → 内包するスキルが個別に読み込む
 
 これはSAAFの **Set** 段階に相当します。スキル実行前に `[TODO]` が残っているファイルがあれば、それは Set が未完成ということ。Ask の前に Set を整えることが、成果物の質を決めます。
+
+## Canonical SAAF Flow
+
+初めてのプロジェクトは以下の順で回すのが推奨フローです:
+
+1. `/set-company` — 企業情報を一括ヒアリング（Set）
+2. `/saaf-check` — 充足率を確認し、不足があれば再 `/set-company`
+3. `/cmo-review` or `/campaign-launch` — 施策レビュー／全工程開始（Ask + Action）
+4. `/analytics` or `/weekly-retro` — 結果集約（Feedback）
+5. `/set-latest` + `/feedback` — Set層への還元（サイクルを閉じる）
+
+各 SKILL.md 冒頭には `SAAF Alignment` セクションがあり、そのスキルの **Position / Set Preflight / Feedback Hook** が明記されています。スキル呼び出し前に確認してください。

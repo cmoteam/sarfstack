@@ -1,5 +1,21 @@
 {
   "skills": {
+    "set-company": {
+      "path": "skills/set-company/SKILL.md",
+      "description": "SAAFのSet段階: 企業情報を対話で一気にヒアリングして knowledge/company/ を埋める"
+    },
+    "set-latest": {
+      "path": "skills/set-latest/SKILL.md",
+      "description": "SAAFのSet段階: 最新情報（数値・トレンド・仕様変更）を knowledge/latest/ に書き戻す"
+    },
+    "saaf-check": {
+      "path": "skills/saaf-check/SKILL.md",
+      "description": "SAAFサイクルの現在地を診断し、Set充足率と次の一手を提示する"
+    },
+    "feedback": {
+      "path": "skills/feedback/SKILL.md",
+      "description": "SAAFのFeedback段階: 施策結果を検証ゲート付きで knowledge 層に反映する"
+    },
     "ceo-review": {
       "path": "skills/ceo-review/SKILL.md",
       "description": "収益性・ビジネス観点からマーケティング施策をレビュー"

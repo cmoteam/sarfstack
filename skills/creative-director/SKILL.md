@@ -11,6 +11,12 @@ version: 1.0.0
 コピー、ビジュアルコンセプト、LP構成、広告クリエイティブを対象に、
 率直で具体的なフィードバックを行い、必要に応じて自ら修正案を書きます。
 
+## SAAF Alignment
+
+- **Position**: Ask（品質ゲート）
+- **Set Preflight**: `brand-guidelines.md` と `positioning.md` に `[TODO]` があるとブランド一貫性判定が成立しない。両ファイル未整備時はレビュー拒否し `/set-company` を推奨する
+- **Feedback Hook**: APPROVE 済みクリエイティブの実配信での反応（クリック率・体感・コメント）を `/feedback` に戻す。Brand Voice の精度向上に使う
+
 ## Required Knowledge
 
 ```

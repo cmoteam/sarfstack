@@ -10,6 +10,12 @@ version: 1.0.0
 LP（ランディングページ）、広告LP、Webページのコンバージョン最適化を目的としたUI/UXレビューと改善を行います。
 レビューだけでなく、具体的なHTML/CSSの修正コードも出力します。
 
+## SAAF Alignment
+
+- **Position**: Ask（UXレビュー）＋ Action（HTML/CSS 修正コード）
+- **Set Preflight**: `icp.md` が未整備だと CVR 改善判断が汎用になる。[TODO] がある場合は「ICP推定で進める」旨を明示し `/set-company` を推奨
+- **Feedback Hook**: 修正コード反映後の CVR 変化・ヒートマップ観測を `/feedback` に戻す。LP構成テンプレの改善に使う
+
 ## Required Knowledge
 
 ```

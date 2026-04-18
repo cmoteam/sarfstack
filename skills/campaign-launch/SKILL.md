@@ -10,6 +10,12 @@ version: 1.0.0
 1つのサイクルとして回します。各フェーズで適切な専門エージェントを呼び出し、
 成果物を次のエージェントに引き継ぎます。
 
+## SAAF Alignment
+
+- **Position**: Workflow（Set → Ask → Action → Feedback の1サイクルを完結）
+- **Set Preflight**: Phase 0 で `/saaf-check` 相当の診断を必ず実行。company 層の充足率 < 70% なら `/set-company` を先に走らせるようユーザーに確認する（推定モードで進めることも可能だが明示必須）
+- **Feedback Hook**: Phase 6 完了時に `/feedback` を必ず呼び出し、キャンペーン結果を knowledge 層に還元。Feedback を省略するとサイクルが閉じない
+
 **SAAF上の位置づけ**: このワークフローは **Set → Ask → Action → Feedback** の1サイクルを丸ごと包括します。Phase 0でSet（knowledge/の確認）、Phase 1-2-3がAsk、Phase 4-5がAction、Phase 6がFeedbackに対応します。
 
 ## Workflow Overview

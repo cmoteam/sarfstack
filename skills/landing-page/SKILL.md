@@ -9,6 +9,12 @@ version: 1.0.0
 LPの設計からコピーライティング、HTML/CSS実装、SEO最適化、CVR改善まで
 一貫して行うワークフローです。そのまま使えるLP一式を出力します。
 
+## SAAF Alignment
+
+- **Position**: Workflow（Ask → Action → Feedback設計）
+- **Set Preflight**: `icp.md` `positioning.md` `brand-guidelines.md` の3つが揃っていないと LP コピーが刺さらない。開始前に `/saaf-check` を推奨、欠けていれば `/set-company` に先回りする
+- **Feedback Hook**: 公開後の CVR・フォーム離脱率・ヒートマップ結果を `/analytics` → `/feedback` へ。A/B テスト結果は `performance-data.md` に時系列で蓄積する
+
 **SAAF上の位置づけ**: Step 1がAsk（戦略設計）、Step 2-6がAction（制作・最適化）、Step 7がFeedback設計（計測の仕込み）です。公開後は `/analytics` でCVR実績を取得し、`knowledge/latest/performance-data.md` に書き戻してサイクルを閉じてください。
 
 ## Workflow
