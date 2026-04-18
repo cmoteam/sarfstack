@@ -1,5 +1,5 @@
 ---
-name: weekly-retro
+name: flow-weekly-retro
 description: 週次マーケティング振り返りを実施し、来週のアクションプランを策定するワークフロー
 version: 1.0.0
 ---
@@ -150,7 +150,7 @@ Step 5: Knowledge    — 知識ベースの更新（Setへの還元）
 ## How to Use
 
 ```
-/weekly-retro
+/flow-weekly-retro
 
 # 以下の情報を提供してください:
 # - 今週実施した施策の概要

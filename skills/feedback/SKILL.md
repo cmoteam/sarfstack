@@ -41,7 +41,7 @@ Read: knowledge/results/performance-data.md
 
 ### Block A: 施策の特定
 - 施策名 / 期間 / チャネル
-- 使用したスラッシュコマンド（/ads, /content, /landing-page など）
+- 使用したスラッシュコマンド（/ads, /content, /flow-landing-page など）
 
 ### Block B: 数字のFeedback
 - KPI実績: CTR / CVR / CPA / ROAS / LTV（該当するもの）
@@ -149,5 +149,5 @@ Read: knowledge/results/performance-data.md
 
 ## Chaining
 
-- **前工程**: `/analytics` `/weekly-retro` の出力、または実地のキャンペーン結果
+- **前工程**: `/analytics` `/flow-weekly-retro` の出力、または実地のキャンペーン結果
 - **後工程**: `/saaf-check`（更新後の状態確認）→ 次サイクルの `/cmo-review`

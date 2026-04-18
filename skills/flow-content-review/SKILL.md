@@ -1,5 +1,5 @@
 ---
-name: content-review
+name: flow-content-review
 description: コンテンツの企画→制作→多角的レビュー→公開までのサイクルを回すワークフロー
 version: 1.0.0
 ---
@@ -114,7 +114,7 @@ APPROVE / REVISE / REWORK を判定。
 ## How to Use
 
 ```
-/content-review
+/flow-content-review
 
 # 以下の情報を提供してください:
 # - テーマ / トピック

@@ -48,20 +48,20 @@
       "path": "skills/analytics/SKILL.md",
       "description": "KPI分析・レポーティング・改善提案"
     },
-    "campaign-launch": {
-      "path": "skills/campaign-launch/SKILL.md",
+    "flow-campaign-launch": {
+      "path": "skills/flow-campaign-launch/SKILL.md",
       "description": "キャンペーン企画→制作→レビュー→ローンチの全工程"
     },
-    "content-review": {
-      "path": "skills/content-review/SKILL.md",
+    "flow-content-review": {
+      "path": "skills/flow-content-review/SKILL.md",
       "description": "コンテンツ制作→多角的レビューサイクル"
     },
-    "landing-page": {
-      "path": "skills/landing-page/SKILL.md",
+    "flow-landing-page": {
+      "path": "skills/flow-landing-page/SKILL.md",
       "description": "LP設計→制作→最適化サイクル"
     },
-    "weekly-retro": {
-      "path": "skills/weekly-retro/SKILL.md",
+    "flow-weekly-retro": {
+      "path": "skills/flow-weekly-retro/SKILL.md",
       "description": "週次マーケティング振り返り"
     }
   }

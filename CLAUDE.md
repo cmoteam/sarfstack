@@ -25,8 +25,8 @@ SAAFの各段階はCMObotの構造に対応しています:
 |------|-----------------|
 | Set | `/set-company` `/set-latest` `/saaf-check` + `knowledge/` 4層（foundation / company / latest / results） |
 | Ask | レビュー系スキル（`/cmo-review` `/ceo-review` `/seo` `/creative-director` 等） |
-| Action | 制作系スキル / ワークフロー（`/content` `/ads` `/landing-page` `/campaign-launch` 等） |
-| Feedback | 分析系スキル（`/analytics` `/weekly-retro`）＋ `/feedback`（検証ゲート付きで results/ 生データと company/ 検証済み知見に還元） |
+| Action | 制作系スキル / ワークフロー（`/content` `/ads` `/flow-landing-page` `/flow-campaign-launch` 等） |
+| Feedback | 分析系スキル（`/analytics` `/flow-weekly-retro`）＋ `/feedback`（検証ゲート付きで results/ 生データと company/ 検証済み知見に還元） |
 
 詳細は `knowledge/foundation/saaf-framework.md` を参照。
 
@@ -54,10 +54,10 @@ SAAFの各段階はCMObotの構造に対応しています:
 - `/estimate` — 見積り・工数計算・費用対効果シミュレーション（代理店視点）
 
 ### Workflows（統合ワークフロー）
-- `/campaign-launch` — キャンペーン企画→制作→レビュー→ローンチの全工程
-- `/content-review` — コンテンツ制作→多角的レビューサイクル
-- `/landing-page` — LP設計→制作→最適化サイクル
-- `/weekly-retro` — 週次マーケティング振り返り
+- `/flow-campaign-launch` — キャンペーン企画→制作→レビュー→ローンチの全工程
+- `/flow-content-review` — コンテンツ制作→多角的レビューサイクル
+- `/flow-landing-page` — LP設計→制作→最適化サイクル
+- `/flow-weekly-retro` — 週次マーケティング振り返り
 
 ## Knowledge Architecture
 
@@ -117,8 +117,8 @@ Read: knowledge/results/performance-data.md
 
 1. `/set-company` — 企業情報を一括ヒアリング（Set）
 2. `/saaf-check` — 充足率を確認し、不足があれば再 `/set-company`
-3. `/cmo-review` or `/campaign-launch` — 施策レビュー／全工程開始（Ask + Action）
-4. `/analytics` or `/weekly-retro` — 結果集約（Feedback）
+3. `/cmo-review` or `/flow-campaign-launch` — 施策レビュー／全工程開始（Ask + Action）
+4. `/analytics` or `/flow-weekly-retro` — 結果集約（Feedback）
 5. `/set-latest` + `/feedback` — Set層への還元（サイクルを閉じる）
 
 各 SKILL.md 冒頭には `SAAF Alignment` セクションがあり、そのスキルの **Position / Set Preflight / Feedback Hook** が明記されています。スキル呼び出し前に確認してください。

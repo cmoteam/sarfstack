@@ -1,5 +1,5 @@
 ---
-name: campaign-launch
+name: flow-campaign-launch
 description: キャンペーンの企画→制作→レビュー→ローンチまでの全工程を統合的に実行するワークフロー
 version: 1.0.0
 ---
@@ -183,7 +183,7 @@ SAAF:   Feedback      →  Ask        →  Action            →  Feedback
 ## How to Use
 
 ```
-/campaign-launch
+/flow-campaign-launch
 
 # 以下の情報を提供してください:
 # - キャンペーンの目的

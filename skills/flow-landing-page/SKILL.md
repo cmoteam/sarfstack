@@ -1,5 +1,5 @@
 ---
-name: landing-page
+name: flow-landing-page
 description: LP（ランディングページ）の設計→制作→最適化までを一貫して行うワークフロー
 version: 1.0.0
 ---
@@ -130,7 +130,7 @@ LPへの流入経路となる広告の設計:
 ## How to Use
 
 ```
-/landing-page
+/flow-landing-page
 
 # 以下の情報を提供してください:
 # - LPの目的

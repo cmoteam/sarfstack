@@ -141,4 +141,4 @@ Awareness    → Interest     → Consideration → Purchase    → Advocacy
 ## Chaining
 
 - **前工程**: 各チャネルのパフォーマンスデータ、`/ads` `/seo` `/content` の成果
-- **後工程**: `/cmo-review`（戦略見直し）、`/weekly-retro`（振り返り）
+- **後工程**: `/cmo-review`（戦略見直し）、`/flow-weekly-retro`（振り返り）

@@ -41,7 +41,7 @@ cp -r knowledge/results.example knowledge/results
 
 - `performance-data.md` — 週次でのKPI実績を更新（CVR・CPA・ROAS 等）
 - 施策終了時は `/feedback` スキルで一括記入
-- 週次振り返りは `/weekly-retro` が参照
+- 週次振り返りは `/flow-weekly-retro` が参照
 
 ## 注意事項
 
