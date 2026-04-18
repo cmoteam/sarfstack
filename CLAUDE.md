@@ -23,10 +23,10 @@ SAAFの各段階はCMObotの構造に対応しています:
 
 | SAAF | CMObotでの担い手 |
 |------|-----------------|
-| Set | `/set-company` `/set-latest` `/saaf-check` + `knowledge/` 3層（foundation / company / latest） |
+| Set | `/set-company` `/set-latest` `/saaf-check` + `knowledge/` 4層（foundation / company / latest / results） |
 | Ask | レビュー系スキル（`/cmo-review` `/ceo-review` `/seo` `/creative-director` 等） |
 | Action | 制作系スキル / ワークフロー（`/content` `/ads` `/landing-page` `/campaign-launch` 等） |
-| Feedback | 分析系スキル（`/analytics` `/weekly-retro`）＋ `/feedback`（検証ゲート付きでknowledge層に還元） |
+| Feedback | 分析系スキル（`/analytics` `/weekly-retro`）＋ `/feedback`（検証ゲート付きで results/ 生データと company/ 検証済み知見に還元） |
 
 詳細は `knowledge/foundation/saaf-framework.md` を参照。
 
@@ -36,7 +36,7 @@ SAAFの各段階はCMObotの構造に対応しています:
 
 ### SAAF Ops（サイクル運用）
 - `/set-company` — Set段階。企業情報を対話で一括ヒアリングし `knowledge/company/` を埋める
-- `/set-latest` — Set段階。数値・トレンド・仕様変更を `knowledge/latest/` に書き戻す
+- `/set-latest` — Set段階。業界トレンド・プラットフォーム仕様変更を `knowledge/latest/` に書き戻す（自社実績は対象外 → `/feedback`）
 - `/saaf-check` — サイクル診断。Set充足率・次の一手を提示
 - `/feedback` — Feedback段階。施策結果を検証ゲート付きで knowledge 層に反映
 
@@ -61,19 +61,27 @@ SAAFの各段階はCMObotの構造に対応しています:
 
 ## Knowledge Architecture
 
-知識ベースは3層に分離されています。各スキルは必要に応じて適切な層を読み込みます。
+知識ベースは4層に分離されています。各スキルは必要に応じて適切な層を読み込みます。
 
-### Foundation（不変の知識）
+### Foundation（不変の知識 / tracked）
 `knowledge/foundation/` — マーケティングのフレームワーク、マインドセット、原則。
 めったに変更されない普遍的な知識。全スキルの基盤として暗黙的に参照される。
 
-### Company（企業固有情報）
+### Company（企業固有情報 / gitignored）
 `knowledge/company/` — 事業概要、ICP、ポジショニング、ブランドガイドライン、競合情報。
 プロジェクト開始時にユーザーが記入する。施策レビュー時に必ず参照される。
 
-### Latest（最新情報）
-`knowledge/latest/` — プラットフォームアップデート、業界トレンド、直近のパフォーマンスデータ。
-頻繁に更新される揮発性の情報。実行系スキルが参照する。
+> このディレクトリは **gitignore 対象**（各プロジェクトのローカル管理）です。upstream には共通テンプレート `knowledge/company.example/` のみが入っています。初回は `cp -r knowledge/company.example knowledge/company` で複製するか、`/set-company` に任せてください。企業の実情報は必ず `knowledge/company/` 側に書き、`knowledge/company.example/` は書き換えないでください（upstreamに流れます）。
+
+### Latest（外部揮発情報 / tracked）
+`knowledge/latest/` — プラットフォームアップデート、業界トレンド。**外から入ってくる** 公開情報ベースの揮発層。
+`/set-latest` で更新する。自社の実績数値（CVR・CPA 等）はここではなく `results/` 側。
+
+### Results（企業固有の結果ログ / gitignored）
+`knowledge/results/` — 直近のパフォーマンスデータ（CVR・CPA・ROAS・売上 等）、施策ごとの検証ログ、普遍化前の観測仮説。
+**中から出てくる** 機密性の高い数値のため gitignore 対象。SAAFのFeedback段階で `/feedback` スキルが書き込む保管先。
+
+> upstream には共通テンプレート `knowledge/results.example/` のみ。初回は `cp -r knowledge/results.example knowledge/results` で複製するか、`/feedback` に任せてください。`knowledge/results.example/` は書き換え禁止（upstreamに流れます）。
 
 ## Principles
 
@@ -92,13 +100,13 @@ SAAFの各段階はCMObotの構造に対応しています:
 Read: knowledge/company/company-overview.md
 Read: knowledge/company/icp.md
 Read: knowledge/foundation/growth-frameworks.md
-Read: knowledge/latest/performance-data.md
+Read: knowledge/results/performance-data.md
 ```
 
 スキルの性質に応じて読み込む知識層が異なります:
 - **SAAF Ops** → saaf-framework + 対象となる knowledge 層（Set/Feedbackの操作自体が責務）
 - **Executive Review** → foundation + company（戦略判断に必要）
-- **Specialist Agents** → foundation + company + latest（実行に必要）
+- **Specialist Agents** → foundation + company + latest + results（実行に必要）
 - **Workflows** → 内包するスキルが個別に読み込む
 
 これはSAAFの **Set** 段階に相当します。スキル実行前に `[TODO]` が残っているファイルがあれば、それは Set が未完成ということ。Ask の前に Set を整えることが、成果物の質を決めます。

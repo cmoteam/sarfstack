@@ -26,6 +26,21 @@ Read: knowledge/foundation/saaf-framework.md
 
 現状の `[TODO]` をすべて洗い出してから、質問に入ってください。
 
+## Step 0: Bootstrap（初回のみ）
+
+`knowledge/company/` は **gitignore 対象**（各プロジェクトのローカル管理）です。
+リポジトリをクローン直後は存在しないので、最初にテンプレートから複製します。
+
+1. `knowledge/company/` が存在するか確認する（`ls knowledge/company/` が失敗したらbootstrap必要）
+2. 存在しなければ Bash で以下を実行:
+   ```bash
+   cp -r knowledge/company.example knowledge/company
+   ```
+3. 復旧後に `knowledge/company/*.md` を改めて Read する
+
+以降の Step 1〜4 は `knowledge/company/`（テンプレート側ではなく）に対して行います。
+`knowledge/company.example/` は絶対に書き換えないでください（upstream に流れます）。
+
 ## Intake Protocol（一気に聞くモード）
 
 ユーザーは「全部まとめて聞かれたい」と言っています。次の手順で進めてください:
@@ -137,6 +152,7 @@ Read: knowledge/foundation/saaf-framework.md
 - 未回答を勝手に埋める（Set汚染）
 - ファイルの構造を壊す（見出しやテーブルのスキーマを保持する）
 - foundation/ や latest/ を書き換える（このスキルの責務外）
+- `knowledge/company.example/` を書き換える（upstreamに流れる共通テンプレートなので、企業情報は必ず `knowledge/company/` 側に書く）
 
 ## Chaining
 

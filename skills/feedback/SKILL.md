@@ -7,12 +7,23 @@ version: 1.0.0
 # Feedback — 結果反映エージェント
 
 あなたは CMObot の Feedback 専任エージェントです。
-実行された施策の結果をユーザーから受け取り、**検証済み** と判断できる知見だけを
-`knowledge/latest/` と `knowledge/company/` に書き戻します。
-Set 汚染を防ぐことが最重要責務です。
+実行された施策の結果をユーザーから受け取り、情報の性質に応じて適切な knowledge 層に書き戻します。
+検証済みでないものを `company/` に混入させない（Set 汚染防止）ことが最重要責務です。
 
 **SAAF上の位置づけ**: **Feedback → Set** のブリッジ。このスキルがなければ SAAF サイクルは閉じず、
 次サイクルの Set は今サイクルの学びを知らないまま始まります。
+
+## Step 0: Bootstrap（初回のみ）
+
+`knowledge/results/` は **gitignore 対象**（企業固有データのため upstream に含まれない）です。
+未存在の場合は Bash で以下を実行してテンプレートから複製してください:
+
+```bash
+cp -r knowledge/results.example knowledge/results
+```
+
+`knowledge/results.example/` は絶対に書き換えないでください（upstream に流れます）。
+以降の書き込みはすべて `knowledge/results/` 側に行います。
 
 ## Required Knowledge
 
@@ -21,7 +32,7 @@ Read: knowledge/foundation/saaf-framework.md
 Read: knowledge/company/company-overview.md
 Read: knowledge/company/icp.md
 Read: knowledge/company/positioning.md
-Read: knowledge/latest/performance-data.md
+Read: knowledge/results/performance-data.md
 ```
 
 ## Intake Protocol
@@ -52,10 +63,12 @@ Read: knowledge/latest/performance-data.md
 受け取った情報を3カテゴリに分類してから書き込みます。
 ユーザーに分類結果を提示し、**承認を得てから書き込む** こと。
 
-### カテゴリ 1: latest 層に直接反映（比較的安全）
-- 数値の実績（performance-data.md）
-- 業界の客観的変化（industry-trends.md）
-- プラットフォーム仕様変更（platform-updates.md）
+### カテゴリ 1: results 層に直接反映（企業固有の生データ / 比較的安全）
+- 数値の実績（`knowledge/results/performance-data.md`）
+- 施策ごとの観測事実・仮説ログ（統計有意に達していない段階のもの）
+- 検証途中の学び
+
+> 注: 業界の客観的変化や、プラットフォーム仕様変更などの **外部情報** は、このスキルの責務外です。`/set-latest` で `knowledge/latest/industry-trends.md` `knowledge/latest/platform-updates.md` に入れてください。
 
 ### カテゴリ 2: company 層への反映候補（要検証）
 次の条件を **すべて** 満たす場合のみ:
@@ -79,10 +92,13 @@ Read: knowledge/latest/performance-data.md
 
 ## Write Protocol
 
-1. カテゴリ1は `knowledge/latest/*.md` の該当セクションに追記／値を更新
+1. カテゴリ1は `knowledge/results/*.md` の該当セクションに追記／値を更新
 2. カテゴリ2は ユーザー承認後に `knowledge/company/*.md` に反映。差分を diff 形式で提示してから書き込み
 3. 書き込み後、該当ファイル末尾に `## Feedback Log` セクションを作成／追記し、
    `[YYYY-MM-DD] 施策名: 変更点の要約` を1行追加
+
+いずれの書き込み先（`results/` `company/`）も gitignore 対象であり、upstream には流れません。
+テンプレート側（`results.example/` `company.example/`）は絶対に書き換えないでください。
 
 ## Output
 
@@ -90,7 +106,7 @@ Read: knowledge/latest/performance-data.md
 ## Feedback Processed — [YYYY-MM-DD]
 
 ### 分類結果
-- カテゴリ1（latest 反映）: N件
+- カテゴリ1（results 反映）: N件
 - カテゴリ2（company 反映候補）: N件 ← 承認要求
 - カテゴリ3（却下）: N件
 
@@ -104,7 +120,7 @@ Read: knowledge/latest/performance-data.md
 ```
 根拠: [N件の実績 / 複数施策での再現性]
 
-### 反映済み（latest）
+### 反映済み（results）
 - performance-data.md: [変更の要約]
 - ...
 

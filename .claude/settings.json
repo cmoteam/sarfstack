@@ -6,7 +6,7 @@
     },
     "set-latest": {
       "path": "skills/set-latest/SKILL.md",
-      "description": "SAAFのSet段階: 最新情報（数値・トレンド・仕様変更）を knowledge/latest/ に書き戻す"
+      "description": "SAAFのSet段階: 業界トレンド・プラットフォーム仕様変更を knowledge/latest/ に書き戻す"
     },
     "saaf-check": {
       "path": "skills/saaf-check/SKILL.md",
