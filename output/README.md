@@ -15,9 +15,9 @@ output/
 ├── ads/                  # /ads-manager の広告コピー・入稿データ
 ├── content/              # /contents-editor の原稿
 ├── landing-page/         # /flow-landing-page / /ui-designer のHTML/CSS
-├── seo/                  # /seo-consultant のKWリスト・監査レポート
+├── seo/                  # /seo-specialist のKWリスト・監査レポート
 ├── analytics/            # /data-analyst のレポート
-├── reviews/              # /ask-ceo /ask-cmo /creative-director のレビュー
+├── reviews/              # /ask-ceo /ask-cmo /ask-consultant /creative-director のレビュー
 └── estimates/            # /estimate の見積書
 ```
 

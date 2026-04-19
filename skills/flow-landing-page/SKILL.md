@@ -23,7 +23,7 @@ LPの設計からコピーライティング、HTML/CSS実装、SEO最適化、C
 Step 1: /ask-cmo        — LP戦略・構成設計
 Step 2: /contents-editor    — LPコピーライティング
 Step 3: /ui-designer        — UI実装・レビュー
-Step 4: /seo-consultant     — SEO・技術最適化
+Step 4: /seo-specialist     — SEO・技術最適化
 Step 5: /creative-director  — 全体品質レビュー
 Step 6: /ads-manager        — 広告連携設計
 Step 7: /data-analyst       — 計測設計
@@ -83,7 +83,7 @@ Step 2のコピーを使ってLPをHTML/CSSで実装し、レビュー:
 
 ## Step 4: SEO Optimization（SEO最適化）
 
-**エージェント**: `/seo-consultant`
+**エージェント**: `/seo-specialist`
 
 - title / meta description の最適化
 - OGP設定

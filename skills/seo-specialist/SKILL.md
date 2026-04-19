@@ -1,5 +1,5 @@
 ---
-name: seo-consultant
+name: seo-specialist
 description: SEO分析・キーワード戦略・技術SEO監査・コンテンツ最適化を実行するSEO専門エージェント
 version: 1.0.0
 ---

@@ -115,4 +115,4 @@ Read: memory/results/performance-data.md
 ## Chaining
 
 - **前工程**: `/flow-landing-page` ワークフロー、`/contents-editor`（LP用コピー）
-- **後工程**: `/creative-director`（全体品質チェック）、`/seo-consultant`（技術SEO確認）
+- **後工程**: `/creative-director`（全体品質チェック）、`/seo-specialist`（技術SEO確認）

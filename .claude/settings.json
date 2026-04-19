@@ -24,8 +24,12 @@
       "path": "skills/ask-cmo/SKILL.md",
       "description": "マーケティング戦略全体の統括レビュー"
     },
-    "seo-consultant": {
-      "path": "skills/seo-consultant/SKILL.md",
+    "ask-consultant": {
+      "path": "skills/ask-consultant/SKILL.md",
+      "description": "外部コンサル視点でのゼロベース率直フィードバック"
+    },
+    "seo-specialist": {
+      "path": "skills/seo-specialist/SKILL.md",
       "description": "SEO分析・キーワード戦略・技術SEO監査"
     },
     "creative-director": {

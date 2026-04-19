@@ -30,14 +30,14 @@ SARFの各段階はCMObotの構造に対応しています:
 | SARF | CMObotでの担い手 |
 |------|-----------------|
 | Set | `/set-company` `/set-latest` `/sarf-check` + `knowledge/`（foundation / latest）と `memory/`（company / results） |
-| Ask | レビュー系スキル（`/ask-cmo` `/ask-ceo` `/seo-consultant` `/creative-director` 等） |
+| Ask | レビュー系スキル（`/ask-cmo` `/ask-ceo` `/ask-consultant` `/seo-specialist` `/creative-director` 等） |
 | Release | 制作系スキル / ワークフロー（`/contents-editor` `/ads-manager` `/flow-landing-page` `/flow-campaign-launch` 等） |
 | Feedback | 分析系スキル（`/data-analyst` `/flow-weekly-retro`）＋ `/feedback`（検証ゲート付きで results/ 生データと company/ 検証済み知見に還元） |
 
 ```
 Set（情報を渡す）      → /set-company /set-latest + knowledge/（base） + memory/（per-project）
 Meta（サイクル診断）   → /sarf-check
-Ask（問いに答える）    → /ask-ceo /ask-cmo /creative-director /seo-consultant /ui-designer
+Ask（問いに答える）    → /ask-ceo /ask-cmo /ask-consultant /creative-director /seo-specialist /ui-designer
 Release（本番反映）    → /contents-editor /ads-manager /estimate /flow-landing-page /flow-campaign-launch
 Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback → knowledge 層に還元
 ```
@@ -60,9 +60,10 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 ### Executive Review（経営レビュー）
 - `/ask-ceo` — 収益性・ビジネス観点からの施策レビュー
 - `/ask-cmo` — マーケティング戦略全体の統括レビュー
+- `/ask-consultant` — 外部コンサルタント視点でのゼロベース率直フィードバック
 
 ### Specialist Agents（専門エージェント）
-- `/seo-consultant` — SEO分析・キーワード戦略・技術SEO監査
+- `/seo-specialist` — SEO分析・キーワード戦略・技術SEO監査
 - `/ui-designer` — LP/広告クリエイティブのUI/UXレビュー
 - `/ads-manager` — 広告運用（Google/Meta/X）の設計・分析・最適化
 - `/creative-director` — クリエイティブの品質・ブランド一貫性チェック
@@ -157,12 +158,19 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 - **知識**: foundation + company
 - **トリガー**: 施策の企画段階、四半期計画、チャネルミックスの見直し
 
-### SEO Consultant (`/seo-consultant`)
+### SEO Specialist (`/seo-specialist`)
 - **役割**: 検索エンジン最適化の分析・戦略立案・技術監査・実装
 - **入力**: URL、キーワード候補、コンテンツ原稿、サイト構造
 - **出力**: キーワード戦略、技術SEO監査レポート、コンテンツ最適化案、実装コード
 - **知識**: foundation + company + latest
 - **トリガー**: コンテンツ制作時、サイト改修時、順位変動時
+
+### Consultant Review (`/ask-consultant`)
+- **役割**: 外部コンサルタント視点で、前提・戦略・施策に対してゼロベースの率直なフィードバックを返す
+- **入力**: 戦略・施策・意思決定プロセス（前提・制約・想定を含む）
+- **出力**: 前提の棚卸し、聖域の指摘、Kill候補、ゼロベース再設計案
+- **知識**: foundation + company + latest + results
+- **トリガー**: 戦略の停滞感、施策のマンネリ化、四半期／年次見直し、CMOレビューで「整ってはいるが伸びない」判定が出たとき
 
 ### Creative Director (`/creative-director`)
 - **役割**: クリエイティブの品質管理・ブランド一貫性・トーン&マナーの監督

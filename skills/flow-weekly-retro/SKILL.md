@@ -88,7 +88,7 @@ Step 5: Knowledge    — 知識ベースの更新（Setへの還元）
 |---|--------|-------|-----|----------|
 | 1 | ... | /ads-manager | ... | Mon |
 | 2 | ... | /contents-editor | ... | Wed |
-| 3 | ... | /seo-consultant | ... | Fri |
+| 3 | ... | /seo-specialist | ... | Fri |
 
 ### Should Do（推奨）
 | # | Action | Owner | KPI |
