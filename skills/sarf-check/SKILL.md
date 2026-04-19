@@ -12,6 +12,12 @@ version: 2.0.0
 
 **SARF上の位置づけ**: メタ層。どの段階にも属さず、全段階の状態を俯瞰して報告します。
 
+## SARF Alignment
+
+- **Position**: Meta（サイクル診断 / read-only）
+- **Set Preflight**: `knowledge/foundation/sarf-framework.md` が存在すること。`memory/company/*` `memory/results/*` は未存在でも動作する（存在しないこと自体が診断結果になる）。`[TODO]` の残存も診断対象なので Preflight の失格条件にはしない
+- **Feedback Hook**: このスキルは knowledge 層に書き戻さない（read-only）。診断結果は推奨アクション Top 3 として提示するのみで、実際の書き込みは `/set-company` `/set-update` `/feedback` が担う
+
 ## Required Knowledge
 
 ```
