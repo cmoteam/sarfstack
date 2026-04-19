@@ -16,6 +16,9 @@ version: 1.0.0
 - **Ask Subtype**: Design（スコープ設計と工数積算。まだ決まっていないものに対して松竹梅案を構築する Design Ask。完成済み見積りの妥当性 Review は `/ask-ceo` が担う）
 - **Set Preflight**: `performance-data.md` の CPC/CTR/CVR ベンチマークがないと ROI 試算が架空値になる。欠けている場合はシナリオの前提を業界平均で埋めた上で「自社データ不足」を明示する
 - **Feedback Hook**: 見積り vs 実際の工数・媒体費・ROAS の差分を `/feedback` に戻す。次回見積りの単価・係数較正に使う
+- **[Optional] Target Funnel Stage**: 指定があれば段階別の単価・工数係数を使う（TOFU は CPM / 認知メディア、BOFU は CPA / CV 最適化）。未指定なら段階横断で松竹梅を出す
+- **[Optional] Target Segment**: 指定があればそのセグメントの獲得単価帯を前提に試算。未指定なら Primary ICP の単価を使用
+- **[Optional] Primary KPI**: 指定があればその KPI を達成目標に置いた ROI 試算（CPA / ROAS / LTV:CAC / Payback）。未指定なら LTV:CAC ≥ 3 をデフォルト目標
 
 ## Required Knowledge
 

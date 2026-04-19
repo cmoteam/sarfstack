@@ -15,6 +15,10 @@ version: 1.0.0
 - **Position**: Release（そのまま公開できる成果物を出し、本番配信へ）
 - **Set Preflight**: `icp.md` `brand-guidelines.md` `positioning.md` のいずれかに `[TODO]` があると「ICPの言葉」で書けない。該当時は冒頭で明示し `/set-company` を推奨する
 - **Feedback Hook**: 公開後のエンゲージメント・CV・検索順位を `/feedback` に戻す。トピッククラスタ戦略の精度向上に使う
+- **[Optional] Target Funnel Stage**: 指定があれば段階別にフォーマットを選ぶ（TOFU=教育・解説記事／SNSショート、MOFU=比較・事例、BOFU=導入ガイド・ROI試算）。未指定なら段階中立で汎用フォーマットを使う
+- **[Optional] Target Segment**: 指定があればそのセグメント特有の語彙・課題・情報収集経路に合わせて原稿を書く。未指定なら Primary ICP を前提
+- **[Optional] Primary KPI**: 指定があればその KPI に最適化（Organic CV / エンゲージメント率 / リード獲得 / 読了率 / シェア数）。未指定なら Organic CV と読了率を両立
+- **[Optional] Release Gate**: 公開時に UTM / 計測タグ / OGP の同時実装をチェック（Marketing Extension の Release 計測完了条件）
 
 ## Required Knowledge
 

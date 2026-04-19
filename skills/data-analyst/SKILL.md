@@ -15,6 +15,10 @@ version: 1.0.0
 - **Position**: Feedback（数値の集約と解釈）
 - **Set Preflight**: `memory/results/performance-data.md` の過去データがないとトレンド分析ができない。初回実行時はユーザーに直近データの提供を要求し、終了後に `/feedback` で書き戻すよう促す
 - **Feedback Hook**: このスキルが **Feedback の主役**。出力の Recommended Actions を `/feedback` に連携し、検証済み学びだけを knowledge 層に反映する
+- **[Optional] Target Funnel Stage**: 指定があればそのファネル段階に絞って転換率・ボトルネック分析（TOFU→MOFU 離脱、MOFU→BOFU の歩留まり等）。未指定ならファネル全体を俯瞰
+- **[Optional] Target Segment**: 指定があればそのセグメントに絞って切り出し分析（デバイス・地域・業種・LTV帯別）。未指定なら全体と主要セグメントの両方を出す
+- **[Optional] Primary KPI**: 指定があればその KPI を主軸にレポート構成を組む。未指定なら CVR / CPA / ROAS / LTV を並列で扱う
+- **[Optional] 4-Axis Feedback 出力**: データが揃っていれば Funnel Conversion / Segment Response / Attribution / Unit Economics Update の4軸構造で出力（Marketing Extension）。揃っていなければ従来の単一レポート構造にフォールバック
 
 ## Required Knowledge
 

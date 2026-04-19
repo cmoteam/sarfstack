@@ -39,3 +39,12 @@
 - **月間マーケ予算**: [TODO: 概算]
 - **主要チャネル**: [TODO: 現在注力しているチャネル]
 - **使用ツール**: [TODO: GA4, GSC, 広告プラットフォーム, CRM等]
+
+## Marketing Extension (Optional)
+
+> **任意項目**: SARFの Marketing Extension に対応する optional フィールド。埋めると `/ask-cmo` `/ads-manager` 等の出力精度が上がるが、空欄でも SARF は通常動作する。詳細は `knowledge/foundation/sarf-framework.md` の末尾を参照。
+
+### Measurement（計測基盤）
+- **主要KPI**: [OPTIONAL: 例 MRR / CVR / CAC / LTV / ROAS のうち、単一の North Star は？]
+- **計測ツールと粒度**: [OPTIONAL: 例 GA4（全ページ） / HubSpot（商談段階別） / Looker Studio（週次集計）]
+- **計測できていないもの**: [OPTIONAL: 例 オフライン商談の寄与、複数デバイス横断、印刷広告の到達]

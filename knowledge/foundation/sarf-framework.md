@@ -1,9 +1,13 @@
-# SARF — AI時代のマーケティングフレームワーク
+# SARF — AI時代のマーケティングOS
 
 ## 定義
 
-SARFは、AIエージェントと協働してマーケティングを推進するための基本サイクルを4段階で表したフレームワーク。
-SARFStackの全スキル・全ワークフローの基底にあるOSであり、個別のフレームワーク（AARRR・STP・RAM-CE等）の上位に位置する「AIとの関わり方の型」を定義する。
+SARFは、**AIエージェントと協働してマーケティングを推進するためのオペレーティング・システム**である。
+マーケティング業務に固有の「誰に・どのチャネルで・どのKPIで」という問いを、AI協働のサイクル（Set → Ask → Release → Feedback）に**構造として埋め込む**ことを目的とする。
+
+SARFStackの全スキル・全ワークフローの基底にあるマーケOSであり、個別のマーケティングフレームワーク（AARRR・STP・RAM-CE等）の上位に位置して、それらを**AI協働下で機能させる**ための型を定義する。
+
+> **位置づけの明示**: SARF は「AI協働の汎用フレームワーク」ではない。マーケティングに特化したOSであり、各段階にマーケ固有の必須・推奨ディメンション（ファネル段階・セグメント・ユニットエコノミクス・KPI・アトリビューション）を組み込むことでその特化性を担保する。詳細は末尾 `Marketing Extension (Optional)` を参照。
 
 読みは「**サーフ**」。波乗りのメタファーと整合する:
 - **Set**（セット）= 波待ちのポジション取り
@@ -138,6 +142,68 @@ Feedbackの反映先:
 - **Release層** = 制作系スキル / ワークフロー（実装物を出力し、本番に反映する）
 - **Feedback層** = 分析系スキル（結果を測り、知識ベースに還元する）
 
+マーケティングOS としての特化性は、各段階に重ねる **Marketing Extension**（後述）によって担保される。Extension は optional だが、埋めるほど AI の出力がマーケ固有文脈で鋭くなる。
+
+## Marketing Extension (Optional)
+
+SARFは**マーケティングOS**として設計されているため、各段階に「マーケ固有の次元」を重ねると出力精度が段違いに上がる。
+これらは **オプトイン**（記入は任意）。空欄なら通常のSARFとして動作し、既存プロジェクトの挙動は一切変わらない。
+「埋めれば効く、埋めなければ素通り」の present-if-filled 方式で、スモールビジネスや初期フェーズでも窮屈にならないよう設計されている。
+
+> 推奨: 余裕ができた段階で1次元ずつ埋めていく。全部を一気に揃える必要はない。
+
+### Set の5次元（推奨）
+
+現状の Set 情報に加え、以下5次元を明示すると Ask / Release / Feedback すべての精度が上がる:
+
+| 次元 | 内容 | 書き込み先（例） |
+|------|------|-----------------|
+| **Funnel Stage** | TOFU / MOFU / BOFU（または AARRR のどこ）。施策がどの段階への介入かを決める | `memory/company/icp.md` のカスタマージャーニー / 各施策のブリーフ |
+| **Segment** | ICP のどの層・どのユースケースに打つか。「全員向け」を禁じる解像度 | `memory/company/icp.md`（Primary / Secondary / Anti-Persona） |
+| **Unit Economics** | CAC / LTV / Payback period / 許容 CPA。経済合理性の判定基盤 | `memory/results/performance-data.md`（サマリー） |
+| **Measurement** | どの KPI を、どのツールで、どの粒度で測れるか。計測できないものはリリースしない原則 | `memory/company/company-overview.md`（使用ツール） |
+| **Baseline KPI** | 現状 CVR / CPA / ROAS / 順位。Feedback の比較対象になる | `memory/results/performance-data.md`（ベースライン） |
+
+これらが埋まっているかは `/sarf-check` が advisory として報告する（fail させない）。
+
+### Ask のマーケ固有フィールド（推奨）
+
+問いを組むとき、以下3フィールドを明示する:
+
+- **Target Funnel Stage**: この Ask はどの段階への介入か（TOFU / MOFU / BOFU / Retention / Referral）
+- **Target Segment**: 誰向けの問いか（Primary ICP / Secondary / 既存顧客 / 休眠 etc.）
+- **Primary KPI**: 判定基準となる主 KPI（CVR / CPA / ROAS / LTV / 検索順位 / NPS 等のいずれか）
+
+これらを明示すると、Review Ask での評価基準がブレず、Design Ask での選択肢生成がシャープになる。
+各 SKILL.md の `SARF Alignment` セクションに optional フィールドとして追加される。
+
+### Release の計測完了条件（推奨）
+
+「本番反映して完了」の定義に、以下を**同時完了の推奨条件**として加える:
+
+- **Tracking実装**: UTM / 計測タグ / コンバージョン設定 / A/Bテスト分岐
+- **Baseline記録**: リリース時点の Before 数値を `memory/results/performance-data.md` に記録（後で差分が測れる状態）
+- **Gate痕跡**: 法務・ブランド・予算などの承認ログ（該当する場合のみ）
+
+計測されていない Release は、Feedback 段階で比較対象を失う。余裕があれば計測まで含めて1つのRelease とする運用が望ましい。
+
+### Feedback の4軸（推奨）
+
+現状の「数字 / 定性 / 差分 / 学び」に加え、マーケ固有の4軸で整理すると knowledge 還元の解像度が上がる:
+
+1. **Funnel Conversion**: ファネル段階ごとの転換率変化。どの段階で詰まったか／抜けたか
+2. **Segment Response**: セグメント別の反応差。どの層に効き、どの層に効かなかったか
+3. **Attribution**: どのチャネル・接点が寄与したか（ラストクリック以外の視点も）
+4. **Unit Economics Update**: LTV / CAC / Payback が想定とどうズレたか。ベースライン更新の根拠
+
+十分なデータが揃っていれば `/feedback` がこの4軸構造で出力し、揃っていなければ従来の出力にフォールバックする（auto-upgrade）。
+
+### オプトインの使い方
+
+- **今すぐ始めるなら**: 各施策のブリーフ冒頭に `Funnel Stage` `Segment` `Primary KPI` の3行を書き足すだけでも十分効く
+- **プロジェクト初期で数値がまだ無い場合**: Baseline KPI は「未計測」と明示すればよい。埋めないより「未計測」と書く方が Ask の精度が上がる
+- **他領域（BtoBtoC / D2C / 多プロダクト）で窮屈な場合**: Funnel Stage を自社のファネル段階名で上書きしてよい。形式より解像度を優先する
+
 ## アンチパターン
 
 - **Set丸投げ**: 「とにかくいい感じで」— AIは平均的な回答しか返せない
@@ -145,6 +211,9 @@ Feedbackの反映先:
 - **Release不在**: レビューレポートを読んで満足 — 本番反映がなければ何も変わらない
 - **Feedbackの断絶**: 出した施策の結果を戻さない — 次回も同じ精度の出力しか得られない
 - **Set汚染**: 検証されていない仮説を事実としてmemory/companyに書く — 以降全ての出力が歪む
+- **ファネル曖昧 Ask**（マーケ固有）: どの段階への介入か不明な Ask は、Design でも Review でも平均的な回答しか返らない
+- **計測なしRelease**（マーケ固有）: UTM も タグも無いままリリースすると、Feedback で効果を切り分けられず学習が成立しない
+- **セグメント空白のFeedback**（マーケ固有）: 「全体 CVR が上がった/下がった」だけでは次の Set が更新できない。どのセグメントで起きたかまで戻す
 
 ## Practitioner's Checklist
 

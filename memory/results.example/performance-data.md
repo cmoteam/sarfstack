@@ -54,3 +54,37 @@
 1. [TODO: データから見える課題]
 2. [TODO]
 3. [TODO]
+
+## Marketing Extension (Optional)
+
+> **任意項目**: SARFの Marketing Extension のうち **Baseline KPI** と **Unit Economics** に対応。`/feedback` の 4-Axis 出力と `/sarf-check` の Marketing Extension advisory が参照する。空欄でも従来どおり動作する。
+
+### Baseline KPI（各施策の比較対象となる基準値）
+施策リリース時点で記録し、Feedback で差分を見るための定点。
+
+| 指標 | 現状値 | 計測日 | 更新頻度 |
+|------|-------|--------|---------|
+| 全体 CVR | [OPTIONAL] | [OPTIONAL: YYYY-MM-DD] | [OPTIONAL: 週次] |
+| 全体 CPA | [OPTIONAL] | [OPTIONAL] | [OPTIONAL] |
+| 全体 ROAS | [OPTIONAL] | [OPTIONAL] | [OPTIONAL] |
+| LTV:CAC | [OPTIONAL] | [OPTIONAL] | [OPTIONAL] |
+| Payback Period | [OPTIONAL] | [OPTIONAL] | [OPTIONAL] |
+
+### Funnel Conversion（ファネル段階別の転換率）
+| 段階遷移 | 転換率 | 前期比 |
+|---------|--------|--------|
+| 訪問 → リード | [OPTIONAL] | [OPTIONAL] |
+| リード → 商談/検討 | [OPTIONAL] | [OPTIONAL] |
+| 商談/検討 → 受注/購入 | [OPTIONAL] | [OPTIONAL] |
+| 受注/購入 → リピート | [OPTIONAL] | [OPTIONAL] |
+
+### Segment Response（セグメント別反応）
+| セグメント | CVR | CPA | LTV | 備考 |
+|-----------|-----|-----|-----|------|
+| Primary ICP | [OPTIONAL] | [OPTIONAL] | [OPTIONAL] | [OPTIONAL] |
+| Secondary ICP | [OPTIONAL] | [OPTIONAL] | [OPTIONAL] | [OPTIONAL] |
+
+### Attribution メモ
+- **寄与度が高いチャネル**: [OPTIONAL: ラストクリック以外の視点を含む]
+- **アシストが多いチャネル**: [OPTIONAL]
+- **未計測の接点**: [OPTIONAL: 認識しているがトラッキングできていないもの]

@@ -15,6 +15,9 @@ version: 1.0.0
 - **Ask Subtype**: Both — **Design**（キーワード戦略立案、トピッククラスタ設計、コンテンツ構造案）と **Review**（既存ページの技術SEO監査、コンテンツ改善提案）の両方。入力が「これからやる」なら Design、「この既存コンテンツを見て」なら Review に寄せる
 - **Set Preflight**: `knowledge/latest/platform-updates.md` が60日以上更新されていない場合、アルゴリズム判断が古い可能性を明示し、`/set-latest` を推奨する
 - **Feedback Hook**: 実装後の順位変動・CTR・impression を `/feedback` に戻す。キーワード優先順位モデルの較正に使う
+- **[Optional] Target Funnel Stage**: 指定があればその段階向けの検索意図でキーワード選定（TOFU=informational、MOFU=comparison、BOFU=transactional）。未指定なら全段階のキーワードマップを出す
+- **[Optional] Target Segment**: 指定があればそのセグメント特有のクエリ（職種・業界・課題ワード）に絞る。未指定なら Primary ICP のペルソナ語彙を基準
+- **[Optional] Primary KPI**: 指定があればその KPI に最適化（順位 / CTR / impression / Organic CV）。未指定なら Organic CV を優先
 
 ## Required Knowledge
 

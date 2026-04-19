@@ -15,6 +15,10 @@ version: 1.0.0
 - **Position**: Workflow（Set → Ask → Release → Feedback の1サイクルを完結）
 - **Set Preflight**: Phase 0 で `/sarf-check` 相当の診断を必ず実行。company 層の充足率 < 70% なら `/set-company` を先に走らせるようユーザーに確認する（推定モードで進めることも可能だが明示必須）
 - **Feedback Hook**: Phase 6 完了時に `/feedback` を必ず呼び出し、キャンペーン結果を knowledge 層に還元。Feedback を省略するとサイクルが閉じない
+- **[Optional] Campaign Funnel Stage**: キャンペーン全体のメインターゲット段階（TOFU / MOFU / BOFU）。指定があれば各 Phase の専門エージェント呼び出し時に `Target Funnel Stage` として引き継ぐ
+- **[Optional] Campaign Segment**: キャンペーンの Primary Segment。指定があれば `/ask-cmo` `/contents-editor` `/ads-manager` 等に `Target Segment` として引き継ぐ
+- **[Optional] Campaign Primary KPI**: キャンペーン成功の単一判定指標（CPA / ROAS / パイプライン額 / サインアップ数等）。指定があれば各 Phase の KPI として引き継ぎ、Phase 6 の Feedback 軸に採用
+- **[Optional] Release Gate (Phase 5)**: 本番ローンチ前にトラッキング実装・ベースライン記録・承認ログを計測チェックリストで確認する（Marketing Extension の Release 計測完了条件）
 
 **SARF上の位置づけ**: このワークフローは **Set → Ask → Release → Feedback** の1サイクルを丸ごと包括します。Phase 0でSet（knowledge/の確認）、Phase 1-2-3がAsk、Phase 4-5がRelease（経営承認と本番ローンチ）、Phase 6がFeedbackに対応します。
 

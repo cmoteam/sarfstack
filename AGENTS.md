@@ -10,7 +10,9 @@ AIエージェントチームと協働してマーケティング業務を遂行
 
 ## Operating Model — SARF
 
-SARFStackの全スキルは **SARF** サイクルの上で動作します。SARFはAI時代のマーケティングの基本OSであり、個別のフレームワーク（AARRR・STP・RAM-CE等）の上位に位置する「AIとの関わり方の型」です。読みは「**サーフ**」で、波乗りのメタファー(波待ち→波の見極め→ライディング→次の波を読む)と整合しています。
+SARFStackの全スキルは **SARF** サイクルの上で動作します。SARFは **AI時代のマーケティングOS** であり、個別のマーケティングフレームワーク（AARRR・STP・RAM-CE等）の上位に位置して、それらをAI協働下で機能させるための型を定義します。読みは「**サーフ**」で、波乗りのメタファー(波待ち→波の見極め→ライディング→次の波を読む)と整合しています。
+
+> **位置づけ**: SARF は「AI協働の汎用フレームワーク」ではなくマーケティング特化のOSです。各段階にマーケ固有のディメンション（ファネル段階 / セグメント / ユニットエコノミクス / KPI / アトリビューション）を重ねる **Marketing Extension** によって特化性を担保しています。Extension は optional（詳細は `knowledge/foundation/sarf-framework.md` の末尾を参照）。
 
 ```
 Set ─→ Ask ─→ Release ─→ Feedback ─┐
@@ -321,6 +323,8 @@ Read: memory/results/performance-data.md
 5. `/set-latest` + `/feedback` — Set層への還元（サイクルを閉じる）
 
 各 SKILL.md 冒頭には `SARF Alignment` セクションがあり、そのスキルの **Position / Set Preflight / Feedback Hook** が明記されています。スキル呼び出し前に確認してください。
+
+Ask系・Release系のスキルには、マーケ固有の解像度を上げる optional フィールド（`Target Funnel Stage` / `Target Segment` / `Primary KPI`）が追加されています。記入があればそれを前提に動作し、未記入なら従来通りの動作にフォールバックします（オプトイン方式の Marketing Extension）。
 
 ## Agent Communication Protocol
 

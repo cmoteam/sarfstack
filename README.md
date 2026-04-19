@@ -1,7 +1,9 @@
 # SARFStack — Virtual Marketing Organization 
 
 SARFStackは、コーディングエージェント上で動作する**仮想マーケティング組織**です。
-AI時代のマーケティングフレームワーク **SARF**（Set / Ask / Release / Feedback、読み:「サーフ」）をそのまま実装したもので、1コマンドでSetからFeedbackまでのサイクルを回せます。
+AI時代の **マーケティングOS** である **SARF**（Set / Ask / Release / Feedback、読み:「サーフ」）をそのまま実装したもので、1コマンドでSetからFeedbackまでのサイクルを回せます。
+
+> SARF は「AI協働の汎用フレームワーク」ではなく、マーケティング特化のOSです。ファネル段階・セグメント・ユニットエコノミクス・KPI・アトリビューションといったマーケ固有のディメンションを各段階に重ねる **Marketing Extension**（optional）により、マーケ文脈でAIが本気で機能するように設計されています。
 
 ## Who is this for?
 
@@ -12,7 +14,7 @@ AI時代のマーケティングフレームワーク **SARF**（Set / Ask / Rel
 
 ## The SARF Framework
 
-SARFStackが前提とする、AI時代のマーケティングの基本サイクル:
+SARFStackが前提とする、AI時代のマーケティングの基本サイクル（**マーケティングOS**）:
 
 ```
 ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
@@ -30,7 +32,7 @@ SARFStackが前提とする、AI時代のマーケティングの基本サイク
 | **R**elease | 出てきたアイデアを判断して**本番環境に反映**する | 制作系スキル・ワークフロー（`/contents-editor` `/flow-landing-page` 等） |
 | **F**eedback | 結果の数字と定性反応をAIに戻す | 分析系スキル（`/data-analyst` `/flow-weekly-retro`） |
 
-詳細は [`knowledge/foundation/sarf-framework.md`](knowledge/foundation/sarf-framework.md) を参照。
+詳細は [`knowledge/foundation/sarf-framework.md`](knowledge/foundation/sarf-framework.md) を参照。マーケ固有のディメンション（Funnel Stage / Segment / Unit Economics / Measurement / Baseline KPI）を各段階に重ねる optional な **Marketing Extension** もそこに定義されています。
 
 ## Setup
 

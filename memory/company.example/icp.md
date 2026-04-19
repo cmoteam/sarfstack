@@ -53,3 +53,21 @@ So I can [TODO: 期待する成果].
 | 検討 | [TODO] | [TODO] | [TODO] | [TODO] |
 | 購入 | [TODO] | [TODO] | [TODO] | [TODO] |
 | 推奨 | [TODO] | [TODO] | [TODO] | [TODO] |
+
+## Marketing Extension (Optional)
+
+> **任意項目**: SARFの Marketing Extension に対応する optional フィールド。`/ask-cmo` `/contents-editor` `/ads-manager` 等に `Target Funnel Stage` `Target Segment` として引き継がれる。
+
+### Funnel Stage マッピング
+自社のファネル段階（AARRR / STP / 独自段階名でも可）:
+- **TOFU（認知・興味）**: [OPTIONAL: このICPがこの段階で取る行動、効くチャネル]
+- **MOFU（検討・比較）**: [OPTIONAL]
+- **BOFU（決定・購入）**: [OPTIONAL]
+- **Retention（継続・リピート）**: [OPTIONAL]
+- **Referral（推奨・紹介）**: [OPTIONAL]
+
+### Segment の CAC / LTV 概算（分かる範囲で）
+- **Primary ICP の CAC**: [OPTIONAL: 例 ¥30,000]
+- **Primary ICP の LTV**: [OPTIONAL: 例 ¥180,000]
+- **Primary ICP の Payback Period**: [OPTIONAL: 例 4ヶ月]
+- **Secondary ICP との差**: [OPTIONAL: 例 CAC 1.5倍 / LTV 0.7倍]

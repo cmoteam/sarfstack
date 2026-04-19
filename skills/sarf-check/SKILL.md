@@ -46,7 +46,22 @@ Set→Ask→Release→Feedback のどの段階に今いるかを判定:
 | **Release 実行可** | 上記に加え、直近でレビュー系スキルの出力が参照可能 |
 | **Feedback 待ち** | Release 後、`memory/results/performance-data.md` の最終更新が古い／未反映 |
 
-### Step 3: Output
+### Step 3: Marketing Extension のヘルス（advisory）
+
+SARFは**マーケティングOS**として設計されており、マーケ固有のディメンションが埋まるほどAIの出力が鋭くなる。
+以下5次元の記入状況を**参考情報**として収集する。**fail させない**。スコアにも影響させない。空欄は空欄として報告し、「埋めるとこう変わる」を推奨アクションに添える。
+
+| 次元 | 参照先 | 判定 |
+|------|--------|------|
+| Funnel Stage | `icp.md` の Customer Journey Map / 各施策ブリーフ | 段階が明示されているか |
+| Segment | `icp.md` の Primary / Secondary / Anti-Persona | 単一ペルソナに落ちているか |
+| Unit Economics | `performance-data.md` のサマリー（CAC / LTV / Payback） | 数値が入っているか |
+| Measurement | `company-overview.md` の「使用ツール」 | KPI と計測ツールが紐付いているか |
+| Baseline KPI | `performance-data.md` の CVR / CPA / ROAS | ベースラインが最新か |
+
+未記入が多くても Set 充足率は下げない。「記入済み / 未記入」を表示するだけ。
+
+### Step 4: Output
 
 ```markdown
 # SARF Diagnostic — [YYYY-MM-DD]
@@ -79,6 +94,19 @@ Set→Ask→Release→Feedback のどの段階に今いるかを判定:
 - 🟢 performance-data: 7日以内 / industry-trends: 30日以内 / platform-updates: 60日以内
 - 🟡 上記の2倍以内
 - 🔴 それ以上
+
+## 💡 Marketing Extension（任意 / advisory）
+
+マーケティングOS としての解像度を上げる optional ディメンション。空欄でも通常のSARFは動作する。
+埋めるほど Ask / Release / Feedback の精度が上がる。
+
+| 次元 | 状態 | 記入例 / 埋めるとこう変わる |
+|------|------|---------------------------|
+| Funnel Stage | ✓ 記入済み / ○ 未記入 | 例: TOFU。埋めると Ask がどの段階への介入か明示されレビュー基準がブレない |
+| Segment | ✓ / ○ | 例: Enterprise SaaS 営業責任者。埋めるとコピーの粒度がペルソナ単位になる |
+| Unit Economics | ✓ / ○ | 例: CAC ¥30k / LTV ¥180k / Payback 4ヶ月。埋めると ROI 試算が架空値にならない |
+| Measurement | ✓ / ○ | 例: GA4 + HubSpot + Looker。埋めると計測できないKPIを提案しなくなる |
+| Baseline KPI | ✓ / ○ | 例: CVR 2.3% / CPA ¥8k / ROAS 3.1。埋めると Feedback が比較対象を持てる |
 
 ## 最大のブロッカー（Top 3）
 1. [具体的にどのファイルのどの項目が欠けているか + なぜそれが重要か]
@@ -114,6 +142,7 @@ Set→Ask→Release→Feedback のどの段階に今いるかを判定:
 - **次の1手に絞る**: 網羅的なTODOリストではなく、優先度1-3位のアクションを示す
 - **時間軸を持つ**: latest 層は「鮮度」が命。更新日付を見て判定する
 - **判断しない**: 「やるべき」ではなく「このコマンドが使える」と事実を提示する
+- **Marketing Extension は advisory**: 未記入でも fail させない・スコアを下げない。空欄を空欄として報告し、埋めるとどう変わるかの Before/After を添える
 
 ## Chaining
 
