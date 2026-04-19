@@ -121,6 +121,21 @@ memory/results/performance-data.md   ← 直近のパフォーマンスデータ
 | `/ads-manager` | Ads | Google/Meta/X広告の設計・最適化 |
 | `/contents-editor` | Content | ブログ・SNS・メールの企画・制作 |
 | `/data-analyst` | Analytics | KPI分析・レポート・改善提案 |
+| `/customer-research` | Research | 顧客インタビュー・JTBD・Win/Loss分析（ICPをデータで鍛える） |
+| `/pricing-strategy` | Pricing | 価格設定・プラン設計・パッケージング戦略 |
+| `/churn-prevention` | Retention | 解約防止・リテンション改善・Save Offer設計 |
+
+### Optimization Agents（最適化スペシャリスト）
+各ファネル段階でのユーザー行動完了率（CVR）を数字で上げる診断・改修を専門とする。`/ui-designer` が UI/UX 全般を見るのに対し、最適化系はファネル段階別に特化。
+
+| Command | Target | Description |
+|---------|--------|-------------|
+| `/optimize-page` | Marketing Pages | LP/Product/Feature/Pricing等のCVR最適化 |
+| `/optimize-signup-flow` | Signup | 登録〜初回ログインの完了率最適化 |
+| `/optimize-onboarding` | Activation | Aha Moment 到達・Activation 最適化 |
+| `/optimize-form` | Lead Forms | デモ/資料DL/問い合わせフォームの完了率最適化 |
+| `/optimize-popup` | Popups/Modals | Exit intent・Newsletter・告知系の設計と最適化 |
+| `/optimize-paywall` | Paywall/Upsell | Free→Paid・アプリ内アップセルのCVR最適化 |
 
 ### Workflows（統合ワークフロー）
 | Command | Description |
@@ -162,6 +177,15 @@ sarfstack/
 │   ├── ads-manager/SKILL.md
 │   ├── contents-editor/SKILL.md
 │   ├── data-analyst/SKILL.md
+│   ├── customer-research/SKILL.md
+│   ├── pricing-strategy/SKILL.md
+│   ├── churn-prevention/SKILL.md
+│   ├── optimize-page/SKILL.md
+│   ├── optimize-signup-flow/SKILL.md
+│   ├── optimize-onboarding/SKILL.md
+│   ├── optimize-form/SKILL.md
+│   ├── optimize-popup/SKILL.md
+│   ├── optimize-paywall/SKILL.md
 │   ├── flow-campaign-launch/SKILL.md
 │   ├── flow-content-review/SKILL.md
 │   ├── flow-landing-page/SKILL.md
