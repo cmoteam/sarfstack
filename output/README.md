@@ -26,8 +26,8 @@ output/
 | 目的 | 書き込み先 |
 |------|-----------|
 | 一次成果物（原稿・コード・レポート） | `output/` |
-| 検証済み知見（ICP解像度、ブランド修正） | `knowledge/company/` |
-| 実績数値・生ログ | `knowledge/results/` |
+| 検証済み知見（ICP解像度、ブランド修正） | `memory/company/` |
+| 実績数値・生ログ | `memory/results/` |
 | 業界・プラットフォームの外部情報 | `knowledge/latest/` |
 
 `output/` は「その瞬間の成果物」、`knowledge/` は「次サイクルの Set に効く蓄積」と役割が異なります。混同しないこと。

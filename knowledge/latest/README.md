@@ -8,7 +8,7 @@
 - **platform-updates.md** — プラットフォーム仕様変更時に随時更新
 - **industry-trends.md** — 月次で更新推奨
 
-> 自社の実績数値（CVR・CPA・ROAS・売上）は `knowledge/results/` 側（gitignore対象）に格納します。
+> 自社の実績数値（CVR・CPA・ROAS・売上）は `memory/results/` 側（gitignore対象）に格納します。
 > ここ（`latest/`）は機密性が低い外部観測専用です。
 
 ## 使い方

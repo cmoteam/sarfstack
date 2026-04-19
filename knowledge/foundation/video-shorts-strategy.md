@@ -234,7 +234,7 @@ Podcast音声のみ配信
 
 ## SAAFとの接続
 
-- **Set**: ブランドトーン・NG表現・ICPの利用プラットフォームを `knowledge/company/` に書く
+- **Set**: ブランドトーン・NG表現・ICPの利用プラットフォームを `memory/company/` に書く
 - **Ask**: 「このトピックのTikTok Hookを10案」「リテンショングラフから学ぶ改善点を分析して」
 - **Action**: 撮影・編集・字幕付け・複数比率書き出し・投稿・広告化
-- **Feedback**: Completion Rate・Share Rate・広告CVRを `knowledge/latest/performance-data.md` に記録
+- **Feedback**: Completion Rate・Share Rate・広告CVRを `memory/results/performance-data.md` に記録

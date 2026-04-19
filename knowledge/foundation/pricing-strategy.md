@@ -117,7 +117,7 @@ SaaS/サブスクでは「何で課金するか」が重要：
 
 ## SAAFとの接続
 
-- **Set**: ICPの支払能力、競合価格レンジ、自社のコスト構造を `knowledge/company/` に書く
+- **Set**: ICPの支払能力、競合価格レンジ、自社のコスト構造を `memory/company/` に書く
 - **Ask**: 「このICPに対するVan Westendorp設問を作って」「競合3社のプラン構造を比較して」
 - **Action**: 価格ページ / プラン表 / 契約書の値を**実際に変更**する
-- **Feedback**: 値上げ後のチャーン率、プラン分布、ACVの変化を `knowledge/latest/performance-data.md` に記録
+- **Feedback**: 値上げ後のチャーン率、プラン分布、ACVの変化を `memory/results/performance-data.md` に記録

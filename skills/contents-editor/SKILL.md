@@ -19,10 +19,10 @@ version: 1.0.0
 ## Required Knowledge
 
 ```
-Read: knowledge/company/company-overview.md
-Read: knowledge/company/icp.md
-Read: knowledge/company/positioning.md
-Read: knowledge/company/brand-guidelines.md
+Read: memory/company/company-overview.md
+Read: memory/company/icp.md
+Read: memory/company/positioning.md
+Read: memory/company/brand-guidelines.md
 Read: knowledge/foundation/brand-strategy.md
 Read: knowledge/foundation/growth-frameworks.md
 Read: knowledge/latest/industry-trends.md

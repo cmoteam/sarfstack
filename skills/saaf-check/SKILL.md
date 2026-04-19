@@ -16,14 +16,14 @@ version: 1.0.0
 
 ```
 Read: knowledge/foundation/saaf-framework.md
-Read: knowledge/company/company-overview.md
-Read: knowledge/company/icp.md
-Read: knowledge/company/positioning.md
-Read: knowledge/company/brand-guidelines.md
-Read: knowledge/company/competitors.md
+Read: memory/company/company-overview.md
+Read: memory/company/icp.md
+Read: memory/company/positioning.md
+Read: memory/company/brand-guidelines.md
+Read: memory/company/competitors.md
 Read: knowledge/latest/industry-trends.md
 Read: knowledge/latest/platform-updates.md
-Read: knowledge/results/performance-data.md
+Read: memory/results/performance-data.md
 ```
 
 ## Diagnostic Protocol
@@ -44,7 +44,7 @@ Set→Ask→Action→Feedback のどの段階に今いるかを判定:
 | **Set 構築中** | company 層の充足率 < 70% |
 | **Ask 準備完了** | company 層 ≥ 70% かつ latest が 30日以内に更新されている |
 | **Action 実行可** | 上記に加え、直近でレビュー系スキルの出力が参照可能 |
-| **Feedback 待ち** | Action 後、`knowledge/results/performance-data.md` の最終更新が古い／未反映 |
+| **Feedback 待ち** | Action 後、`memory/results/performance-data.md` の最終更新が古い／未反映 |
 
 ### Step 3: Output
 

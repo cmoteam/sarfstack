@@ -23,9 +23,9 @@ version: 1.0.0
 以下を読み込んでからレビューを開始してください:
 
 ```
-Read: knowledge/company/company-overview.md
-Read: knowledge/company/icp.md
-Read: knowledge/company/positioning.md
+Read: memory/company/company-overview.md
+Read: memory/company/icp.md
+Read: memory/company/positioning.md
 Read: knowledge/foundation/marketing-mindset.md
 Read: knowledge/foundation/growth-frameworks.md
 Read: knowledge/foundation/metrics-glossary.md

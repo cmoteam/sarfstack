@@ -2,7 +2,7 @@
   "skills": {
     "set-company": {
       "path": "skills/set-company/SKILL.md",
-      "description": "SAAFのSet段階: 企業情報を対話で一気にヒアリングして knowledge/company/ を埋める"
+      "description": "SAAFのSet段階: 企業情報を対話で一気にヒアリングして memory/company/ を埋める"
     },
     "set-latest": {
       "path": "skills/set-latest/SKILL.md",

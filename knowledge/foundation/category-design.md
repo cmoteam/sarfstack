@@ -212,7 +212,7 @@ Category Designの一類型：**既存大カテゴリの中で、特定業界向
 
 ## SAAFとの接続
 
-- **Set**: 既存カテゴリの限界、顧客のJTBD、競合のカテゴリ命名を `knowledge/company/positioning.md` に書く
+- **Set**: 既存カテゴリの限界、顧客のJTBD、競合のカテゴリ命名を `memory/company/positioning.md` に書く
 - **Ask**: 「このプロダクトに新カテゴリ名を3案」「POVステートメントを書いて」
 - **Action**: Manifesto公開、アナリストブリーフィング、カテゴリ命名を全マーケ資産に反映
 - **Feedback**: カテゴリ名の検索量、メディア/アナリスト言及数、指名検索の動きを `knowledge/latest/` に記録

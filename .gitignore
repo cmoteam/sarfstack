@@ -11,13 +11,13 @@ Thumbs.db
 # Node (if used for tooling)
 node_modules/
 
-# Company-specific knowledge (per-project, not shared upstream)
-# Bootstrap with: cp -r knowledge/company.example knowledge/company
-knowledge/company/
+# Company-specific memory (per-project, not shared upstream)
+# Bootstrap with: cp -r memory/company.example memory/company
+memory/company/
 
-# Results knowledge: company-specific performance numbers & learnings (per-project, not shared upstream)
-# Bootstrap with: cp -r knowledge/results.example knowledge/results
-knowledge/results/
+# Results memory: company-specific performance numbers & learnings (per-project, not shared upstream)
+# Bootstrap with: cp -r memory/results.example memory/results
+memory/results/
 
 # Generated artifacts (per-project outputs; not shared upstream)
 # All skills write their deliverables under output/

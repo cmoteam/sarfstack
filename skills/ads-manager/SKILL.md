@@ -19,15 +19,15 @@ Google Ads、Meta Ads、X Ads等のデジタル広告の設計から入稿デー
 ## Required Knowledge
 
 ```
-Read: knowledge/company/company-overview.md
-Read: knowledge/company/icp.md
-Read: knowledge/company/positioning.md
-Read: knowledge/company/competitors.md
-Read: knowledge/company/brand-guidelines.md
+Read: memory/company/company-overview.md
+Read: memory/company/icp.md
+Read: memory/company/positioning.md
+Read: memory/company/competitors.md
+Read: memory/company/brand-guidelines.md
 Read: knowledge/foundation/marketing-mindset.md
 Read: knowledge/foundation/metrics-glossary.md
 Read: knowledge/latest/platform-updates.md
-Read: knowledge/results/performance-data.md
+Read: memory/results/performance-data.md
 ```
 
 ## Capabilities

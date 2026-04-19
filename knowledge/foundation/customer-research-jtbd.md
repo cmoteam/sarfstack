@@ -1,7 +1,7 @@
 # Customer Research & JTBD — 顧客リサーチとJobs to be Done
 
 マーケティング施策の根拠は**常に顧客の言葉**にある。フレームワーク・データも重要だが、N1の生々しい発言を聞いていないマーケは漂流する。
-顧客リサーチはSAAFの **Set** を更新する最重要活動であり、N1インタビューの内容は必ず `knowledge/company/icp.md` に反映させる。
+顧客リサーチはSAAFの **Set** を更新する最重要活動であり、N1インタビューの内容は必ず `memory/company/icp.md` に反映させる。
 
 ## なぜJTBD（Jobs to be Done）か
 
@@ -171,7 +171,7 @@ Problemが浅いのにSolutionを磨いても、**誰も買わないプロダク
 2. **JTBDステートメント集** — 発見されたジョブのリスト
 3. **Voice of Customer（VOC）** — 印象的な生発言の集積（コピーの源泉）
 4. **競合比較表** — 顧客視点のSwitch元 / 評価軸
-5. **ICPアップデート** — `knowledge/company/icp.md` を書き換える
+5. **ICPアップデート** — `memory/company/icp.md` を書き換える
 
 **聞いて終わり、書いて終わりにしない。** コピー・広告・LP・プロダクトに反映して初めて完了。
 
@@ -189,7 +189,7 @@ Problemが浅いのにSolutionを磨いても、**誰も買わないプロダク
 
 ## SAAFとの接続
 
-- **Set**: インタビューから得たJTBD / 競合 / 反論 / Anxietiesを `knowledge/company/icp.md` `competitors.md` に書く
+- **Set**: インタビューから得たJTBD / 競合 / 反論 / Anxietiesを `memory/company/icp.md` `competitors.md` に書く
 - **Ask**: 「このSwitch Interviewログから主要ジョブを3つ抽出して」「Problem検証のインタビュースクリプトを作って」
 - **Action**: LP・広告・メールのコピーをVOCの生発言から作り、テストする
 - **Feedback**: 施策の結果（CVR・反応）を、どのジョブ仮説が当たっていたかの検証として記録

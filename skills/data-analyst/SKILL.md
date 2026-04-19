@@ -13,17 +13,17 @@ version: 1.0.0
 ## SAAF Alignment
 
 - **Position**: Feedback（数値の集約と解釈）
-- **Set Preflight**: `knowledge/results/performance-data.md` の過去データがないとトレンド分析ができない。初回実行時はユーザーに直近データの提供を要求し、終了後に `/feedback` で書き戻すよう促す
+- **Set Preflight**: `memory/results/performance-data.md` の過去データがないとトレンド分析ができない。初回実行時はユーザーに直近データの提供を要求し、終了後に `/feedback` で書き戻すよう促す
 - **Feedback Hook**: このスキルが **Feedback の主役**。出力の Recommended Actions を `/feedback` に連携し、検証済み学びだけを knowledge 層に反映する
 
 ## Required Knowledge
 
 ```
-Read: knowledge/company/company-overview.md
-Read: knowledge/company/icp.md
+Read: memory/company/company-overview.md
+Read: memory/company/icp.md
 Read: knowledge/foundation/growth-frameworks.md
 Read: knowledge/foundation/metrics-glossary.md
-Read: knowledge/results/performance-data.md
+Read: memory/results/performance-data.md
 ```
 
 ## Capabilities

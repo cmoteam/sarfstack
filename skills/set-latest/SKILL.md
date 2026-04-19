@@ -10,7 +10,7 @@ version: 1.0.0
 `knowledge/latest/` 配下の **外部観測・公開情報** を、ユーザーからの最新観測・仕様変更で書き換えます。
 
 **SAAF上の位置づけ**: Set のうち **外部環境** を最新化する段階。自社のパフォーマンス実績（CVR・CPA・売上等）は
-`knowledge/results/performance-data.md` に属し、このスキルの責務外です（担当は `/feedback`）。
+`memory/results/performance-data.md` に属し、このスキルの責務外です（担当は `/feedback`）。
 company 層（不変の知識）にも触りません（担当は `/feedback` → `/set-company`）。
 
 ## Required Knowledge
@@ -49,7 +49,7 @@ Read: knowledge/foundation/saaf-framework.md
 ## Set 汚染ガードレール
 
 - **検証されていない仮説を事実として書かない**: 業界動向は「〜と言われている／〜という報道がある」と出所を明示
-- **performance-data.md には書かない**: 自社数値は `/feedback` が `knowledge/results/` に書く責務
+- **performance-data.md には書かない**: 自社数値は `/feedback` が `memory/results/` に書く責務
 - **company層を書き換えない**: ICP や Positioning の修正が必要と感じたら、`/feedback` に送る旨をユーザーに提案して終了する
 
 ## Output

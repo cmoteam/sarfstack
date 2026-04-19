@@ -191,7 +191,7 @@ Ambassador（公式アンバサダー）
 
 ## SAAFとの接続
 
-- **Set**: ターゲットの共通関心、既存の熱狂ユーザー、競合コミュニティの状況を `knowledge/company/` に書く
+- **Set**: ターゲットの共通関心、既存の熱狂ユーザー、競合コミュニティの状況を `memory/company/` に書く
 - **Ask**: 「このICPに対するコミュニティMissionを3案」「立ち上げ初期のプログラム設計を」
 - **Action**: Discord / Slack開設、Code of Conduct策定、オンボーディングフロー実装、月次イベント運営
-- **Feedback**: Health MetricsとBusiness Impactを `knowledge/latest/performance-data.md` に記録
+- **Feedback**: Health MetricsとBusiness Impactを `memory/results/performance-data.md` に記録

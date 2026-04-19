@@ -28,7 +28,7 @@ Set ─→ Ask ─→ Action ─→ Feedback ─┐
 - **Actionが弱い組織** → AIの提案を眺めるだけで終わる。PDCAの「D」が抜ける
 - **Feedbackが弱い組織** → 同じミスを繰り返す。AIが賢くならず、ナレッジが蓄積されない
 
-CMObotの知識ベース構造（foundation / company / latest）は、SAAFの**Set**を継続的に強化するための仕組みである。
+CMObotの知識ベース構造（`knowledge/foundation` `knowledge/latest` `memory/company` `memory/results`）は、SAAFの**Set**を継続的に強化するための仕組みである。
 
 ## 4つの段階の詳細
 
@@ -37,12 +37,12 @@ CMObotの知識ベース構造（foundation / company / latest）は、SAAFの**
 **原則**: AIは渡された情報の範囲でしか判断できない。出力の質は Set の質で9割決まる。
 
 渡すべき情報:
-- **事業**: 何を売っているか、収益モデル、現状の数字（`knowledge/company/company-overview.md`）
-- **ICP**: 誰に売っているか、その人の1日・課題・情報収集経路（`knowledge/company/icp.md`）
-- **ポジショニング**: 競合との差別化軸（`knowledge/company/positioning.md`）
-- **ブランド**: トーン&マナー、使ってよい言葉・避ける言葉（`knowledge/company/brand-guidelines.md`）
+- **事業**: 何を売っているか、収益モデル、現状の数字（`memory/company/company-overview.md`）
+- **ICP**: 誰に売っているか、その人の1日・課題・情報収集経路（`memory/company/icp.md`）
+- **ポジショニング**: 競合との差別化軸（`memory/company/positioning.md`）
+- **ブランド**: トーン&マナー、使ってよい言葉・避ける言葉（`memory/company/brand-guidelines.md`）
 - **制約**: 予算・期間・人的リソース・法規制
-- **直近データ**: 最近のパフォーマンス、成功/失敗の履歴（`knowledge/results/performance-data.md`）
+- **直近データ**: 最近のパフォーマンス、成功/失敗の履歴（`memory/results/performance-data.md`）
 
 Setが成立しているかのチェック:
 - [ ] `[TODO]` が残っていないか
@@ -107,8 +107,8 @@ Actionの段階で人間がやること:
 - **学び**: なぜ予測と実績がズレたか。次回のSetに何を追加すべきか
 
 Feedbackの反映先:
-- `knowledge/results/performance-data.md` — 企業固有の実績数値（gitignore 対象）
-- `knowledge/company/*.md` — 検証された知見（ICPの解像度上昇、ポジショニングの微修正／gitignore 対象）
+- `memory/results/performance-data.md` — 企業固有の実績数値（gitignore 対象）
+- `memory/company/*.md` — 検証された知見（ICPの解像度上昇、ポジショニングの微修正／gitignore 対象）
 - `knowledge/latest/industry-trends.md` — 外部観測として一般化できるもの（共有可）
 
 ## SAAFとCMObotの対応
@@ -117,15 +117,15 @@ Feedbackの反映先:
 ┌───────────────────┬──────────────────┬──────────────────┬──────────────┐
 │  Set              │  Ask             │  Action          │  Feedback    │
 ├───────────────────┼──────────────────┼──────────────────┼──────────────┤
-│ knowledge/company │ /ask-cmo         │ /contents-editor │ /data-analyst│
-│ knowledge/latest  │ /ask-ceo         │ /ads-manager     │ /weekly-     │
-│ knowledge/        │ /seo-consultant  │ /landing-        │  retro       │
-│  foundation       │ /creative-       │  page            │              │
-│                   │  director        │ （成果物出力）   │ → Setに還元  │
+│ memory/company    │ /ask-cmo         │ /contents-editor │ /data-analyst│
+│ memory/results    │ /ask-ceo         │ /ads-manager     │ /weekly-     │
+│ knowledge/latest  │ /seo-consultant  │ /landing-        │  retro       │
+│ knowledge/        │ /creative-       │  page            │              │
+│  foundation       │  director        │ （成果物出力）   │ → Setに還元  │
 └───────────────────┴──────────────────┴──────────────────┴──────────────┘
 ```
 
-- **Set層** = 3層の知識ベース（常に最新化する）
+- **Set層** = `knowledge/`（base） + `memory/`（per-project）（常に最新化する）
 - **Ask層** = レビュー系スキル（問いの型を提供する）
 - **Action層** = 制作系スキル / ワークフロー（実装物を出力する）
 - **Feedback層** = 分析系スキル（結果を測り、知識ベースに還元する）
@@ -136,7 +136,7 @@ Feedbackの反映先:
 - **Askの過剰**: 1つのプロンプトで10個聞く — どれも中途半端になる。1サイクル1目的
 - **Action不在**: レビューレポートを読んで満足 — 本番反映がなければ何も変わらない
 - **Feedbackの断絶**: 出した施策の結果を戻さない — 次回も同じ精度の出力しか得られない
-- **Set汚染**: 検証されていない仮説を事実としてknowledge/companyに書く — 以降全ての出力が歪む
+- **Set汚染**: 検証されていない仮説を事実としてmemory/companyに書く — 以降全ての出力が歪む
 
 ## Practitioner's Checklist
 

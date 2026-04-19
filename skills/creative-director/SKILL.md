@@ -21,9 +21,9 @@ version: 1.0.0
 ## Required Knowledge
 
 ```
-Read: knowledge/company/brand-guidelines.md
-Read: knowledge/company/positioning.md
-Read: knowledge/company/icp.md
+Read: memory/company/brand-guidelines.md
+Read: memory/company/positioning.md
+Read: memory/company/icp.md
 Read: knowledge/foundation/brand-strategy.md
 Read: knowledge/foundation/marketing-mindset.md
 ```

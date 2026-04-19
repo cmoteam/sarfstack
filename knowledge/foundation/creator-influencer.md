@@ -209,7 +209,7 @@ Mega:      0.5〜1%
 
 ## SAAFとの接続
 
-- **Set**: ICPが信頼している発信者リスト、ブランド相性条件、NG事項を `knowledge/company/` に書く
+- **Set**: ICPが信頼している発信者リスト、ブランド相性条件、NG事項を `memory/company/` に書く
 - **Ask**: 「このICPに最適なMicro Influencer層を10人推薦して」「ブリーフをこの商材向けに作って」
 - **Action**: 選定・発注・ブリーフ作成・投稿レビュー・開示確認・素材二次利用
-- **Feedback**: エンゲージ・CV・ブランドリフト・ROI比較を `knowledge/latest/performance-data.md` に記録
+- **Feedback**: エンゲージ・CV・ブランドリフト・ROI比較を `memory/results/performance-data.md` に記録

@@ -1,7 +1,7 @@
-# Company Knowledge Template — 企業固有情報テンプレート
+# Company Memory Template — 企業固有情報テンプレート
 
-> **このディレクトリ（`knowledge/company.example/`）はテンプレートです。**
-> 実際の企業情報は `knowledge/company/`（gitignore対象）に格納します。
+> **このディレクトリ（`memory/company.example/`）はテンプレートです。**
+> 実際の企業情報は `memory/company/`（gitignore対象）に格納します。
 > upstream への誤コミットを避けるため、企業固有情報は本ディレクトリには書き込まないでください。
 
 ## なぜ分離しているか
@@ -19,7 +19,7 @@
 ### 1. テンプレートをコピー
 
 ```bash
-cp -r knowledge/company.example knowledge/company
+cp -r memory/company.example memory/company
 ```
 
 または `/set-company` を実行すると、未存在時に自動で同じコピーを行います。
@@ -37,5 +37,5 @@ cp -r knowledge/company.example knowledge/company
 ## 注意事項
 
 - 情報が不十分でも CMObot は動作しますが、レビューの精度が下がります。
-- 機密情報を書き込む先は **必ず `knowledge/company/`**（gitignore対象）側です。`knowledge/company.example/` に書き込むと upstream に push されうるので注意してください。
+- 機密情報を書き込む先は **必ず `memory/company/`**（gitignore対象）側です。`memory/company.example/` に書き込むと upstream に push されうるので注意してください。
 - 定期的に情報を更新してください（特に競合情報とポジショニング）。
