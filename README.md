@@ -1,6 +1,6 @@
-# SARFStack — Virtual Marketing Organization for Claude Code
+# SARFStack — Virtual Marketing Organization 
 
-SARFStackは、Claude Code / Codex 上で動作する**仮想マーケティング組織**です。
+SARFStackは、コーディングエージェント上で動作する**仮想マーケティング組織**です。
 AI時代のマーケティングフレームワーク **SARF**（Set / Ask / Release / Feedback、読み:「サーフ」）をそのまま実装したもので、1コマンドでSetからFeedbackまでのサイクルを回せます。
 
 ## Who is this for?
