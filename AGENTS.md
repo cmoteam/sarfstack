@@ -27,20 +27,22 @@ Set ─→ Ask ─→ Release ─→ Feedback ─┐
 
 SARFの各段階はSARFStackの構造に対応しています:
 
-| SARF | SARFStackでの担い手 |
+| SARF | SARFStackでの担い手（単体スキル） |
 |------|-----------------|
 | Set | `/set-company` `/set-update` `/sarf-check` + `knowledge/`（foundation / update）と `memory/`（company / results） |
 | Ask | レビュー系スキル（`/ask-cmo` `/ask-ceo` `/ask-consultant` `/seo-specialist` `/creative-director` 等） |
-| Release | 制作系スキル / ワークフロー（`/contents-editor` `/ads-manager` `/flow-landing-page` `/flow-campaign-launch` 等） |
-| Feedback | 分析系スキル（`/data-analyst` `/flow-weekly-retro`）＋ `/feedback`（検証ゲート付きで results/ 生データと company/ 検証済み知見に還元） |
+| Release | 制作系スキル（`/contents-editor` `/ads-manager` `/estimate` 等） |
+| Feedback | 分析系スキル（`/data-analyst`）＋ `/feedback`（検証ゲート付きで results/ 生データと company/ 検証済み知見に還元） |
 
 ```
 Set（情報を渡す）      → /set-company /set-update + knowledge/（base） + memory/（per-project）
 Meta（サイクル診断）   → /sarf-check
 Ask（問いに答える）    → /ask-ceo /ask-cmo /ask-consultant /creative-director /seo-specialist /ui-designer
-Release（本番反映）    → /contents-editor /ads-manager /estimate /flow-landing-page /flow-campaign-launch
-Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback → knowledge 層に還元
+Release（本番反映）    → /contents-editor /ads-manager /estimate
+Feedback（結果を戻す） → /data-analyst /feedback → knowledge 層に還元
 ```
+
+> **Workflows（`/flow-*`）は単一段階の担い手ではなく、複数段階を横断して繋ぐ統合レイヤー** です。単体スキルの組み合わせで Set→Ask→Release→Feedback を1コマンドで回すための束ねであり、上表のどの行にも属しません。各 flow がカバーする段階は後述の [Workflow Chains](#workflow-chains) を参照してください。
 
 単体スキルを使う場合も、この位置づけを意識することで正しい期待値を持てます。
 レビュー系に「完成品」を求めたり、制作系に「戦略判定」を求めたりすると、SARFの段階がズレて成果が出ません。
@@ -71,11 +73,13 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 - `/data-analyst` — KPI分析・レポーティング・アトリビューション
 - `/estimate` — 見積り・工数計算・費用対効果シミュレーション（代理店視点）
 
-### Workflows（統合ワークフロー）
-- `/flow-campaign-launch` — キャンペーン企画→制作→レビュー→ローンチの全工程
-- `/flow-content-review` — コンテンツ制作→多角的レビューサイクル
-- `/flow-landing-page` — LP設計→制作→最適化サイクル
-- `/flow-weekly-retro` — 週次マーケティング振り返り
+### Workflows（統合ワークフロー / SARF 複数段階を横断）
+単体スキルとは別レイヤー。Set→Ask→Release→Feedback の複数段階を1コマンドで繋ぐ束ね役で、どれか1つの段階に属するわけではありません（カバー範囲は [Workflow Chains](#workflow-chains) 参照）。
+
+- `/flow-campaign-launch` — キャンペーン企画→制作→レビュー→ローンチの全工程（Set〜Feedback 全域）
+- `/flow-content-review` — コンテンツ制作→多角的レビューサイクル（Set〜Feedback 全域）
+- `/flow-landing-page` — LP設計→制作→最適化サイクル（Set〜Feedback 全域）
+- `/flow-weekly-retro` — 週次マーケティング振り返り（Feedback 起点で次サイクルの Set へ閉じる）
 
 ## Organization Chart
 
@@ -318,8 +322,8 @@ Read: memory/results/performance-data.md
 
 1. `/set-company` — 企業情報を一括ヒアリング（Set）
 2. `/sarf-check` — 充足率を確認し、不足があれば再 `/set-company`
-3. `/ask-cmo` or `/flow-campaign-launch` — 施策レビュー／全工程開始（Ask + Release）
-4. `/data-analyst` or `/flow-weekly-retro` — 結果集約（Feedback）
+3. `/ask-cmo`（Ask 単体）or `/flow-campaign-launch`（Set〜Feedback を横断する統合ワークフロー）— 施策レビュー／全工程開始
+4. `/data-analyst`（Feedback 単体）or `/flow-weekly-retro`（Feedback 起点で次サイクルの Set へ閉じる統合ワークフロー）— 結果集約
 5. `/set-update` + `/feedback` — Set層への還元（サイクルを閉じる）
 
 各 SKILL.md 冒頭には `SARF Alignment` セクションがあり、そのスキルの **Position / Set Preflight / Feedback Hook** が明記されています。スキル呼び出し前に確認してください。
