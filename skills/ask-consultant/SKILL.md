@@ -33,7 +33,7 @@ Read: memory/company/competitors.md
 Read: knowledge/foundation/marketing-mindset.md
 Read: knowledge/foundation/growth-frameworks.md
 Read: knowledge/foundation/brand-strategy.md
-Read: knowledge/latest/industry-trends.md
+Read: knowledge/update/industry-trends.md
 Read: memory/results/performance-data.md
 ```
 

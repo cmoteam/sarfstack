@@ -29,13 +29,13 @@ SARFの各段階はSARFStackの構造に対応しています:
 
 | SARF | SARFStackでの担い手 |
 |------|-----------------|
-| Set | `/set-company` `/set-latest` `/sarf-check` + `knowledge/`（foundation / latest）と `memory/`（company / results） |
+| Set | `/set-company` `/set-update` `/sarf-check` + `knowledge/`（foundation / update）と `memory/`（company / results） |
 | Ask | レビュー系スキル（`/ask-cmo` `/ask-ceo` `/ask-consultant` `/seo-specialist` `/creative-director` 等） |
 | Release | 制作系スキル / ワークフロー（`/contents-editor` `/ads-manager` `/flow-landing-page` `/flow-campaign-launch` 等） |
 | Feedback | 分析系スキル（`/data-analyst` `/flow-weekly-retro`）＋ `/feedback`（検証ゲート付きで results/ 生データと company/ 検証済み知見に還元） |
 
 ```
-Set（情報を渡す）      → /set-company /set-latest + knowledge/（base） + memory/（per-project）
+Set（情報を渡す）      → /set-company /set-update + knowledge/（base） + memory/（per-project）
 Meta（サイクル診断）   → /sarf-check
 Ask（問いに答える）    → /ask-ceo /ask-cmo /ask-consultant /creative-director /seo-specialist /ui-designer
 Release（本番反映）    → /contents-editor /ads-manager /estimate /flow-landing-page /flow-campaign-launch
@@ -53,7 +53,7 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 
 ### SARF Ops（サイクル運用）
 - `/set-company` — Set段階。企業情報を対話で一括ヒアリングし `memory/company/` を埋める
-- `/set-latest` — Set段階。業界トレンド・プラットフォーム仕様変更を `knowledge/latest/` に書き戻す（自社実績は対象外 → `/feedback`）
+- `/set-update` — Set段階。業界トレンド・プラットフォーム仕様変更を `knowledge/update/` に書き戻す（自社実績は対象外 → `/feedback`）
 - `/sarf-check` — サイクル診断。Set充足率・次の一手を提示
 - `/feedback` — Feedback段階。施策結果を検証ゲート付きで knowledge 層に反映
 
@@ -82,7 +82,7 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 ```
    ┌──────────────┐         ┌──────────────┐
    │ Set Company  │◀───────▶│ SARF Check   │◀── いつでも診断
-   │ Set Latest   │         │  (Meta)      │
+   │ Set Update   │         │  (Meta)      │
    └──────┬───────┘         └──────────────┘
           │ Set が揃ったら
           ▼
@@ -123,11 +123,11 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 - **知識**: company + sarf-framework
 - **トリガー**: プロジェクト初回セットアップ、ICP や Positioning 更新時
 
-### Set Latest (`/set-latest`)
-- **役割**: 最新数値・トレンド・仕様変更を `knowledge/latest/` に書き戻す
+### Set Update (`/set-update`)
+- **役割**: 最新数値・トレンド・仕様変更を `knowledge/update/` に書き戻す
 - **入力**: パフォーマンスデータ、業界ニュース、プラットフォーム仕様変更
-- **出力**: 3つの latest ファイルの更新 + 更新サマリー
-- **知識**: latest + sarf-framework
+- **出力**: 3つの update ファイルの更新 + 更新サマリー
+- **知識**: update + sarf-framework
 - **トリガー**: 週次（performance-data）、月次（industry-trends）、仕様変更時（platform-updates）
 
 ### SARF Check (`/sarf-check`)
@@ -141,7 +141,7 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 - **役割**: 施策結果を検証ゲート付きで knowledge 層に反映
 - **入力**: 数字（KPI実績）＋定性（顧客反応・学び）
 - **出力**: カテゴリ分類（反映 / 候補 / 却下）＋ diff ベースの書き込み
-- **知識**: foundation/sarf-framework + company + latest
+- **知識**: foundation/sarf-framework + company + update
 - **トリガー**: キャンペーン終了時、`/flow-weekly-retro` の Step 5
 
 ### CEO Review (`/ask-ceo`)
@@ -162,14 +162,14 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 - **役割**: 検索エンジン最適化の分析・戦略立案・技術監査・実装
 - **入力**: URL、キーワード候補、コンテンツ原稿、サイト構造
 - **出力**: キーワード戦略、技術SEO監査レポート、コンテンツ最適化案、実装コード
-- **知識**: foundation + company + latest
+- **知識**: foundation + company + update
 - **トリガー**: コンテンツ制作時、サイト改修時、順位変動時
 
 ### Consultant Review (`/ask-consultant`)
 - **役割**: 外部コンサルタント視点で、前提・戦略・施策に対してゼロベースの率直なフィードバックを返す
 - **入力**: 戦略・施策・意思決定プロセス（前提・制約・想定を含む）
 - **出力**: 前提の棚卸し、聖域の指摘、Kill候補、ゼロベース再設計案
-- **知識**: foundation + company + latest + results
+- **知識**: foundation + company + update + results
 - **トリガー**: 戦略の停滞感、施策のマンネリ化、四半期／年次見直し、CMOレビューで「整ってはいるが伸びない」判定が出たとき
 
 ### Creative Director (`/creative-director`)
@@ -183,28 +183,28 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 - **役割**: マーケティング用のLP・広告LPのUI/UXレビューと改善
 - **入力**: HTML/CSS、デザインファイル、ワイヤーフレーム
 - **出力**: UI改善提案 + 修正済みコード + コンバージョン最適化案
-- **知識**: foundation + company + latest
+- **知識**: foundation + company + update
 - **トリガー**: LP制作後、A/Bテスト設計時、CVR改善施策時
 
 ### Ads Manager (`/ads-manager`)
 - **役割**: デジタル広告（Google/Meta/X等）の設計・運用・最適化
 - **入力**: 広告アカウント情報、クリエイティブ、ターゲティング設定、パフォーマンスデータ
 - **出力**: 広告設計書、入稿データ、最適化提案、予算配分案
-- **知識**: foundation + company + latest
+- **知識**: foundation + company + update
 - **トリガー**: 新規キャンペーン設計時、パフォーマンス悪化時、予算見直し時
 
 ### Contents Editor (`/contents-editor`)
 - **役割**: コンテンツマーケティング（ブログ・SNS・メール・ホワイトペーパー）の企画・制作
 - **入力**: テーマ、ターゲット、チャネル、参考情報
 - **出力**: 完成原稿 + SEO対応メタ情報 + 配信スケジュール案
-- **知識**: foundation + company + latest
+- **知識**: foundation + company + update
 - **トリガー**: コンテンツカレンダー更新時、キャンペーン企画時
 
 ### Data Analyst (`/data-analyst`)
 - **役割**: マーケティングKPIの分析・レポーティング・アトリビューション・改善提案
 - **入力**: パフォーマンスデータ、KPI目標、ファネルデータ
 - **出力**: 分析レポート + インサイト + ネクストアクション提案
-- **知識**: foundation + company + latest
+- **知識**: foundation + company + update
 - **トリガー**: 週次/月次レビュー、異常値検出時、施策効果測定時
 
 ## Workflow Chains
@@ -216,7 +216,7 @@ Feedback（結果を戻す） → /data-analyst /flow-weekly-retro /feedback →
 SARF:     Set      → Ask           → Release       → Ask  →Release→ Feedback
           knowledge→ CMO Review    → CD→Content/Ads → CEO → Launch→ Analytics
                    → SEO → UI Review Review        → Review          ↓
-                                                                 knowledge/latest/
+                                                                 knowledge/update/
 ```
 
 ### Content Review Cycle（`/flow-content-review`）
@@ -234,7 +234,7 @@ SARF:   Set       → Ask        → Release                     → Ask   → F
 ### Weekly Retro（`/flow-weekly-retro` = SARFの閉じる部分）
 ```
 SARF:   Feedback             → 集約 → 次のSet更新           → 次のAsk
-        Analytics → CMO Review → CEO Review → Next Week Plan → knowledge/latest/ 更新
+        Analytics → CMO Review → CEO Review → Next Week Plan → knowledge/update/ 更新
 ```
 
 ## Knowledge Architecture
@@ -244,7 +244,7 @@ SARF:   Feedback             → 集約 → 次のSet更新           → 次の
 ```
 knowledge/   — shared base (tracked, upstream に流れる)
   foundation/   — 不変フレームワーク・マインドセット
-  latest/       — 外部揮発情報（プラットフォーム仕様・業界トレンド）
+  update/       — 外部揮発情報（プラットフォーム仕様・業界トレンド）
 
 memory/      — per-project memory (gitignored, 各プロジェクト管理)
   company/      — 事業概要・ICP・ポジショニング・ブランドガイドライン・競合
@@ -257,9 +257,9 @@ memory/      — per-project memory (gitignored, 各プロジェクト管理)
 `knowledge/foundation/` — マーケティングのフレームワーク、マインドセット、原則。
 めったに変更されない普遍的な知識。全スキルの基盤として暗黙的に参照される。
 
-### Latest（外部揮発情報 / tracked）
-`knowledge/latest/` — プラットフォームアップデート、業界トレンド。**外から入ってくる** 公開情報ベースの揮発層。
-`/set-latest` で更新する。自社の実績数値（CVR・CPA 等）はここではなく `memory/results/` 側。
+### Update（外部揮発情報 / tracked）
+`knowledge/update/` — プラットフォームアップデート、業界トレンド。**外から入ってくる** 公開情報ベースの揮発層。
+`/set-update` で更新する。自社の実績数値（CVR・CPA 等）はここではなく `memory/results/` 側。
 
 ### Company（企業固有情報 / gitignored）
 `memory/company/` — 事業概要、ICP、ポジショニング、ブランドガイドライン、競合情報。
@@ -299,7 +299,7 @@ Read: memory/results/performance-data.md
 スキルの性質に応じて読み込む知識層が異なります:
 - **SARF Ops** → sarf-framework + 対象となる knowledge 層（Set/Feedbackの操作自体が責務）
 - **Executive Review** → foundation + company（戦略判断に必要）
-- **Specialist Agents** → foundation + company + latest + results（実行に必要）
+- **Specialist Agents** → foundation + company + update + results（実行に必要）
 - **Workflows** → 内包するスキルが個別に読み込む
 
 これはSARFの **Set** 段階に相当します。スキル実行前に `[TODO]` が残っているファイルがあれば、それは Set が未完成ということ。Ask の前に Set を整えることが、成果物の質を決めます。
@@ -320,7 +320,7 @@ Read: memory/results/performance-data.md
 2. `/sarf-check` — 充足率を確認し、不足があれば再 `/set-company`
 3. `/ask-cmo` or `/flow-campaign-launch` — 施策レビュー／全工程開始（Ask + Release）
 4. `/data-analyst` or `/flow-weekly-retro` — 結果集約（Feedback）
-5. `/set-latest` + `/feedback` — Set層への還元（サイクルを閉じる）
+5. `/set-update` + `/feedback` — Set層への還元（サイクルを閉じる）
 
 各 SKILL.md 冒頭には `SARF Alignment` セクションがあり、そのスキルの **Position / Set Preflight / Feedback Hook** が明記されています。スキル呼び出し前に確認してください。
 

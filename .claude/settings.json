@@ -4,9 +4,9 @@
       "path": "skills/set-company/SKILL.md",
       "description": "SARFのSet段階: 企業情報を対話で一気にヒアリングして memory/company/ を埋める"
     },
-    "set-latest": {
-      "path": "skills/set-latest/SKILL.md",
-      "description": "SARFのSet段階: 業界トレンド・プラットフォーム仕様変更を knowledge/latest/ に書き戻す"
+    "set-update": {
+      "path": "skills/set-update/SKILL.md",
+      "description": "SARFのSet段階: プラットフォーム公式ソースを pull 型で巡回し、差分を承認ゲート経由で knowledge/update/ に書き戻す"
     },
     "sarf-check": {
       "path": "skills/sarf-check/SKILL.md",

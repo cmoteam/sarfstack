@@ -29,8 +29,8 @@ Read: memory/company/positioning.md
 Read: memory/company/brand-guidelines.md
 Read: knowledge/foundation/brand-strategy.md
 Read: knowledge/foundation/growth-frameworks.md
-Read: knowledge/latest/industry-trends.md
-Read: knowledge/latest/platform-updates.md
+Read: knowledge/update/industry-trends.md
+Read: knowledge/update/platform-updates.md
 ```
 
 ## Capabilities

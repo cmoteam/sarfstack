@@ -13,13 +13,13 @@ version: 1.0.0
 
 - **Position**: Workflow（Feedback → Set 還元）
 - **Set Preflight**: 今週の施策ログと数値が手元にあることが前提。なければ `/data-analyst` を先に実行してから戻ってくる
-- **Feedback Hook**: Step 5 で `/set-latest` と `/feedback` を必ず呼び出す。これを省略するとサイクルが閉じず、次週の Set 精度が今週と同じレベルに留まる
+- **Feedback Hook**: Step 5 で `/set-update` と `/feedback` を必ず呼び出す。これを省略するとサイクルが閉じず、次週の Set 精度が今週と同じレベルに留まる
 - **[Optional] Retro Funnel Focus**: 指定があればその段階の転換率・ボトルネックを中心にレビュー（例: 今週は MOFU 改善ウィーク）。未指定ならファネル全体を俯瞰
 - **[Optional] Retro Segment Focus**: 指定があればそのセグメントに絞ってセグメント別反応を分析。未指定なら全体＋主要セグメントを並列
 - **[Optional] Retro Primary KPI**: 指定があればその KPI を単一の評価軸に（週次目標 vs 実績）。未指定なら CVR / CPA / ROAS / LTV を並列追跡
 - **[Optional] 4-Axis Feedback**: データが揃えば Step 1 の `/data-analyst` が Funnel Conversion / Segment Response / Attribution / Unit Economics Update の4軸で出力し、Step 5 の Feedback 書き戻しもこの構造に従う（Marketing Extension）。揃わなければ従来構造
 
-**SARF上の位置づけ**: このワークフローは **Feedback → Set** のブリッジを担います。今週のRelease結果（実配信された施策）を数値と定性で集約し、来週の Set（特に `memory/results/` `knowledge/latest/` `memory/company/`）を更新するのが最終目的です。単なる報告会ではなく、AIの次のサイクルの入力精度を上げる儀式として位置づけてください。
+**SARF上の位置づけ**: このワークフローは **Feedback → Set** のブリッジを担います。今週のRelease結果（実配信された施策）を数値と定性で集約し、来週の Set（特に `memory/results/` `knowledge/update/` `memory/company/`）を更新するのが最終目的です。単なる報告会ではなく、AIの次のサイクルの入力精度を上げる儀式として位置づけてください。
 
 ## Workflow
 
@@ -112,7 +112,7 @@ Step 5: Knowledge    — 知識ベースの更新（Setへの還元）
 **このステップを省略するとSARFのループが閉じません。**
 振り返りの中で得られた情報を専用スキルで知識ベースに反映し、次サイクルのSetを強化します:
 
-1. **`/set-latest` を実行** — 今週の実測値を `performance-data.md` に、新トレンドを `industry-trends.md` に、仕様変更を `platform-updates.md` に書き戻す
+1. **`/set-update` を実行** — 今週の実測値を `performance-data.md` に、新トレンドを `industry-trends.md` に、仕様変更を `platform-updates.md` に書き戻す
 2. **`/feedback` を実行** — 検証済み知見（ICPの解像度向上、ポジショニングの微修正等）の company 層反映を検証ゲート付きで処理する
 
 **注意**: 未検証の仮説をcompany層に直書きしない。必ず `/feedback` の検証ゲートを通すこと。Set層の汚染は以降の全出力を歪めます。

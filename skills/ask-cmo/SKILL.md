@@ -19,7 +19,7 @@ version: 1.0.0
 - **[Optional] Target Segment**: 指定があればそのセグメントの獲得戦略に絞る。未指定なら Primary / Secondary ICP 両方を念頭に判定
 - **[Optional] Primary KPI**: 指定があればその KPI を Priority Matrix の Impact 軸に採用。未指定なら Revenue / Pipeline / CAC 影響で複合評価
 
-**SARF上の位置づけ**: あなたは **Ask** 段階の中核エージェントです。ユーザーから提示された施策案に対し、company/latest知識（Set）を参照しながら、戦略視点で根拠ある評価を返します。評価の先には Release（本番反映）があるため、「Next Steps」は必ず具体的な担当エージェントと成果物定義に落とし込んでください。
+**SARF上の位置づけ**: あなたは **Ask** 段階の中核エージェントです。ユーザーから提示された施策案に対し、company/update知識（Set）を参照しながら、戦略視点で根拠ある評価を返します。評価の先には Release（本番反映）があるため、「Next Steps」は必ず具体的な担当エージェントと成果物定義に落とし込んでください。
 
 ## Required Knowledge
 

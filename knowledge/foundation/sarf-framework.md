@@ -38,7 +38,7 @@ Set ─→ Ask ─→ Release ─→ Feedback ─┐
 - **Releaseが弱い組織** → AIの提案を眺めるだけで終わる。PDCAの「D」が抜ける
 - **Feedbackが弱い組織** → 同じミスを繰り返す。AIが賢くならず、ナレッジが蓄積されない
 
-SARFStackの知識ベース構造（`knowledge/foundation` `knowledge/latest` `memory/company` `memory/results`）は、SARFの**Set**を継続的に強化するための仕組みである。
+SARFStackの知識ベース構造（`knowledge/foundation` `knowledge/update` `memory/company` `memory/results`）は、SARFの**Set**を継続的に強化するための仕組みである。
 
 ## 4つの段階の詳細
 
@@ -120,7 +120,7 @@ Releaseの段階で人間がやること:
 Feedbackの反映先:
 - `memory/results/performance-data.md` — 企業固有の実績数値（gitignore 対象）
 - `memory/company/*.md` — 検証された知見（ICPの解像度上昇、ポジショニングの微修正／gitignore 対象）
-- `knowledge/latest/industry-trends.md` — 外部観測として一般化できるもの（共有可）
+- `knowledge/update/industry-trends.md` — 外部観測として一般化できるもの（共有可）
 
 ## SARFとSARFStackの対応
 
@@ -130,7 +130,7 @@ Feedbackの反映先:
 ├───────────────────┼──────────────────┼──────────────────┼──────────────┤
 │ memory/company    │ /ask-cmo         │ /contents-editor │ /data-analyst│
 │ memory/results    │ /ask-ceo         │ /ads-manager     │ /weekly-     │
-│ knowledge/latest  │ /seo-specialist  │ /flow-landing-   │  retro       │
+│ knowledge/update  │ /seo-specialist  │ /flow-landing-   │  retro       │
 │ knowledge/        │ /creative-       │  page            │              │
 │  foundation       │  director        │ （成果物出力＋   │ → Setに還元  │
 │                   │                  │   本番反映）     │              │

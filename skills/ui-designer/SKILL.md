@@ -27,7 +27,7 @@ Read: memory/company/brand-guidelines.md
 Read: memory/company/icp.md
 Read: memory/company/positioning.md
 Read: knowledge/foundation/marketing-mindset.md
-Read: knowledge/latest/platform-updates.md
+Read: knowledge/update/platform-updates.md
 Read: memory/results/performance-data.md
 ```
 
