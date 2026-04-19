@@ -125,7 +125,9 @@ memory/results/performance-data.md   ← 直近のパフォーマンスデータ
 | `/pricing-strategy` | Pricing | 価格設定・プラン設計・パッケージング戦略 |
 | `/churn-prevention` | Retention | 解約防止・リテンション改善・Save Offer設計 |
 
-### CRO Agents（コンバージョン最適化スペシャリスト）
+### CRO Agents（コンバージョン率最適化スペシャリスト）
+**CRO = Conversion Rate Optimization（コンバージョン率最適化）**。各ファネル段階でのユーザー行動完了率（CVR）を数字で上げる診断・改修を専門とする。`/ui-designer` が UI/UX 全般を見るのに対し、CRO 系はファネル段階別に特化。
+
 | Command | Target | Description |
 |---------|--------|-------------|
 | `/cro-page` | Marketing Pages | LP/Product/Feature/Pricing等のCVR最適化 |
