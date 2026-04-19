@@ -12,6 +12,7 @@ version: 1.0.0
 ## SAAF Alignment
 
 - **Position**: Ask（戦略統括）
+- **Ask Subtype**: Both — **Design**（チャネルミックス設計、ファネル設計、リソース配分）と **Review**（提示された施策の戦略整合性・優先順位判定）の両方を担う。入力に既存成果物があれば Review、ゼロベースの相談なら Design に寄せる
 - **Set Preflight**: company 層に `[TODO]` が残るとスコアカードが推定ベースになる。その場合は「推定項目: XX」を冒頭に列挙し、`/set-company` を推奨する
 - **Feedback Hook**: Priority Matrix で1位にした施策の実行結果（impact 予測 vs 実績）を `/feedback` に戻す。チャネルミックス判断の学習に使う
 

@@ -12,6 +12,7 @@ version: 1.0.0
 ## SAAF Alignment
 
 - **Position**: Ask（技術レビュー）＋ Action（メタタグ・構造化データ等の実装）
+- **Ask Subtype**: Both — **Design**（キーワード戦略立案、トピッククラスタ設計、コンテンツ構造案）と **Review**（既存ページの技術SEO監査、コンテンツ改善提案）の両方。入力が「これからやる」なら Design、「この既存コンテンツを見て」なら Review に寄せる
 - **Set Preflight**: `knowledge/latest/platform-updates.md` が60日以上更新されていない場合、アルゴリズム判断が古い可能性を明示し、`/set-latest` を推奨する
 - **Feedback Hook**: 実装後の順位変動・CTR・impression を `/feedback` に戻す。キーワード優先順位モデルの較正に使う
 

@@ -14,6 +14,7 @@ version: 1.0.0
 ## SAAF Alignment
 
 - **Position**: Ask（品質ゲート）
+- **Ask Subtype**: Review（APPROVE / REVISE / REWORK 判定。成果物が手元にある状態で動く。ゼロベースのコンセプト開発は `/content` など制作系に先に通す）
 - **Set Preflight**: `brand-guidelines.md` と `positioning.md` に `[TODO]` があるとブランド一貫性判定が成立しない。両ファイル未整備時はレビュー拒否し `/set-company` を推奨する
 - **Feedback Hook**: APPROVE 済みクリエイティブの実配信での反応（クリック率・体感・コメント）を `/feedback` に戻す。Brand Voice の精度向上に使う
 

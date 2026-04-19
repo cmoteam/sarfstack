@@ -13,6 +13,7 @@ version: 1.0.0
 ## SAAF Alignment
 
 - **Position**: Action（提案書・見積書の成果物）／ Ask（経営承認前の試算）
+- **Ask Subtype**: Design（スコープ設計と工数積算。まだ決まっていないものに対して松竹梅案を構築する Design Ask。完成済み見積りの妥当性 Review は `/ask-ceo` が担う）
 - **Set Preflight**: `performance-data.md` の CPC/CTR/CVR ベンチマークがないと ROI 試算が架空値になる。欠けている場合はシナリオの前提を業界平均で埋めた上で「自社データ不足」を明示する
 - **Feedback Hook**: 見積り vs 実際の工数・媒体費・ROAS の差分を `/feedback` に戻す。次回見積りの単価・係数較正に使う
 
