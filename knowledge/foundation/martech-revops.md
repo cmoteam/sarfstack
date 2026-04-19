@@ -220,7 +220,7 @@ MarTechの新層として**AI Automation**が台頭：
 - **AI Analyst**: Hex Magic / Julius / ThoughtSpot Sage
 - **Agent Framework / Workflow**: Claude Agent SDK / LangChain / n8n / Zapier
 
-**CMObotもこの層に位置する。** AIが各機能を横断して"オペレーションの接着剤"になる。
+**SARFStackもこの層に位置する。** AIが各機能を横断して"オペレーションの接着剤"になる。
 
 ## ツール選定の原則
 

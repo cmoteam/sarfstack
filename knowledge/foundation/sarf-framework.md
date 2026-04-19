@@ -3,7 +3,7 @@
 ## 定義
 
 SARFは、AIエージェントと協働してマーケティングを推進するための基本サイクルを4段階で表したフレームワーク。
-CMObotの全スキル・全ワークフローの基底にあるOSであり、個別のフレームワーク（AARRR・STP・RAM-CE等）の上位に位置する「AIとの関わり方の型」を定義する。
+SARFStackの全スキル・全ワークフローの基底にあるOSであり、個別のフレームワーク（AARRR・STP・RAM-CE等）の上位に位置する「AIとの関わり方の型」を定義する。
 
 読みは「**サーフ**」。波乗りのメタファーと整合する:
 - **Set**（セット）= 波待ちのポジション取り
@@ -36,7 +36,7 @@ Set ─→ Ask ─→ Release ─→ Feedback ─┐
 - **Releaseが弱い組織** → AIの提案を眺めるだけで終わる。PDCAの「D」が抜ける
 - **Feedbackが弱い組織** → 同じミスを繰り返す。AIが賢くならず、ナレッジが蓄積されない
 
-CMObotの知識ベース構造（`knowledge/foundation` `knowledge/latest` `memory/company` `memory/results`）は、SARFの**Set**を継続的に強化するための仕組みである。
+SARFStackの知識ベース構造（`knowledge/foundation` `knowledge/latest` `memory/company` `memory/results`）は、SARFの**Set**を継続的に強化するための仕組みである。
 
 ## 4つの段階の詳細
 
@@ -68,7 +68,7 @@ Setが成立しているかのチェック:
 4. **何を判断基準に**（ICE / ROI / ブランド整合 / CVR予測）
 5. **どの形式で**（表 / チェックリスト / コード / 原稿）
 
-CMObotでは、スラッシュコマンドがこのAskをテンプレート化している:
+SARFStackでは、スラッシュコマンドがこのAskをテンプレート化している:
 - `/ask-ceo` = 「CEO視点で、ROI基準で、GO/PIVOT/KILLの判定付きで評価せよ」
 - `/ui-designer` = 「UI/UX視点で、CVR改善基準で、修正後コード込みでレビューせよ」
 
@@ -120,7 +120,7 @@ Feedbackの反映先:
 - `memory/company/*.md` — 検証された知見（ICPの解像度上昇、ポジショニングの微修正／gitignore 対象）
 - `knowledge/latest/industry-trends.md` — 外部観測として一般化できるもの（共有可）
 
-## SARFとCMObotの対応
+## SARFとSARFStackの対応
 
 ```
 ┌───────────────────┬──────────────────┬──────────────────┬──────────────┐

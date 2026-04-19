@@ -1,6 +1,6 @@
 # output/ — Generated Artifacts
 
-CMObot の各スキルが生成した成果物（LP の HTML/CSS、広告コピー、分析レポート、キーワード一覧、見積書など）の出力先です。
+SARFStack の各スキルが生成した成果物（LP の HTML/CSS、広告コピー、分析レポート、キーワード一覧、見積書など）の出力先です。
 
 - **このディレクトリは `.gitignore` 対象**です（`.gitkeep` と `README.md` のみ tracked）。upstream には流れないため、企業固有の数値・コピー・機密情報を安全に置けます。
 - **各スキルは必ず `output/` 配下に書き込む**こと。プロジェクトルートや `skills/` 内に直接ファイルを作らないでください。

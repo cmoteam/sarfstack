@@ -1,6 +1,6 @@
-# CMObot — Virtual Marketing Organization for Claude Code
+# SARFStack — Virtual Marketing Organization for Claude Code
 
-CMObotは、Claude Code / Codex 上で動作する**仮想マーケティング組織**です。
+SARFStackは、Claude Code / Codex 上で動作する**仮想マーケティング組織**です。
 AI時代のマーケティングフレームワーク **SARF**（Set / Ask / Release / Feedback、読み:「サーフ」）をそのまま実装したもので、1コマンドでSetからFeedbackまでのサイクルを回せます。
 
 > **v2.0 改名**: 3段階目は旧版では "Action" と呼んでいました（旧称 SAAF）。「AIに書かせて眺めて終わり＝Action完了」と誤解される事例が多かったため、本番反映の意味を強く持つ **Release** に改名しました。読みは「サーフ」のまま、波乗りのメタファーも継続しています。
@@ -14,7 +14,7 @@ AI時代のマーケティングフレームワーク **SARF**（Set / Ask / Rel
 
 ## The SARF Framework
 
-CMObotが前提とする、AI時代のマーケティングの基本サイクル:
+SARFStackが前提とする、AI時代のマーケティングの基本サイクル:
 
 ```
 ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
@@ -25,7 +25,7 @@ CMObotが前提とする、AI時代のマーケティングの基本サイクル
       └───────────────────────────────────────────────────────────┘
 ```
 
-| SARF段階 | 人間がやること | CMObotでの対応 |
+| SARF段階 | 人間がやること | SARFStackでの対応 |
 |---------|---------------|---------------|
 | **S**et | 事業・ICP・ブランド・制約を言語化してAIに渡す | `knowledge/`（base）と `memory/`（per-project）に記入 |
 | **A**sk | 誰の視点で・何を・どの形式で出させるか問いを組む | レビュー系スキル（`/ask-cmo` 等） |
@@ -39,8 +39,8 @@ CMObotが前提とする、AI時代のマーケティングの基本サイクル
 ### 1. Clone
 
 ```bash
-git clone https://github.com/cmoteam/cmobot.git
-cd cmobot
+git clone https://github.com/cmoteam/sarfstack.git
+cd sarfstack
 ```
 
 ### 2. Bootstrap Company Knowledge（企業情報ディレクトリを作成）
@@ -133,7 +133,7 @@ memory/results/performance-data.md   ← 直近のパフォーマンスデータ
 ## Architecture
 
 ```
-cmobot/
+sarfstack/
 ├── AGENTS.md                    # Canonical: agents, SARF, knowledge, workflows
 ├── CLAUDE.md                    # Stub importing AGENTS.md (for Claude Code)
 ├── .claude/settings.json        # Skill definitions
@@ -215,7 +215,7 @@ Write targets:
 
 ## Marketing Cycle = SARF Cycle
 
-CMObotのマーケティングサイクルは、そのままSARFのサイクルです:
+SARFStackのマーケティングサイクルは、そのままSARFのサイクルです:
 
 ```
             SARF:  Set ──→ Ask ──→ Release ──→ Feedback ──→ (Setに還元)

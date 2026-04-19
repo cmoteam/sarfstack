@@ -12,7 +12,7 @@
 これにより:
 - `git pull` で upstream のテンプレート更新を素直に取り込める
 - ICP・競合情報・ブランドガイドラインなどの機密情報が誤って public に漏れない
-- 同じ `cmobot` クローンを複数プロジェクトで使い分けやすい（`company/` だけ差し替え）
+- 同じ `sarfstack` クローンを複数プロジェクトで使い分けやすい（`company/` だけ差し替え）
 
 ## セットアップ手順
 
@@ -36,6 +36,6 @@ cp -r memory/company.example memory/company
 
 ## 注意事項
 
-- 情報が不十分でも CMObot は動作しますが、レビューの精度が下がります。
+- 情報が不十分でも SARFStack は動作しますが、レビューの精度が下がります。
 - 機密情報を書き込む先は **必ず `memory/company/`**（gitignore対象）側です。`memory/company.example/` に書き込むと upstream に push されうるので注意してください。
 - 定期的に情報を更新してください（特に競合情報とポジショニング）。

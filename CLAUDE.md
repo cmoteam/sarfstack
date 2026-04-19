@@ -1,4 +1,4 @@
-# CMObot
+# SARFStack
 
 このファイルは互換性のためのスタブです。**canonical なプロジェクト定義・エージェント仕様は [`AGENTS.md`](AGENTS.md)** に統合されています。
 

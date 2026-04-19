@@ -1,6 +1,6 @@
-# CMObot Agents — Virtual Marketing Organization
+# SARFStack Agents — Virtual Marketing Organization
 
-CMObotは、Claude Code / Codex 上で動作する仮想マーケティング組織です。
+SARFStackは、Claude Code / Codex 上で動作する仮想マーケティング組織です。
 企業のマーケティング担当者、スタートアップのグロース担当、広告代理店の担当者が、
 AIエージェントチームと協働してマーケティング業務を遂行するためのフレームワークです。
 各エージェントはSKILL.mdで定義され、明確な責務・入力・出力を持ちます。
@@ -10,7 +10,7 @@ AIエージェントチームと協働してマーケティング業務を遂行
 
 ## Operating Model — SARF
 
-CMObotの全スキルは **SARF** サイクルの上で動作します。SARFはAI時代のマーケティングの基本OSであり、個別のフレームワーク（AARRR・STP・RAM-CE等）の上位に位置する「AIとの関わり方の型」です。読みは「**サーフ**」で、波乗りのメタファー(波待ち→波の見極め→ライディング→次の波を読む)と整合しています。
+SARFStackの全スキルは **SARF** サイクルの上で動作します。SARFはAI時代のマーケティングの基本OSであり、個別のフレームワーク（AARRR・STP・RAM-CE等）の上位に位置する「AIとの関わり方の型」です。読みは「**サーフ**」で、波乗りのメタファー(波待ち→波の見極め→ライディング→次の波を読む)と整合しています。
 
 ```
 Set ─→ Ask ─→ Release ─→ Feedback ─┐
@@ -25,9 +25,9 @@ Set ─→ Ask ─→ Release ─→ Feedback ─┐
 
 > **v2.0 改名ノート**: 3段階目は旧版では "Action" と呼んでいたが、「AIに書かせたものを眺めて終わり＝Action完了」と誤解される事例が多かったため、本番反映の意味を強く持つ **Release** に改名した。旧 SAAF → 新 SARF。読みは「サーフ」のまま。
 
-SARFの各段階はCMObotの構造に対応しています:
+SARFの各段階はSARFStackの構造に対応しています:
 
-| SARF | CMObotでの担い手 |
+| SARF | SARFStackでの担い手 |
 |------|-----------------|
 | Set | `/set-company` `/set-latest` `/sarf-check` + `knowledge/`（foundation / latest）と `memory/`（company / results） |
 | Ask | レビュー系スキル（`/ask-cmo` `/ask-ceo` `/ask-consultant` `/seo-specialist` `/creative-director` 等） |
