@@ -121,6 +121,19 @@ memory/results/performance-data.md   ← 直近のパフォーマンスデータ
 | `/ads-manager` | Ads | Google/Meta/X広告の設計・最適化 |
 | `/contents-editor` | Content | ブログ・SNS・メールの企画・制作 |
 | `/data-analyst` | Analytics | KPI分析・レポート・改善提案 |
+| `/customer-research` | Research | 顧客インタビュー・JTBD・Win/Loss分析（ICPをデータで鍛える） |
+| `/pricing-strategy` | Pricing | 価格設定・プラン設計・パッケージング戦略 |
+| `/churn-prevention` | Retention | 解約防止・リテンション改善・Save Offer設計 |
+
+### CRO Agents（コンバージョン最適化スペシャリスト）
+| Command | Target | Description |
+|---------|--------|-------------|
+| `/cro-page` | Marketing Pages | LP/Product/Feature/Pricing等のCVR最適化 |
+| `/cro-signup-flow` | Signup | 登録〜初回ログインの完了率最適化 |
+| `/cro-onboarding` | Activation | Aha Moment 到達・Activation 最適化 |
+| `/cro-form` | Lead Forms | デモ/資料DL/問い合わせフォームの完了率最適化 |
+| `/cro-popup` | Popups/Modals | Exit intent・Newsletter・告知系の設計と最適化 |
+| `/cro-paywall` | Paywall/Upsell | Free→Paid・アプリ内アップセルのCVR最適化 |
 
 ### Workflows（統合ワークフロー）
 | Command | Description |
@@ -162,6 +175,15 @@ sarfstack/
 │   ├── ads-manager/SKILL.md
 │   ├── contents-editor/SKILL.md
 │   ├── data-analyst/SKILL.md
+│   ├── customer-research/SKILL.md
+│   ├── pricing-strategy/SKILL.md
+│   ├── churn-prevention/SKILL.md
+│   ├── cro-page/SKILL.md
+│   ├── cro-signup-flow/SKILL.md
+│   ├── cro-onboarding/SKILL.md
+│   ├── cro-form/SKILL.md
+│   ├── cro-popup/SKILL.md
+│   ├── cro-paywall/SKILL.md
 │   ├── flow-campaign-launch/SKILL.md
 │   ├── flow-content-review/SKILL.md
 │   ├── flow-landing-page/SKILL.md

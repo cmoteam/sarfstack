@@ -52,6 +52,42 @@
       "path": "skills/data-analyst/SKILL.md",
       "description": "KPI分析・レポーティング・改善提案"
     },
+    "customer-research": {
+      "path": "skills/customer-research/SKILL.md",
+      "description": "顧客インタビュー・JTBD・Win/Loss分析の設計と実施支援（ICPをデータで鍛える）"
+    },
+    "pricing-strategy": {
+      "path": "skills/pricing-strategy/SKILL.md",
+      "description": "価格設定・プラン設計・パッケージング戦略"
+    },
+    "churn-prevention": {
+      "path": "skills/churn-prevention/SKILL.md",
+      "description": "解約防止・リテンション改善・Save Offer設計"
+    },
+    "cro-page": {
+      "path": "skills/cro-page/SKILL.md",
+      "description": "マーケティングページ全般のCVR最適化（LP/Product/Feature/Pricingページ等）"
+    },
+    "cro-signup-flow": {
+      "path": "skills/cro-signup-flow/SKILL.md",
+      "description": "サインアップフロー（登録〜初回ログイン）のCVR最適化"
+    },
+    "cro-onboarding": {
+      "path": "skills/cro-onboarding/SKILL.md",
+      "description": "オンボーディング・Activation・Aha Moment到達率の最適化"
+    },
+    "cro-form": {
+      "path": "skills/cro-form/SKILL.md",
+      "description": "リード獲得フォーム（デモ/資料DL/問い合わせ）の完了率最適化"
+    },
+    "cro-popup": {
+      "path": "skills/cro-popup/SKILL.md",
+      "description": "ポップアップ・モーダル・オーバーレイの設計と最適化"
+    },
+    "cro-paywall": {
+      "path": "skills/cro-paywall/SKILL.md",
+      "description": "Paywall・Upgradeモーダル・アプリ内アップセルのCVR最適化"
+    },
     "flow-campaign-launch": {
       "path": "skills/flow-campaign-launch/SKILL.md",
       "description": "キャンペーン企画→制作→レビュー→ローンチの全工程"
