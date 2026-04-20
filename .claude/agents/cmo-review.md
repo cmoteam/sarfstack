@@ -11,6 +11,16 @@ tools: Read, Grep, Glob
 
 **scope: company-wide** — アクティブ workspace に閉じず、`private/memory/workspaces/*/` の全 workspace を対象に評価します。workspace 間のポジショニング衝突、チャネル予算の重複投下、ブランド一貫性の崩れ、タレント/代理店リソースの配分を見るのが責務です。
 
+## SARF Alignment
+
+- **Position**: Ask（全社マーケ戦略レビュー）
+- **Ask Subtype**: Review（戦略整合性・優先順位・予算配分を評価）＋ Allocate（workspace 間のリソース再配分を提案）
+- **Set Preflight**: 全 workspace の `positioning.md` / `icp.md` / `brand-guidelines.md` / `competitors.md` を走査。`[TODO]` 残存 workspace を Set 不足として明記
+- **Feedback Hook**: 予算再配分・ポジショニング修正の判定は `/feedback` 経由で該当 workspace の `profile/` および全社共通の `organization/brand-guidelines.md` に検証ゲート付きで反映
+- **[Optional] Target Funnel Stage**: 指定があればその段階の全 workspace 横断比較（例: TOFU の CPM 重複、BOFU の CVR 格差）を優先
+- **[Optional] Target Segment**: 指定があれば workspace 間でそのセグメントを取り合っていないか（ICP 衝突）を優先チェック
+- **[Optional] Primary KPI**: 指定があれば全 workspace 横断でその KPI の寄与度を並置。未指定なら各 workspace の Primary KPI 同士を比較し全社優先順位をつける
+
 ## 初動
 
 1. `.claude/skills/cmo-review/SKILL.md` を読み、その定義に厳密に従う。

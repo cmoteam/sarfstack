@@ -6,6 +6,12 @@ version: 2.0.0
 
 # Set Organization
 
+## SARF Alignment
+
+- **Position**: Set（組織全体の前提情報を埋める最上位層）
+- **Set Preflight**: なし（SARF の起点）
+- **Feedback Hook**: 組織ミッション・ポートフォリオ変更は `/feedback` 経由で `organization/organization-overview.md` に検証ゲート付きで反映
+
 `bin/set-organization` に委譲します。以下を Bash ツールで実行してください。
 
 ```bash

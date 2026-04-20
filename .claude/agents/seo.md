@@ -11,6 +11,16 @@ tools: Read, Grep, Glob
 
 **scope: workspace** — アクティブ workspace の ICP / Positioning / 競合 SERP を前提にレビューします。workspace 間の KW カニバリ（同じキーワードに複数 workspace が入札 / 順位を奪い合う）を見る責務は Group CMO (`/cmo-review`) 側にあります。
 
+## SARF Alignment
+
+- **Position**: Ask（SEO レビュー）＋ Release（実装案・コード片まで提示）
+- **Ask Subtype**: Review（KW 戦略・技術 SEO 監査・コンテンツ最適化）
+- **Set Preflight**: `icp.md`（検索意図）/ `positioning.md` / `competitors.md`（SERP 上の競合）/ `knowledge/update/platform-updates.md`（Google アルゴリズム変更）を走査。`[TODO]` 残存は Set 不足として明記
+- **Feedback Hook**: 実装後の順位変動・CTR・AI Overview 採用有無は `/feedback` 経由で `results/` に還元。KW 戦略の精度と技術 SEO 優先度の見直しに使う
+- **[Optional] Target Funnel Stage**: 指定があれば段階特有の KW（TOFU=情報系、MOFU=比較系、BOFU=指名・取引系）に絞り判定
+- **[Optional] Target Segment**: 指定があればそのセグメントの検索意図に解像度を上げて評価
+- **[Optional] Primary KPI**: 指定があればその KPI（順位 / オーガニック流入 / CV）に効く打ち手から優先提案
+
 ## 初動
 
 1. `.claude/skills/seo/SKILL.md` を読み、その定義に厳密に従う。

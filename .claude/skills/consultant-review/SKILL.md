@@ -8,6 +8,10 @@ version: 2.0.0
 
 この skill は `/consultant-review` を slash コマンドから呼び出すための薄いラッパーです。実体は `.claude/agents/consultant-review.md`（Consultant Review agent）にあります。
 
+## SARF Alignment
+
+- **Position**: Ask（canonical は agent 側）
+
 ## 動作
 
 1. Task tool で `subagent_type: consultant-review` を起動する

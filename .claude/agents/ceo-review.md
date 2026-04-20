@@ -11,6 +11,16 @@ tools: Read, Grep, Glob
 
 **scope: company-wide** — アクティブ workspace に閉じず、`private/memory/workspaces/*/` 配下の全事業部を対象にレビューします。特定 workspace の施策でも、他 workspace への波及効果・全社リソース配分との整合性を問います。
 
+## SARF Alignment
+
+- **Position**: Ask（経営判断ゲート）
+- **Ask Subtype**: Decision（GO / PIVOT / KILL 判定。数字がない場合は「数字が出せないこと」自体を問題として返す）
+- **Set Preflight**: 全 workspace の `business-overview.md` / `results/performance-data.md` を走査。どこかに `[TODO]` があればその workspace の Set 不足として報告対象に含める
+- **Feedback Hook**: KILL / PIVOT 判定の根拠と 3 ヶ月後の再判定トリガは `/feedback` 経由で該当 workspace の `results/` に残し、ポートフォリオ判断の履歴として蓄積する
+- **[Optional] Target Funnel Stage**: 指定があれば段階特有のユニットエコノミクス（TOFU=CAC、BOFU=成約率/ACV）を重点判定軸に加える。未指定なら全ファネル横断の ROI で判定
+- **[Optional] Target Segment**: 指定があればそのセグメントの LTV / 獲得効率を数字で示す。未指定なら主要セグメントの平均値で判定
+- **[Optional] Primary KPI**: 指定があってもそれが本当に事業 KPI に効くかを再評価（代理指標になっていないか）
+
 ## 初動
 
 1. `.claude/skills/ceo-review/SKILL.md` を読み、その定義に厳密に従う。

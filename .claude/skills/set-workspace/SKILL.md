@@ -6,6 +6,12 @@ version: 2.0.0
 
 # Set Workspace
 
+## SARF Alignment
+
+- **Position**: Set（workspace 固有の ICP / Positioning / Competitors を埋める）
+- **Set Preflight**: アクティブ workspace が存在すること（`bin/workspace new <slug>`）、organization 層整備済み
+- **Feedback Hook**: 施策検証で ICP・Positioning に更新が出たら `/feedback` 経由で `workspaces/active/profile/` に検証ゲート付きで反映
+
 `bin/set-workspace` に委譲します。以下を Bash ツールで実行してください。
 
 ```bash

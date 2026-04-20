@@ -8,6 +8,10 @@ version: 1.0.0
 
 この skill は `/cmo-review` を slash コマンドから呼び出すための薄いラッパーです。実体は `.claude/agents/cmo-review.md`（Group CMO agent）にあります。
 
+## SARF Alignment
+
+- **Position**: Ask（canonical は agent 側）
+
 ## 動作
 
 1. Task tool で `subagent_type: cmo-review` を起動する

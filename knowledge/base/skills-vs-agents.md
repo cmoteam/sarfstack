@@ -33,19 +33,28 @@ Agent の frontmatter には `scope` フィールドを持たせる:
 
 ## 現状マッピング
 
-| カテゴリ | Agent 化済み | Scope | Skill のみ |
+| カテゴリ | Agent 化済み（canonical） | Scope | Skill のみ |
 |---|---|---|---|
-| Executive Review | `ceo-review` | company-wide | — |
-| Executive Review | `cmo-review` | company-wide | — |
-| Executive Review | `consultant-review` | workspace | — |
-| Specialist (Ask) | `creative-direction` `seo` | workspace | `customer-research` |
-| Specialist (Release) | — | workspace | `contents-edit` `ads-manager` `estimate` `ui-design` `pricing-strategy` `churn-prevention` |
+| Review 系 | `ceo-review` | company-wide | — |
+| Review 系 | `cmo-review` | company-wide | — |
+| Review 系 | `consultant-review` | workspace | — |
+| Review 系 | `creative-direction` | workspace | — |
+| Review 系 | `seo` | workspace | — |
+| Specialist (Ask) | — | workspace | `customer-research` |
+| Specialist (Release) | — | workspace | `contents-edit` `ads-manager` `estimate` `ui-design` `pricing-strategy` `churn-prevention` `data-analytics` |
 | Optimization | — | workspace | `optimize`（6 target 統合） |
-| SARF Ops | — | organization | `set-organization` |
-| SARF Ops | — | workspace | `set-workspace` `set-update` `feedback` `sarf-check` |
-| Meta | — | cross-workspace | `workspace` |
+| SARF Ops | — | organization | `set-organization` `set-brand` |
+| SARF Ops | — | workspace | `set-workspace` `set-update` `feedback` |
+| Meta | — | cross-workspace | `workspace` `next` `sarf-check` |
 | Workflows | — | — | `campaign-launch` 他（`.claude/workflows/` 配下、未実装） |
+
+Agent 化された 5 つは、同名の Skill が `.claude/skills/<name>/SKILL.md` に **thin dispatcher** として存在し、slash コマンドのエントリポイント兼 Task tool へのディスパッチャを担う。
 
 ## 実装原則
 
-Agent は「**Skill の薄いラッパー**」として実装します（対応 SKILL.md を Read → 定義通り実行 → 結果返却）。Skill 側に定義を一本化することで、仕様の重複を防ぎます。
+**Agent 化された機能は agent 側を canonical とし、Skill は thin dispatcher（slash エントリ用）**。Skill の責務は Task tool 経由で同名 agent を起動することのみで、ロジックは持たない。
+
+これにより:
+- slash コマンド (`/ceo-review` 等) が Unknown にならない
+- レビュー系は独立コンテキストで走り、メインセッションを全走査で汚さない
+- 仕様は agent 側に一本化され、重複・drift を防ぐ

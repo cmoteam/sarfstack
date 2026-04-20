@@ -163,21 +163,21 @@ cp .mcp.json.example .mcp.json
 | `/set-update` | Set | 業界トレンド・プラットフォーム仕様変更を `knowledge/update/` に書き戻す |
 | `/feedback` | Feedback | 施策結果を検証ゲート付きで `results/` と `profile/` に反映 |
 
-### Executive Review（経営レビュー）
+### Review 系（thin dispatcher + agent パターン）
 
-経営層 3 つは **agent** として `.claude/agents/` に canonical 定義を持ち、`.claude/skills/*/SKILL.md` は slash エントリ用の thin dispatcher。slash で叩くと Task tool 経由でサブエージェントに委譲され、メインコンテキストを汚さずレビューを回せます。
+レビュー系 5 つは **agent** として `.claude/agents/` に canonical 定義を持ち、`.claude/skills/*/SKILL.md` は slash エントリ用の thin dispatcher。slash で叩くと Task tool 経由でサブエージェントに委譲され、メインコンテキストを汚さずレビューを回せます。
 
 | Command | Role | Scope | Description |
 |---------|------|-------|-------------|
 | `/ceo-review` | CEO | company-wide | 収益性・ROI・事業インパクト評価。GO/PIVOT/KILL 判定 |
 | `/cmo-review` | Group CMO | company-wide | 全 workspace 横断のマーケティング戦略整合性・予算配分 |
 | `/consultant-review` | Consultant | workspace | 外部コンサル視点でゼロベースの率直フィードバック（Phase 0 で率直質問から入る） |
+| `/seo` | SEO | workspace | KW 戦略・技術 SEO 監査・コンテンツ最適化・実装案 |
+| `/creative-direction` | CD | workspace | クリエイティブ品質・ブランド一貫性・トーン&マナー |
 
-### Specialist Agents（専門エージェント）
+### Specialist Skills（専門スキル）
 | Command | Role | Description |
 |---------|------|-------------|
-| `/seo` | SEO | SEO分析・KW戦略・技術SEO |
-| `/creative-direction` | CD | クリエイティブ品質・ブランド一貫性 |
 | `/ui-design` | UI/UX | LP/WebページのUI・CVR最適化 |
 | `/ads-manager` | Ads | Google/Meta/X広告の設計・最適化 |
 | `/contents-edit` | Content | ブログ・SNS・メールの企画・制作 |
@@ -187,7 +187,7 @@ cp .mcp.json.example .mcp.json
 | `/churn-prevention` | Retention | 解約防止・リテンション改善・Save Offer設計 |
 | `/estimate` | Agency | 広告代理店視点での見積り・工数計算・費用概算 |
 
-`/seo` `/creative-direction` は agent 化済（`.claude/agents/`）、その他は skill のみ。判断基準は [`knowledge/base/skills-vs-agents.md`](knowledge/base/skills-vs-agents.md)。
+レビュー系（`/ceo-review` `/cmo-review` `/consultant-review` `/seo` `/creative-direction`）は agent 化済（`.claude/agents/`）、上記は skill のみ。判断基準は [`knowledge/base/skills-vs-agents.md`](knowledge/base/skills-vs-agents.md)。
 
 ### Optimization Agent（`/optimize <target>`）
 各ファネル段階でのユーザー行動完了率（CVR）を数字で上げる診断・改修を専門とする。`/ui-design` が UI/UX 全般を見るのに対し、`/optimize` はファネル段階別に特化（1つのスキルが 6 target に対応）。
@@ -225,9 +225,9 @@ sarfstack/
 │   │   ├── workspace/           #   /workspace list|new|switch|remove
 │   │   ├── set-{organization,brand,workspace,update}/
 │   │   ├── feedback/
-│   │   ├── {ceo,cmo,consultant}-review/  #   thin dispatcher → agents/
-│   │   ├── {seo,creative-direction,ui-design,ads-manager,contents-edit,
-│   │   │   data-analytics,customer-research,pricing-strategy,churn-prevention,estimate}/
+│   │   ├── {ceo,cmo,consultant}-review/ seo/ creative-direction/  # thin dispatcher → agents/
+│   │   ├── {ui-design,ads-manager,contents-edit,data-analytics,
+│   │   │   customer-research,pricing-strategy,churn-prevention,estimate}/
 │   │   └── optimize/            #   /optimize <page|signup-flow|onboarding|form|popup|paywall>
 │   │       └── targets/*.md
 │   └── agents/                  # Agents: Task tool 経由（レビュー系で context 分離）

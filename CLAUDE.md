@@ -91,7 +91,7 @@ private/memory/      — per-workspace memory (gitignored)
 
 ## Skills vs Agents
 
-Skill（`.claude/skills/`）と Agent（`.claude/agents/`）の2種類。経営層（CEO / CMO / Consultant）は agent 化済、それ以外は基本 skill。詳細は `knowledge/base/skills-vs-agents.md`。
+Skill（`.claude/skills/`）と Agent（`.claude/agents/`）の2種類。レビュー系（CEO / CMO / Consultant / SEO / Creative Direction）は agent 化済（skill は thin dispatcher）、それ以外は基本 skill。詳細は `knowledge/base/skills-vs-agents.md`。
 
 ## Integrations
 
