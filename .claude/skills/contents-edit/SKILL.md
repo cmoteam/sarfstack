@@ -13,7 +13,7 @@ version: 1.0.0
 ## SARF Alignment
 
 - **Position**: Release（そのまま公開できる成果物を出し、本番配信へ）
-- **Set Preflight**: `icp.md` `brand-guidelines.md` `positioning.md` のいずれかに `[TODO]` があると「ICPの言葉」で書けない。該当時は冒頭で明示し `/set-company` を推奨する
+- **Set Preflight**: `icp.md` `brand-guidelines.md` `positioning.md` のいずれかに `[TODO]` があると「ICPの言葉」で書けない。該当時は冒頭で明示し `/set-workspace` / `/set-organization` を推奨する
 - **Feedback Hook**: 公開後のエンゲージメント・CV・検索順位を `/feedback` に戻す。トピッククラスタ戦略の精度向上に使う
 - **[Optional] Target Funnel Stage**: 指定があれば段階別にフォーマットを選ぶ（TOFU=教育・解説記事／SNSショート、MOFU=比較・事例、BOFU=導入ガイド・ROI試算）。未指定なら段階中立で汎用フォーマットを使う
 - **[Optional] Target Segment**: 指定があればそのセグメント特有の語彙・課題・情報収集経路に合わせて原稿を書く。未指定なら Primary ICP を前提
@@ -23,12 +23,12 @@ version: 1.0.0
 ## Required Knowledge
 
 ```
-Read: memory/company/company-overview.md
-Read: memory/company/icp.md
-Read: memory/company/positioning.md
-Read: memory/company/brand-guidelines.md
-Read: knowledge/foundation/brand-strategy.md
-Read: knowledge/foundation/growth-frameworks.md
+Read: memory/profile/business-overview.md
+Read: memory/profile/icp.md
+Read: memory/profile/positioning.md
+Read: memory/organization/brand-guidelines.md
+Read: knowledge/base/brand-strategy.md
+Read: knowledge/base/growth-frameworks.md
 Read: knowledge/update/industry-trends.md
 Read: knowledge/update/platform-updates.md
 ```
@@ -141,7 +141,7 @@ Read: knowledge/update/platform-updates.md
 
 ## Integrations（optional）
 
-接続されていれば配信先 CMS・配信スケジュール管理に直結する。詳細は [`knowledge/foundation/integrations.md`](../../knowledge/foundation/integrations.md)。
+接続されていれば配信先 CMS・配信スケジュール管理に直結する。詳細は [`knowledge/base/integrations.md`](../../knowledge/base/integrations.md)。
 
 | Service | MCP / API | 用途 | Fallback |
 |---------|-----------|------|----------|

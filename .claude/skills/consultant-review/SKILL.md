@@ -14,8 +14,8 @@ version: 1.0.0
 
 - **Position**: Ask（既存前提に対する独立レビュー）
 - **Ask Subtype**: Review寄り（現状の戦略・KPI・施策を評価し、前提と聖域を棚卸し）＋ Design補助（再設計の方向性を示す）。既存の成果物がなくても「そもそも事業として今やるべきことは何か」のゼロベース問い直しに使える
-- **Set Preflight**: `memory/company/` と `memory/results/` の両方を参照する。company 層が薄い場合でも、その「Setの薄さ」自体を指摘対象として扱う（Setが埋まっていない＝経営の解像度不足として扱ってよい）
-- **Feedback Hook**: Killed/Pivot した施策は `/feedback` 経由で `memory/results/` に理由を残す。ゼロベース再設計が採用された場合は、前提の修正内容を `/feedback` で `memory/company/` に検証ゲート付きで還元する
+- **Set Preflight**: `memory/profile/` と `memory/results/` の両方を参照する。company 層が薄い場合でも、その「Setの薄さ」自体を指摘対象として扱う（Setが埋まっていない＝経営の解像度不足として扱ってよい）
+- **Feedback Hook**: Killed/Pivot した施策は `/feedback` 経由で `memory/results/` に理由を残す。ゼロベース再設計が採用された場合は、前提の修正内容を `/feedback` で `memory/profile/` に検証ゲート付きで還元する
 - **[Optional] Target Funnel Stage**: 指定があってもあえて全段階を疑う立場を維持する（そもそも「このファネル段階に予算を張る前提」自体を検討対象にする）。未指定時の挙動と実質同じ
 - **[Optional] Target Segment**: 指定があってもそのセグメント選択自体を再評価対象にする（ICP 誤認の可能性を優先チェック）
 - **[Optional] Primary KPI**: 指定があればその KPI の妥当性から問う（「そもそもこの KPI で本当に事業が伸びるのか」を聖域として扱わない）
@@ -25,14 +25,14 @@ version: 1.0.0
 ## Required Knowledge
 
 ```
-Read: memory/company/company-overview.md
-Read: memory/company/icp.md
-Read: memory/company/positioning.md
-Read: memory/company/brand-guidelines.md
-Read: memory/company/competitors.md
-Read: knowledge/foundation/marketing-mindset.md
-Read: knowledge/foundation/growth-frameworks.md
-Read: knowledge/foundation/brand-strategy.md
+Read: memory/profile/business-overview.md
+Read: memory/profile/icp.md
+Read: memory/profile/positioning.md
+Read: memory/organization/brand-guidelines.md
+Read: memory/profile/competitors.md
+Read: knowledge/base/marketing-mindset.md
+Read: knowledge/base/growth-frameworks.md
+Read: knowledge/base/brand-strategy.md
 Read: knowledge/update/industry-trends.md
 Read: memory/results/performance-data.md
 ```
@@ -47,6 +47,30 @@ Read: memory/results/performance-data.md
 - **数字で殴る** — 定性的な違和感も、最後は `memory/results/` の数字と結びつけて根拠化する
 
 ## Review Process
+
+### Phase 0: Frank Questions（率直な質問を先に投げる）
+
+レビュー出力に入る前に、**必ずユーザーに率直な質問を 5〜8 個投げる**。これは形式的なヒアリングではなく、コンサルとしての違和感・仮説・疑いを直接ぶつける場。沈黙や回答拒否もデータとして扱う。
+
+質問を組み立てるときの原則:
+- **具体名で聞く** — 「施策はどうですか」ではなく「この Q1 の XX キャンペーン、本当に続ける意味ありますか？」
+- **痛いところから聞く** — 聞きにくい質問ほど先に出す。価格・人・過去の意思決定・役員案件・看板商品
+- **数字で殴れる質問にする** — 回答の真偽を `memory/results/` や後続の数字で検証できる形にする
+- **Yes/No で逃げられない聞き方** — 「なぜその前提を置いているか」「何を観測したら撤退するか」を問う
+- **忖度語を禁止** — 「お伺いしたいのですが」「可能であれば」等は使わない。「これ、誰が決めたんですか？」でよい
+
+質問カテゴリ（最低1つずつ拾う。該当しないカテゴリはスキップ可）:
+
+1. **目的の疑い** — 「この施策、何が起きたら成功と言えますか？それ、事業KPIに本当に効きますか？」
+2. **聖域の指差し** — 「XX（主力チャネル／看板商品／既存KPI）を今日からやめろと言われたら、何が困りますか？」
+3. **前提の出所** — 「ICP をこれに決めた根拠は、定量データですか、それとも過去の経験則ですか？」
+4. **撤退条件** — 「どの数字がどうなったら、この施策をやめますか？その線、今引けますか？」
+5. **リソース配分** — 「予算の XX% をこのチャネルに張っている理由を、ゼロベースで説明できますか？」
+6. **組織的制約** — 「本当はやった方がいいのにやれていないこと、1つ挙げるとしたら何ですか？なぜやれていないんですか？」
+7. **競合認識** — 「このまま競合 A が同じ戦略を完璧に実行してきたら、勝てますか？勝てる理由は何ですか？」
+8. **時間軸** — 「3ヶ月後、6ヶ月後、このままの延長線上で事業は何倍になりますか？それで足りますか？」
+
+**アウトプット**: 質問リスト（番号付き）+「この中で答えたくない／答えられないものがあれば、それ自体が重要な情報です」と明示。回答が揃うまで Phase 1 以降に進まない。ただしユーザーが「質問抜きで一気にレビューしてくれ」と明示した場合のみスキップし、その旨を Blunt Take 冒頭で注記する。
 
 ### Phase 1: 前提の棚卸し（Assumption Inventory）
 
@@ -89,6 +113,22 @@ Read: memory/results/performance-data.md
 4. **3ヶ月後に測るもの** — 今回の助言が当たっていたかを判定するための数値
 
 ## Output Format
+
+### 初回レスポンス（Phase 0 のみ）
+
+```markdown
+# Consultant Review — Frank Questions
+
+レビューに入る前に、率直に聞きたいことが [N] 個あります。回答をもらってから前提棚卸しに進みます。答えたくない／答えられない質問があれば、それ自体が重要な情報なので「パス」と書いてください。
+
+1. [質問1]
+2. [質問2]
+...
+
+※ 「質問抜きで一気にレビューしてくれ」と言ってもらえれば、現状の `memory/` だけを根拠にフルレビューに入ります（精度は落ちます）。
+```
+
+### 本レビュー（Phase 1〜4）
 
 ```markdown
 # Consultant Review: [テーマ / 事業フェーズ]
@@ -148,6 +188,7 @@ Read: memory/results/performance-data.md
 
 ## Principles
 
+- **質問から入る** — レビュー出力の前に Phase 0 の率直な質問を必ず投げる。「質問抜きで」と明示された時だけスキップし、その旨を冒頭に注記する
 - **忖度しない** — 「全体的に良いと思います」で終わるレビューは禁止。必ず Kill List を1つ以上出す
 - **前提を言語化する** — 暗黙の前提を俎上に載せなければ、ゼロベース思考は機能しない
 - **数字で裏付ける** — 「なんとなく」の違和感も、最終的に `memory/results/` の数字に紐付ける

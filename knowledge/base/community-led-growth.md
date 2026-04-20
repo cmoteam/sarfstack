@@ -191,7 +191,7 @@ Ambassador（公式アンバサダー）
 
 ## SARFとの接続
 
-- **Set**: ターゲットの共通関心、既存の熱狂ユーザー、競合コミュニティの状況を `memory/company/` に書く
+- **Set**: ターゲットの共通関心、既存の熱狂ユーザー、競合コミュニティの状況を `memory/profile/` に書く
 - **Ask**: 「このICPに対するコミュニティMissionを3案」「立ち上げ初期のプログラム設計を」
 - **Release**: Discord / Slack開設、Code of Conduct策定、オンボーディングフロー実装、月次イベント運営
 - **Feedback**: Health MetricsとBusiness Impactを `memory/results/performance-data.md` に記録

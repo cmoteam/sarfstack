@@ -3,6 +3,17 @@
 SARFStackは、コーディングエージェント上で動作する**仮想マーケティング組織**です。
 AI時代の **マーケティングOS** である **SARF**（Set / Ask / Release / Feedback、読み:「サーフ」）をそのまま実装したもので、1コマンドでSetからFeedbackまでのサイクルを回せます。
 
+---
+
+## 🏄 迷ったら `/next`
+
+「何をしたらいいかわからない」「前回どこまでやったか忘れた」「このプロジェクトでAIに何を頼めるんだっけ」——そういう時は **`/next`** を押してください。現在の workspace 状態（Set 充足率・直近の Release / Feedback）を見て、**次の一歩を1つだけ** 推薦します。
+
+- `/next` = 迷った時の入口（ボタン1つ押す感覚）
+- `/sarf-check` = 詳細な診断ダッシュボード（充足率・ブロッカーを多角的に見る）
+
+---
+
 > SARF は「AI協働の汎用フレームワーク」ではなく、マーケティング特化のOSです。ファネル段階・セグメント・ユニットエコノミクス・KPI・アトリビューションといったマーケ固有のディメンションを各段階に重ねる **Marketing Extension**（optional）により、マーケ文脈でAIが本気で機能するように設計されています。
 
 ## Who is this for?
@@ -32,7 +43,7 @@ SARFStackが前提とする、AI時代のマーケティングの基本サイク
 | **R**elease | 出てきたアイデアを判断して**本番環境に反映**する | 制作系スキル・ワークフロー（`/contents-edit` `/landing-page` 等） |
 | **F**eedback | 結果の数字と定性反応をAIに戻す | 分析系スキル（`/data-analytics` `/weekly-retro`） |
 
-詳細は [`knowledge/foundation/sarf-framework.md`](knowledge/foundation/sarf-framework.md) を参照。マーケ固有のディメンション（Funnel Stage / Segment / Unit Economics / Measurement / Baseline KPI）を各段階に重ねる optional な **Marketing Extension** もそこに定義されています。
+詳細は [`knowledge/base/sarf-framework.md`](knowledge/base/sarf-framework.md) を参照。マーケ固有のディメンション（Funnel Stage / Segment / Unit Economics / Measurement / Baseline KPI）を各段階に重ねる optional な **Marketing Extension** もそこに定義されています。
 
 ## Setup
 
@@ -45,10 +56,12 @@ cd sarfstack
 
 ### 2. Bootstrap Company Knowledge（企業情報ディレクトリを作成）
 
-企業固有情報は `memory/company/` に置きますが、このディレクトリは **gitignore 対象**（upstream には含まれない）です。リポジトリにはテンプレート `memory/company.example/` のみが入っているので、初回にコピーしてください:
+企業固有情報は `memory/profile/` に置きますが、このディレクトリは **gitignore 対象**（upstream には含まれない）です。リポジトリにはテンプレート `memory/profile.example/` のみが入っているので、初回にコピーしてください:
 
 ```bash
-cp -r memory/company.example memory/company
+/workspace new <slug>     # 新規 workspace を作成（事業部・プロダクト・クライアント単位）
+/set-organization         # 組織情報（ミッション・ビジョン・ブランド）を memory/organization/ に埋める
+/set-workspace            # workspace 固有情報（ICP・Positioning・競合・事業概要）を memory/profile/ に埋める
 ```
 
 > **なぜ分離しているか**: ICP・競合情報・ブランドガイドラインなどの機密情報を upstream に誤って push する事故を防ぎ、`git pull` でフレームワーク本体のアップデートを素直に取り込めるようにするためです。
@@ -57,19 +70,28 @@ cp -r memory/company.example memory/company
 
 SARFの **Set** 段階。ここを埋めないとAIは汎用回答しか返せません。成果物の質の9割がここで決まります。
 
-**推奨**: `/set-company` を実行すると、`memory/company/` が無ければ自動でテンプレートから作成し、対話で必要な情報を一括ヒアリングして以下のファイルを埋めます。
+memory は **2層** に分かれます:
 
-手動で編集する場合は `memory/company/` 内のファイルを開き、`[TODO]` を実際の情報で置き換えてください:
+| 層 | パス | スコープ | 担当スキル |
+|---|---|---|---|
+| Organization | `memory/organization/` | 組織全体（全 workspace 共通） | `/set-organization` |
+| Workspace | `memory/profile/`（workspace symlink） | 単一 workspace（事業部 / プロダクト / クライアント） | `/set-workspace` |
+
+**推奨**: まず `/set-organization` で組織情報を埋め、次に `/set-workspace` で workspace 固有情報を埋めます。未存在時は自動でテンプレートから作成します。
+
+手動で編集する場合は、それぞれのディレクトリのファイルを開き `[TODO]` を置き換えてください:
 
 ```
-memory/company/company-overview.md  ← 事業概要
-memory/company/icp.md              ← 理想的な顧客像
-memory/company/positioning.md      ← ポジショニング
-memory/company/brand-guidelines.md ← ブランドガイドライン
-memory/company/competitors.md      ← 競合情報
+memory/organization/organization-overview.md ← 組織全体の概要・ミッション・事業ポートフォリオ
+memory/organization/brand-guidelines.md      ← 組織共通のブランドガイドライン
+
+memory/profile/business-overview.md          ← この workspace の事業概要
+memory/profile/icp.md                        ← 理想的な顧客像
+memory/profile/positioning.md                ← ポジショニング
+memory/profile/competitors.md                ← 競合情報
 ```
 
-⚠️ **`memory/company.example/` には実情報を書き込まないでください**。こちらは upstream に push される共通テンプレートです。実データは必ず `memory/company/`（gitignore側）に書きます。
+⚠️ **`.example/` ディレクトリには実情報を書き込まないでください**。こちらは upstream に push される共通テンプレートです。実データは必ず gitignore 側（`memory/organization/` / `memory/workspaces/<slug>/profile/`）に書きます。
 
 充足率は `/sarf-check` で確認できます。
 
@@ -104,7 +126,7 @@ cp .mcp.json.example .mcp.json
 # .mcp.json を編集し、使うサーバを残して API Key / Token を環境変数で注入
 ```
 
-- 詳細カタログ: [`knowledge/foundation/integrations.md`](knowledge/foundation/integrations.md)
+- 詳細カタログ: [`knowledge/base/integrations.md`](knowledge/base/integrations.md)
 - `.mcp.json` と `.claude/settings.local.json` は gitignore 済み（シークレット保護）
 - Write 操作は必ずユーザー承認ゲート経由 / Read-only から始めるのが既定
 - 最小推奨セット: Figma + Google Ads + GA4 + Meta + Slack + GitHub
@@ -114,10 +136,11 @@ cp .mcp.json.example .mcp.json
 ### SARF Ops（サイクル運用）
 | Command | Phase | Description |
 |---------|-------|-------------|
-| `/set-company` | Set | 企業情報（ICP・ポジショニング等）を対話で一括ヒアリング |
+| `/set-organization` | Set | 組織全体の情報（ミッション・ビジョン・ブランド・事業ポートフォリオ）を対話で一括ヒアリング |
+| `/set-workspace` | Set | workspace 単位の情報（事業概要・ICP・Positioning・競合）を対話で一括ヒアリング |
 | `/set-update` | Set | 業界トレンド・プラットフォーム仕様変更を `knowledge/update/` に書き戻す |
 | `/sarf-check` | Meta | Set充足率・次の一手を診断 |
-| `/feedback` | Feedback | 施策結果を検証ゲート付きで `memory/results/` と `memory/company/` に反映 |
+| `/feedback` | Feedback | 施策結果を検証ゲート付きで `memory/results/` と `memory/profile/` に反映 |
 
 ### Executive Review（経営レビュー）
 | Command | Role | Description |
@@ -179,7 +202,8 @@ sarfstack/
 │   └── results/                 # Company-specific: performance data (gitignored — per-project)
 │
 ├── skills/                      # Individual agents & workflows
-│   ├── set-company/SKILL.md     # SARF: Set
+│   ├── set-organization/SKILL.md # SARF: Set (organization層)
+│   ├── set-workspace/SKILL.md    # SARF: Set (workspace層)
 │   ├── set-update/SKILL.md      # SARF: Set
 │   ├── sarf-check/SKILL.md      # SARF: Meta (diagnostic)
 │   ├── feedback/SKILL.md        # SARF: Feedback
@@ -247,9 +271,10 @@ Specialist agents  → knowledge/foundation + memory/company + knowledge/update 
 Workflow agents    → delegates to sub-agents
 
 Write targets:
-  /set-company  → memory/company/
-  /set-update   → knowledge/update/
-  /feedback     → memory/results/ (raw numbers) + memory/company/ (verified learnings)
+  /set-organization → memory/organization/
+  /set-workspace    → memory/profile/ (workspace symlink)
+  /set-update       → knowledge/update/
+  /feedback         → memory/results/ (raw numbers) + memory/profile/ (verified learnings)
 ```
 
 ## Marketing Cycle = SARF Cycle

@@ -8,14 +8,14 @@ version: 1.0.0
 
 あなたは顧客調査（Customer Research）を専門とするエージェントです。
 顧客インタビュー、Win/Loss 分析、JTBD（Jobs to be Done）探索、ペルソナ検証、NPS・CSAT 深掘り等を設計・実施支援し、
-**ICP を仮説から実証データに昇華** させます。出力は `memory/company/icp.md` `memory/company/positioning.md` を鍛える素材となります。
+**ICP を仮説から実証データに昇華** させます。出力は `memory/profile/icp.md` `memory/profile/positioning.md` を鍛える素材となります。
 
 ## SARF Alignment
 
 - **Position**: Ask（既存 ICP の検証）＋ Set の強化（調査結果を `/feedback` 経由で company 層に昇華）
 - **Ask Subtype**: Design（インタビュー設計書・質問票の作成）＋ Review（既存 ICP の妥当性評価）
 - **Set Preflight**: `icp.md` `positioning.md` が必須入力。[TODO] のままでも可だが、その場合は「現状の仮説 ICP を検証する」調査になる（埋まっていれば「ICP を深堀りする」調査になる）
-- **Feedback Hook**: インタビュー結果・調査データを `/feedback` に渡し、検証ゲート通過分を `memory/company/icp.md` `positioning.md` に反映。このスキルの最終成果は **Set 層の精度向上** に他ならない
+- **Feedback Hook**: インタビュー結果・調査データを `/feedback` に渡し、検証ゲート通過分を `memory/profile/icp.md` `positioning.md` に反映。このスキルの最終成果は **Set 層の精度向上** に他ならない
 - **[Optional] Target Funnel Stage**: 全段階対象。ただし対象ユーザー選定は funnel stage 別（未登録リード / 新規顧客 / 長期顧客 / 解約顧客）で設計を分岐
 - **[Optional] Target Segment**: 複数 segment を横断して調査する場合、segment 別のインタビュー計画を推奨
 - **[Optional] Primary KPI**: 調査スキルなので直接 KPI に紐付かないが、「このインタビューで何を意思決定するか」を Primary Question として事前定義
@@ -23,13 +23,13 @@ version: 1.0.0
 ## Required Knowledge
 
 ```
-Read: memory/company/icp.md
-Read: memory/company/positioning.md
-Read: memory/company/company-overview.md
-Read: memory/company/competitors.md
-Read: knowledge/foundation/marketing-mindset.md
-Read: knowledge/foundation/growth-frameworks.md
-Read: knowledge/foundation/brand-strategy.md
+Read: memory/profile/icp.md
+Read: memory/profile/positioning.md
+Read: memory/profile/business-overview.md
+Read: memory/profile/competitors.md
+Read: knowledge/base/marketing-mindset.md
+Read: knowledge/base/growth-frameworks.md
+Read: knowledge/base/brand-strategy.md
 Read: memory/results/performance-data.md
 ```
 
@@ -152,8 +152,8 @@ Positioning / コピー候補を実際のターゲットに見せて反応を測
 ### Finding 2: ...
 
 ## ICP Update Recommendations
-- `memory/company/icp.md` 該当箇所: [現状] → [改定案]
-- `memory/company/positioning.md` 該当箇所: [現状] → [改定案]
+- `memory/profile/icp.md` 該当箇所: [現状] → [改定案]
+- `memory/profile/positioning.md` 該当箇所: [現状] → [改定案]
 
 ## Switch Trigger Map（JTBDのみ）
 | Trigger | 出現数 | 代表的な発言 |
@@ -169,7 +169,7 @@ Positioning / コピー候補を実際のターゲットに見せて反応を測
 - まだ残る不明点 Top 3
 
 ## Handoff
-- `/feedback` で `memory/company/` への反映を提案
+- `/feedback` で `memory/profile/` への反映を提案
 - `/contents-edit` に Objection Bank を渡してコピー改善
 - `/cmo-review` に Positioning Update を提案
 ```
@@ -185,7 +185,7 @@ Positioning / コピー候補を実際のターゲットに見せて反応を測
 
 ## Integrations（optional）
 
-会話データ・調査回答を直接取り込む。詳細は [`knowledge/foundation/integrations.md`](../../knowledge/foundation/integrations.md)。
+会話データ・調査回答を直接取り込む。詳細は [`knowledge/base/integrations.md`](../../knowledge/base/integrations.md)。
 
 | Service | MCP / API | 用途 | Fallback |
 |---------|-----------|------|----------|
@@ -198,10 +198,10 @@ Positioning / コピー候補を実際のターゲットに見せて反応を測
 **運用ルール**:
 - 顧客の実名・所属企業等の PII は `memory/results/` に生のまま書かない。匿名 ID 化 or 集計値に
 - 会話ログの要約・引用は本人許可を前提とする
-- JTBD のステートメントは最終的に `memory/company/icp.md` に落とす（`/feedback` 経由）
+- JTBD のステートメントは最終的に `memory/profile/icp.md` に落とす（`/feedback` 経由）
 
 ## Chaining
 
-- **前工程**: `/set-company`（既存 ICP の棚卸し）、`/consultant-review`（ICP 前提を揺さぶる）
+- **前工程**: `/set-workspace`（既存 ICP の棚卸し）、`/consultant-review`（ICP 前提を揺さぶる）
 - **後工程**: `/feedback`（検証結果を company 層に反映）、`/contents-edit`（Objection Bank をコピーに反映）、`/cmo-review`（Positioning 再設計）
 - **関連**: `/churn-prevention`（解約インタビューの実施）、`/pricing-strategy`（Van Westendorp の実施）

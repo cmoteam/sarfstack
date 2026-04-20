@@ -210,7 +210,7 @@ Affiliate（発信者） → Unique Link / Coupon → Landing Page
 
 ## SARFとの接続
 
-- **Set**: 自社のICP・補完的サービス・潜在パートナー候補を `memory/company/` に書く
+- **Set**: 自社のICP・補完的サービス・潜在パートナー候補を `memory/profile/` に書く
 - **Ask**: 「この商材に最適なCo-Marketingパートナー候補を10社」「Referralプログラム設計を3案」
 - **Release**: 契約書締結、共同ウェビナー開催、アフィリエイトASP導入、Referral UI実装
 - **Feedback**: Partner-Sourced Revenue、LTV、Activation率を `memory/results/performance-data.md` に記録

@@ -183,7 +183,7 @@ Attribution / Last Click  ─ 運用レベル（日々の最適化）
 
 ## SARFとの接続
 
-- **Set**: 現状の計測スタック、主要KPIツリー、計測の既知の穴を `memory/company/` に書く
+- **Set**: 現状の計測スタック、主要KPIツリー、計測の既知の穴を `memory/profile/` に書く
 - **Ask**: 「このチャネルでIncrementality Testを設計して」「このMMM結果を解釈して」
 - **Release**: GeoLift実装、Conversion Lift発注、MMMモデル構築、ダッシュボード改修
 - **Feedback**: Test結果から得た「真のROAS / 増分係数」を `memory/results/performance-data.md` に記録、予算配分の根拠に

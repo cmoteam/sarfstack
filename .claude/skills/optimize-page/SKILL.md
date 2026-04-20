@@ -14,7 +14,7 @@ LPだけでなく、Product ページ、Feature ページ、Pricing ページ、
 
 - **Position**: Ask（CVR診断）＋ Release（HTML/CSS・コピー修正案を本番反映）
 - **Ask Subtype**: Review（既存ページの CVR 阻害要因を特定）＋ Design（改修後の構成案を出力）
-- **Set Preflight**: `icp.md` / `positioning.md` / `performance-data.md` が前提。特に現状 CVR ベースラインが無いと改善幅を見積もれないため、未整備なら `/set-company` → `/feedback` で埋めることを推奨
+- **Set Preflight**: `icp.md` / `positioning.md` / `performance-data.md` が前提。特に現状 CVR ベースラインが無いと改善幅を見積もれないため、未整備なら `/set-workspace` → `/feedback` で埋めることを推奨
 - **Feedback Hook**: 改修版リリース後の CVR / ヒートマップ / スクロール深度を `/feedback` に戻す。検証済みの改善パターンは `knowledge/update/` の自社プレイブックに昇華
 - **[Optional] Target Funnel Stage**: 指定あれば TOFU/MOFU/BOFU に応じて重視軸を切り替え（TOFU=離脱率・直帰率 / MOFU=次アクション遷移率 / BOFU=CTA クリック率・フォーム完了率）。未指定なら全段階横断で評価
 - **[Optional] Target Segment**: 指定あれば該当セグメントの情報収集癖・リテラシーに合わせた改修を優先。未指定なら Primary ICP 基準
@@ -23,12 +23,12 @@ LPだけでなく、Product ページ、Feature ページ、Pricing ページ、
 ## Required Knowledge
 
 ```
-Read: memory/company/icp.md
-Read: memory/company/positioning.md
-Read: memory/company/brand-guidelines.md
-Read: memory/company/competitors.md
-Read: knowledge/foundation/marketing-mindset.md
-Read: knowledge/foundation/growth-frameworks.md
+Read: memory/profile/icp.md
+Read: memory/profile/positioning.md
+Read: memory/organization/brand-guidelines.md
+Read: memory/profile/competitors.md
+Read: knowledge/base/marketing-mindset.md
+Read: knowledge/base/growth-frameworks.md
 Read: knowledge/update/industry-trends.md
 Read: memory/results/performance-data.md
 ```
@@ -122,7 +122,7 @@ Read: memory/results/performance-data.md
 
 ## Integrations（optional）
 
-挙動観察と配信実装を直結する。詳細は [`knowledge/foundation/integrations.md`](../../knowledge/foundation/integrations.md)。
+挙動観察と配信実装を直結する。詳細は [`knowledge/base/integrations.md`](../../knowledge/base/integrations.md)。
 
 | Service | MCP / API | 用途 |
 |---------|-----------|------|

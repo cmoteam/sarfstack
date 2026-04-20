@@ -6,7 +6,7 @@
 - **Release段階**で使う: Hook Model / MVP（何をどう実装・本番反映するかの型）
 - **Feedback段階**で使う: North Star Metric / ユニットエコノミクス / AARRR指標（何を測って戻すか）
 
-SARFの詳細は `knowledge/foundation/sarf-framework.md`。
+SARFの詳細は `knowledge/base/sarf-framework.md`。
 
 ## AARRR（Pirate Metrics）
 

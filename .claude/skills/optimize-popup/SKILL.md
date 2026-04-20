@@ -23,9 +23,9 @@ Exit intent、ニュースレター登録、クーポン配布、機能告知、
 ## Required Knowledge
 
 ```
-Read: memory/company/icp.md
-Read: memory/company/brand-guidelines.md
-Read: knowledge/foundation/marketing-mindset.md
+Read: memory/profile/icp.md
+Read: memory/organization/brand-guidelines.md
+Read: knowledge/base/marketing-mindset.md
 Read: knowledge/update/platform-updates.md
 Read: memory/results/performance-data.md
 ```
@@ -139,7 +139,7 @@ Read: memory/results/performance-data.md
 
 ## Integrations（optional）
 
-表示トリガーと Capture Rate を直結する。詳細は [`knowledge/foundation/integrations.md`](../../knowledge/foundation/integrations.md)。
+表示トリガーと Capture Rate を直結する。詳細は [`knowledge/base/integrations.md`](../../knowledge/base/integrations.md)。
 
 | Service | MCP / API | 用途 |
 |---------|-----------|------|

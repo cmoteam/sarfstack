@@ -11,13 +11,19 @@ Thumbs.db
 # Node (if used for tooling)
 node_modules/
 
-# Company-specific memory (per-project, not shared upstream)
-# Bootstrap with: cp -r memory/company.example memory/company
-memory/company/
+# Per-workspace memory (not shared upstream).
+# Structure: memory/workspaces/<slug>/{profile,results}/
+# Active workspace is selected by the memory/profile and memory/results symlinks,
+# so all skills (Read: memory/profile/...) work transparently.
+# Bootstrap: /workspace new <slug>  or  /workspace switch <slug>
+memory/workspaces/
+memory/profile
+memory/results
 
-# Results memory: company-specific performance numbers & learnings (per-project, not shared upstream)
-# Bootstrap with: cp -r memory/results.example memory/results
-memory/results/
+# Organization-wide memory (single instance, not shared upstream).
+# Contains mission / brand / org-level overview that applies across all workspaces.
+# Bootstrap: /set-organization  (copies from memory/organization.example/ on first run)
+memory/organization/
 
 # Generated artifacts (per-project outputs; not shared upstream)
 # All skills write their deliverables under output/

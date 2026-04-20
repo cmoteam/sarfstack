@@ -23,10 +23,10 @@ version: 1.0.0
 ## Required Knowledge
 
 ```
-Read: memory/company/company-overview.md
-Read: memory/company/icp.md
-Read: knowledge/foundation/marketing-mindset.md
-Read: knowledge/foundation/metrics-glossary.md
+Read: memory/profile/business-overview.md
+Read: memory/profile/icp.md
+Read: knowledge/base/marketing-mindset.md
+Read: knowledge/base/metrics-glossary.md
 Read: memory/results/performance-data.md
 ```
 

@@ -23,10 +23,10 @@ version: 1.0.0
 ## Required Knowledge
 
 ```
-Read: memory/company/company-overview.md
-Read: memory/company/icp.md
-Read: knowledge/foundation/growth-frameworks.md
-Read: knowledge/foundation/metrics-glossary.md
+Read: memory/profile/business-overview.md
+Read: memory/profile/icp.md
+Read: knowledge/base/growth-frameworks.md
+Read: knowledge/base/metrics-glossary.md
 Read: memory/results/performance-data.md
 ```
 
@@ -144,7 +144,7 @@ Awareness    → Interest     → Consideration → Purchase    → Advocacy
 
 ## Integrations（optional）
 
-接続されていれば各チャネルの数字を直接 pull して突合する。詳細は [`knowledge/foundation/integrations.md`](../../knowledge/foundation/integrations.md)。
+接続されていれば各チャネルの数字を直接 pull して突合する。詳細は [`knowledge/base/integrations.md`](../../knowledge/base/integrations.md)。
 
 | Service | MCP / API | 用途 | Fallback |
 |---------|-----------|------|----------|

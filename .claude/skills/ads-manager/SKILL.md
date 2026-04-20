@@ -23,13 +23,13 @@ Google Ads、Meta Ads、X Ads等のデジタル広告の設計から入稿デー
 ## Required Knowledge
 
 ```
-Read: memory/company/company-overview.md
-Read: memory/company/icp.md
-Read: memory/company/positioning.md
-Read: memory/company/competitors.md
-Read: memory/company/brand-guidelines.md
-Read: knowledge/foundation/marketing-mindset.md
-Read: knowledge/foundation/metrics-glossary.md
+Read: memory/profile/business-overview.md
+Read: memory/profile/icp.md
+Read: memory/profile/positioning.md
+Read: memory/profile/competitors.md
+Read: memory/organization/brand-guidelines.md
+Read: knowledge/base/marketing-mindset.md
+Read: knowledge/base/metrics-glossary.md
 Read: knowledge/update/platform-updates.md
 Read: memory/results/performance-data.md
 ```
@@ -135,7 +135,7 @@ Read: memory/results/performance-data.md
 
 ## Integrations（optional）
 
-接続されていれば CSV 手入力をスキップして直接 pull する。詳細カタログは [`knowledge/foundation/integrations.md`](../../knowledge/foundation/integrations.md)。
+接続されていれば CSV 手入力をスキップして直接 pull する。詳細カタログは [`knowledge/base/integrations.md`](../../knowledge/base/integrations.md)。
 
 | Service | MCP / API | 用途 | Fallback |
 |---------|-----------|------|----------|

@@ -23,10 +23,10 @@ version: 1.0.0
 ## Required Knowledge
 
 ```
-Read: memory/company/icp.md
-Read: memory/company/positioning.md
-Read: memory/company/brand-guidelines.md
-Read: knowledge/foundation/growth-frameworks.md
+Read: memory/profile/icp.md
+Read: memory/profile/positioning.md
+Read: memory/organization/brand-guidelines.md
+Read: knowledge/base/growth-frameworks.md
 Read: knowledge/update/platform-updates.md
 Read: memory/results/performance-data.md
 ```
@@ -129,7 +129,7 @@ Read: memory/results/performance-data.md
 
 ## Integrations（optional）
 
-フォーム送信 → リード品質 → 商談化の連鎖を直結する。詳細は [`knowledge/foundation/integrations.md`](../../knowledge/foundation/integrations.md)。
+フォーム送信 → リード品質 → 商談化の連鎖を直結する。詳細は [`knowledge/base/integrations.md`](../../knowledge/base/integrations.md)。
 
 | Service | MCP / API | 用途 |
 |---------|-----------|------|

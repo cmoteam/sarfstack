@@ -12,7 +12,19 @@
       "Write(memory/workspaces/**)",
       "Edit(memory/workspaces/**)",
       "Write(memory/organization/**)",
-      "Edit(memory/organization/**)"
+      "Edit(memory/organization/**)",
+      "Write(knowledge/base/**)",
+      "Edit(knowledge/base/**)"
+    ],
+    "deny": [
+      "Write(memory/profile.example/**)",
+      "Edit(memory/profile.example/**)",
+      "Write(memory/results.example/**)",
+      "Edit(memory/results.example/**)",
+      "Write(memory/organization.example/**)",
+      "Edit(memory/organization.example/**)",
+      "Write(.mcp.json)",
+      "Read(.mcp.json)"
     ]
   },
   "hooks": {
@@ -43,7 +55,7 @@
     },
     "set-workspace": {
       "path": "skills/set-workspace/SKILL.md",
-      "description": "SARFのSet段階(workspace層): アクティブ workspace の事業概要・ICP・Positioning・競合を対話で memory/profile/ に埋める"
+      "description": "SARFのSet段階(workspace層): アクティブ BU/プロダクト/クライアントの事業概要・ICP・Positioning・競合を対話で memory/profile/ に埋める"
     },
     "set-update": {
       "path": "skills/set-update/SKILL.md",

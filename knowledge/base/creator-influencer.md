@@ -140,7 +140,7 @@ Mega:      0.5〜1%
 ### Incrementality測定
 インフルエンサー投稿は**Attribution困難**。
 → **Geo Lift Test** もしくは **Post-hoc Sales Lift**（投稿前後比較）が有効。
-→ `knowledge/foundation/measurement-incrementality.md` 参照。
+→ `knowledge/base/measurement-incrementality.md` 参照。
 
 ## 二次利用権とホワイトリスト広告
 
@@ -209,7 +209,7 @@ Mega:      0.5〜1%
 
 ## SARFとの接続
 
-- **Set**: ICPが信頼している発信者リスト、ブランド相性条件、NG事項を `memory/company/` に書く
+- **Set**: ICPが信頼している発信者リスト、ブランド相性条件、NG事項を `memory/profile/` に書く
 - **Ask**: 「このICPに最適なMicro Influencer層を10人推薦して」「ブリーフをこの商材向けに作って」
 - **Release**: 選定・発注・ブリーフ作成・投稿レビュー・開示確認・素材二次利用
 - **Feedback**: エンゲージ・CV・ブランドリフト・ROI比較を `memory/results/performance-data.md` に記録
