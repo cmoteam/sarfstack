@@ -23,7 +23,7 @@ __pycache__/
 #
 # Bootstrap: git clone <your-company-private-repo> private
 # See README.md §Setup step 2 for details.
-private/
+/private/
 
 # MCP server config: may contain API keys / tokens for third-party integrations
 # Bootstrap with: cp .mcp.json.example .mcp.json

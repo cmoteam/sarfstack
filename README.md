@@ -74,13 +74,16 @@ private/
 
 ### 3. Bootstrap Company Knowledge（企業情報ディレクトリを作成）
 
-企業固有情報は `private/memory/` 配下に置きますが、このディレクトリは **gitignore 対象**（upstream には含まれない）です。リポジトリにはテンプレート `templates/memory/` のみが入っているので、初回にコピーしてください（`bin/init-private` が自動化してくれます）:
+企業固有情報は `private/memory/` 配下に置きますが、このディレクトリは **gitignore 対象**（upstream には含まれない）です。リポジトリにはテンプレート `templates/memory/` のみが入っているので、**最初に `/init-private` を実行してください**。これが全ての起点になります。
 
 ```bash
+/init-private             # ★最初にこれ：private/ 配下（memory/organization, memory/workspaces, output, README）を生成
 /workspace new <slug>     # 新規 workspace を作成（事業部・プロダクト・クライアント単位）
 /set-organization         # 組織情報（ミッション・ビジョン・ブランド）を memory/organization/ に埋める
 /set-workspace            # workspace 固有情報（ICP・Positioning・競合・事業概要）を memory/profile/ に埋める
 ```
+
+> `/init-private` は `bin/init-private` に委譲する薄いラッパーです。冪等なので再実行しても既存は上書きされません（再生成は `bin/init-private --force`）。
 
 > **なぜ分離しているか**: ICP・競合情報・ブランドガイドラインなどの機密情報を upstream に誤って push する事故を防ぎ、`git pull` でフレームワーク本体のアップデートを素直に取り込めるようにするためです。
 
@@ -154,6 +157,7 @@ cp .mcp.json.example .mcp.json
 ### SARF Ops（サイクル運用）
 | Command | Phase | Description |
 |---------|-------|-------------|
+| `/init-private` | Meta | **最初にこれ**。`private/` 配下（memory/organization, memory/workspaces, output, README）を一括生成 |
 | `/next` | Meta | 迷ったらこれ。現在の workspace 状態から次の一歩を **1つだけ** 推薦 |
 | `/sarf-check` | Meta | `/next` の詳細モード（充足率・ブロッカー・Marketing Extension を可視化） |
 | `/workspace` | Meta | workspace の list / current / new / switch / remove |

@@ -11,8 +11,13 @@ set -euo pipefail
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 ORG_TEMPLATE="$REPO/templates/memory/organization"
-PRIVATE="$REPO/private/memory"
+README_TEMPLATE="$REPO/templates/private/README.md"
+PRIVATE_ROOT="$REPO/private"
+PRIVATE="$PRIVATE_ROOT/memory"
 ORG_DIR="$PRIVATE/organization"
+WORKSPACES_DIR="$PRIVATE/workspaces"
+OUTPUT_DIR="$PRIVATE_ROOT/output"
+README_DST="$PRIVATE_ROOT/README.md"
 
 FORCE=0
 while [ $# -gt 0 ]; do
@@ -28,7 +33,12 @@ if [ ! -d "$ORG_TEMPLATE" ]; then
   exit 1
 fi
 
-mkdir -p "$PRIVATE"
+mkdir -p "$PRIVATE" "$WORKSPACES_DIR" "$OUTPUT_DIR"
+
+if [ -f "$README_TEMPLATE" ] && [ ! -f "$README_DST" ]; then
+  cp "$README_TEMPLATE" "$README_DST"
+  echo "作成: $README_DST"
+fi
 
 if [ -d "$ORG_DIR" ]; then
   if [ "$FORCE" = "1" ]; then
